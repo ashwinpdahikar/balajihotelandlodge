@@ -12,4 +12,8 @@
     var el = document.querySelector('.loader_bg');
     if (el) { el.style.display = 'none'; }
   }, 2000);
+  document.addEventListener('DOMContentLoaded', function(){
+    var el = document.querySelector('.loader_bg');
+    if (el) { el.style.display = 'none'; }
+  });
 </script>

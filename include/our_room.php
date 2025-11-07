@@ -28,14 +28,9 @@
                      <p><?php echo h($r['description']); ?></p>
                      <div class="mb-2"><strong>Capacity:</strong> Adults <?php echo (int)($r['max_adults'] ?? 2); ?>, Children <?php echo (int)($r['max_children'] ?? 2); ?><?php if (isset($r['extra_guest_charge']) && $r['extra_guest_charge']!==null): ?>, Extra 15+ guest fee ₹<?php echo h(number_format((float)$r['extra_guest_charge'],2)); ?><?php endif; ?></div>
                      <?php if ($r['price'] !== null): ?><div class="mb-2"><strong>Rate:</strong> ₹<?php echo h(number_format((float)$r['price'], 2)); ?></div><?php endif; ?>
-                     <form method="post" action="book_room.php" class="row g-2" style="margin-top:10px">
-                        <input type="hidden" name="csrf" value="<?php echo h(csrf_token()); ?>">
-                        <input type="hidden" name="room_id" value="<?php echo (int)$r['id']; ?>">
-                        <input type="text" name="website" style="display:none">
-                        <div class="col-12 col-sm-6"><input class="form-control" placeholder="Your Name" name="name" required></div>
-                        <div class="col-12 col-sm-6"><input class="form-control" placeholder="Phone" name="phone" required></div>
-                        <div class="col-12"><button class="btn btn-primary" data-book-room data-room="<?php echo (int)$r['id']; ?>" <?php if ($available<=0): ?>disabled<?php endif; ?>>Book Now</button></div>
-                     </form>
+                    <div class="d-grid" style="margin-top:10px">
+                       <a href="#" class="btn btn-primary" data-book-room data-room="<?php echo (int)$r['id']; ?>" <?php if ($available<=0): ?>aria-disabled="true" style="pointer-events:none;opacity:.6"<?php endif; ?>>Book Now</a>
+                    </div>
                      <?php if (!empty($_SESSION['booking_msg'])): ?><div class="alert alert-info" style="margin-top:10px"><?php echo h($_SESSION['booking_msg']); unset($_SESSION['booking_msg']); ?></div><?php endif; ?>
                   </div>
                </div>

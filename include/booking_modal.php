@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/functions.php'; $pdo = get_pdo(); $rooms = $pdo->query('SELECT id,title,price,max_adults,max_children,extra_guest_charge FROM rooms WHERE status=1 ORDER BY title')->fetchAll(); $upiId = get_setting('upi_id',''); $upiName = get_setting('upi_name',''); ?>
+<?php require_once __DIR__ . '/functions.php'; $pdo = get_pdo(); $rooms = $pdo->query('SELECT id,title,price FROM rooms WHERE status=1 ORDER BY title')->fetchAll(); $upiId = get_setting('upi_id',''); $upiName = get_setting('upi_name',''); ?>
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -15,7 +15,7 @@
             <select class="form-control" name="room_id" id="bm_room" required>
               <option value="">Choose</option>
               <?php foreach($rooms as $r): ?>
-                <option value="<?php echo (int)$r['id']; ?>" data-price="<?php echo (float)$r['price']; ?>" data-adults="<?php echo (int)$r['max_adults']; ?>" data-kids="<?php echo (int)$r['max_children']; ?>" data-extra="<?php echo (float)$r['extra_guest_charge']; ?>"><?php echo h($r['title']); ?></option>
+                <option value="<?php echo (int)$r['id']; ?>" data-price="<?php echo (float)$r['price']; ?>" data-adults="2" data-kids="2" data-extra="0"><?php echo h($r['title']); ?></option>
               <?php endforeach; ?>
             </select>
           </div>

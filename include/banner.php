@@ -12,7 +12,7 @@
                   </div>
                </div>
                <div class="carousel-item">
-                  <img class="second-slide" src="images/banner2.jpg" alt="Second slide">
+                  <img class="second-slide" src="images/talobaimage1.jpeg" alt="Second slide">
                </div>
                <div class="carousel-item">
                   <img class="third-slide" src="images/banner3.jpg" alt="Third slide">
@@ -28,7 +28,7 @@
             </a>
          </div>
          <div class="booking_ocline">
-            <?php require_once __DIR__ . '/functions.php'; $pdo = get_pdo(); $rooms = $pdo->query("SELECT id,title,quantity FROM rooms WHERE status=1 ORDER BY title ASC")->fetchAll(); ?>
+            <?php require_once __DIR__ . '/functions.php'; $pdo = get_pdo(); $rooms = $pdo->query("SELECT id,title FROM rooms WHERE status=1 ORDER BY title ASC")->fetchAll(); ?>
             <div class="container">
                <div class="row">
                   <div class="col-md-6">
