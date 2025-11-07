@@ -7,7 +7,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                              <a href="index.php"><img src="images/logo.png" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -20,22 +20,25 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
-                                 <a class="nav-link" href="index.html">Home</a>
+                                 <a class="nav-link" href="index.php">Home</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="about.html">About</a>
+                                <a class="nav-link" href="about.php">About</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="room.html">Our room</a>
+                                <a class="nav-link" href="room.php">Our room</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="gallery.html">Gallery</a>
+                                <a class="nav-link" href="gallery.php">Gallery</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="blog.html">Blog</a>
+                                <a class="nav-link" href="blog.php">Blog</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                                <a class="nav-link" href="contact.php">Contact Us</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" style="font-weight:600;color:#21a179" href="room.php">Book Now</a>
                               </li>
                            </ul>
                         </div>

@@ -20,17 +20,15 @@
    <?php include 'include/banner.php'; ?>
    <!-- end banner -->
    <!-- about -->
+   <?php require_once __DIR__ . '/include/functions.php'; $page = get_page_by_slug('about'); ?>
    <div class="about">
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-5">
                <div class="titlepage">
-                  <h2>About Us</h2>
-                  <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their
-                     dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their
-                     software. Today it's seen all around the web; on templates, websites, and stock designs. Use our
-                     generator to get your own, or read on for the authoritative history of lorem ipsum. </p>
-                  <a class="read_more" href="Javascript:void(0)"> Read More</a>
+                  <h2><?php echo h($page['title'] ?? 'About Us'); ?></h2>
+                  <p><?php echo h(mb_substr(strip_tags($page['content'] ?? ''), 0, 250)); ?>...</p>
+                  <a class="read_more" href="about.php"> Read More</a>
                </div>
             </div>
             <div class="col-md-7">

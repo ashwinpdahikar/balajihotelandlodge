@@ -1,3 +1,4 @@
+  <?php require_once __DIR__ . '/functions.php'; $galleryItems = list_gallery_images(8); ?>
   <div class="gallery">
       <div class="container">
          <div class="row">
@@ -8,46 +9,16 @@
             </div>
          </div>
          <div class="row">
+            <?php foreach ($galleryItems as $g): ?>
             <div class="col-md-3 col-sm-6">
                <div class="gallery_img">
-                  <figure><img src="images/gallery1.jpg" alt="#" /></figure>
+                  <figure><img src="<?php echo h($g['image_path']); ?>" alt="#" /></figure>
                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="gallery_img">
-                  <figure><img src="images/gallery2.jpg" alt="#" /></figure>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="gallery_img">
-                  <figure><img src="images/gallery3.jpg" alt="#" /></figure>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="gallery_img">
-                  <figure><img src="images/gallery4.jpg" alt="#" /></figure>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="gallery_img">
-                  <figure><img src="images/gallery5.jpg" alt="#" /></figure>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="gallery_img">
-                  <figure><img src="images/gallery6.jpg" alt="#" /></figure>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="gallery_img">
-                  <figure><img src="images/gallery7.jpg" alt="#" /></figure>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="gallery_img">
-                  <figure><img src="images/gallery8.jpg" alt="#" /></figure>
-               </div>
-            </div>
+            <?php endforeach; ?>
+            <?php if (!$galleryItems): ?>
+            <div class="col-12"><div class="text-muted">No images yet.</div></div>
+            <?php endif; ?>
          </div>
       </div>
    </div>
