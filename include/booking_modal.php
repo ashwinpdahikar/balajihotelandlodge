@@ -62,7 +62,11 @@
     function openModalFor(roomId,title){
       var sel = document.getElementById('bm_room');
       if (roomId){ sel.value = String(roomId); }
-      $('#bookingModal').modal('show');
+      if (window.jQuery && typeof jQuery.fn.modal === 'function') {
+        jQuery('#bookingModal').modal('show');
+      } else {
+        var el=document.getElementById('bookingModal'); if(el){ el.style.display='block'; el.classList.add('show'); }
+      }
     }
     window.openBookingModal = openModalFor;
     document.addEventListener('click', function(e){

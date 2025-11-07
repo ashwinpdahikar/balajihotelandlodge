@@ -1,69 +1,32 @@
+<?php require_once __DIR__ . '/include/functions.php'; $slug = trim($_GET['slug'] ?? ''); $page = $slug ? get_page_by_slug($slug) : null; ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-   <?php include 'include/header-section.php'; ?>
-   <!-- site metas -->
-   <title>Balaji Hotel And Lodge Chimur</title>
-</head>
-<!-- body -->
-
-<body class="main-layout">
-   <!-- loader  -->
-   <?php include 'include/loader.php'; ?>
-   <!-- end loader -->
-   <!-- header -->
-   <?php include 'include/header.php'; ?>
-   <!-- end header inner -->
-   <!-- end header -->
-   <!-- banner -->
-   <?php include 'include/banner.php'; ?>
-   <!-- end banner -->
-   <!-- about -->
-   <div class="about">
-      <div class="container-fluid">
-         <div class="row">
-            <div class="col-md-5">
-               <div class="titlepage">
-                  <h2>About Us</h2>
-                  <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their
-                     dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their
-                     software. Today it's seen all around the web; on templates, websites, and stock designs. Use our
-                     generator to get your own, or read on for the authoritative history of lorem ipsum. </p>
-                  <a class="read_more" href="Javascript:void(0)"> Read More</a>
-               </div>
-            </div>
-            <div class="col-md-7">
-               <div class="about_img">
-                  <figure><img src="images/about.png" alt="#" /></figure>
-               </div>
-            </div>
-         </div>
+  <head>
+    <?php include 'include/header-section.php'; ?>
+    <title><?php echo h($page['title'] ?? 'Page'); ?> - Balaji Hotel And Lodge Chimur</title>
+  </head>
+  <body class="main-layout">
+    <?php include 'include/loader.php'; ?>
+    <?php include 'include/header.php'; ?>
+    <div class="back_re">
+      <div class="container"><div class="row"><div class="col-md-12"><div class="title"><h2><?php echo h($page['title'] ?? 'Page'); ?></h2></div></div></div></div>
+    </div>
+    <div class="about">
+      <div class="container">
+        <?php if (!empty($page['hero_path'])): ?>
+        <div class="mb-3"><img src="<?php echo h($page['hero_path']); ?>" alt="" style="max-width:100%;border-radius:6px"></div>
+        <?php endif; ?>
+        <?php if (!empty($page['excerpt'])): ?><p class="mb-3"><?php echo h($page['excerpt']); ?></p><?php endif; ?>
+        <div><?php echo nl2br(h($page['content'] ?? '')); ?></div>
+        <div class="row mt-3">
+          <?php $pdo = get_pdo(); $imgs = []; if ($page){ $st=$pdo->prepare('SELECT * FROM site_page_images WHERE page_id=? ORDER BY id DESC'); $st->execute([(int)$page['id']]); $imgs=$st->fetchAll(); } ?>
+          <?php foreach ($imgs as $im): ?>
+          <div class="col-md-4 col-sm-6 mb-3"><img src="<?php echo h($im['image_path']); ?>" alt="" style="width:100%;border-radius:6px"><div class="small text-muted"><?php echo h($im['caption']); ?></div></div>
+          <?php endforeach; ?>
+        </div>
       </div>
-   </div>
-   <!-- end about -->
-   <!-- our_room -->
-  <?php
-   include 'include/our_room.php';
-   ?>
-   <!-- end our_room -->
-   <!-- gallery -->
- <?php
-   include 'include/gallery.php';
-   ?>
-   <!-- end gallery -->
-   <!-- blog -->
- <?php
-   include 'include/blog.php';
-   ?>
-   <!-- end blog -->
-   <!--  contact -->
-   <?php include 'include/contact.php'; ?>
-   <!-- end contact -->
-   <!--  footer -->
-   <?php include 'include/footer.php'; ?>
-   <!-- end footer -->
-   <?php include 'include/footer-section.php'; ?>
-</body>
-
+    </div>
+    <?php include 'include/footer.php'; ?>
+    <?php include 'include/footer-section.php'; ?>
+  </body>
 </html>

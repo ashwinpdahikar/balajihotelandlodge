@@ -43,6 +43,22 @@ try {
     }
     // Ensure no NULL quantities remain
     $pdo->exec('UPDATE rooms SET quantity = 1 WHERE quantity IS NULL');
+
+    // site_pages columns hero/excerpt
+    $pcols = [
+        ['hero_path','VARCHAR(255) NULL'],
+        ['excerpt','TEXT NULL']
+    ];
+    foreach ($pcols as $c) {
+        $q = $pdo->prepare('SELECT COUNT(*) c FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = "site_pages" AND COLUMN_NAME = ?');
+        $q->execute([DB_NAME, $c[0]]);
+        if ((int)$q->fetch()['c'] === 0) {
+            $pdo->exec('ALTER TABLE site_pages ADD COLUMN ' . $c[0] . ' ' . $c[1]);
+        }
+    }
+
+    // site_page_images table
+    $pdo->exec('CREATE TABLE IF NOT EXISTS site_page_images (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  page_id INT NOT NULL,\n  image_path VARCHAR(255) NOT NULL,\n  caption VARCHAR(200) NULL,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  FOREIGN KEY (page_id) REFERENCES site_pages(id) ON DELETE CASCADE\n) ENGINE=InnoDB');
     echo 'Migration complete.';
 } catch (Throwable $e) {
     http_response_code(500);
