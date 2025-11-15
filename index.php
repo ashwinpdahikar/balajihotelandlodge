@@ -3,6 +3,7 @@
 
 <head>
    <?php include 'include/header-section.php'; ?>
+   <link rel="stylesheet" href="css/style.css">
    <!-- site metas -->
    <title>Balaji Hotel And Lodge Chimur</title>
 </head>

@@ -8,7 +8,7 @@
                      <ul class="conta">
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo h(get_setting('address', 'Address')); ?></li>
                         <li><i class="fa fa-mobile" aria-hidden="true"></i> <?php echo h(get_setting('phone', '+91 7350255026')); ?></li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> <?php echo h(get_setting('email', 'demo@gmail.com')); ?></a></li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> <?php echo h(get_setting('email', 'balajirestaurantandlodge@gmail.com')); ?></a></li>
                      </ul>
                   </div>
                   <div class="col-md-4">
@@ -43,10 +43,8 @@
                      <div class="col-md-10 offset-md-1">
                         
                         <p>
-                        © 2025 All Rights Reserved. Design by <a href="https://html.design/"> Free Html Templates</a>
-                        <br><br>
-                        Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-                        </p>
+                        © 2025 All Rights Reserved. <a href="" class="text-danger">Balaji Hotel - Restaurant and Lodge</a>
+                      
 
                      </div>
                   </div>
