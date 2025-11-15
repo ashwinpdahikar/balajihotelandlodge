@@ -781,16 +781,50 @@ ul.conta li {
      text-align: left;
      padding-bottom: 20px;
      font-size: 16px;
+     display: flex;
+     align-items: flex-start;
+     line-height: 1.6;
 }
 
 ul.conta li i {
      padding-right: 15px;
      text-align: center;
      font-size: 20px;
+     flex-shrink: 0;
+     margin-top: 2px;
 }
 
+ul.conta li span,
 ul.conta li a {
      color: #fff;
+     flex: 1;
+     word-break: break-word;
+     display: inline-block;
+}
+
+ul.conta li a.contact-link {
+     color: #fff;
+     text-decoration: none;
+     transition: color 0.3s ease;
+}
+
+ul.conta li a.contact-link:hover {
+     color: #ff0909;
+}
+
+ul.conta li.email-item {
+     display: flex;
+     align-items: flex-start;
+}
+
+ul.conta li.email-item i {
+     flex-shrink: 0;
+     margin-top: 2px;
+}
+
+ul.conta li.email-item .email-link {
+     word-break: break-all;
+     display: inline;
 }
 
 ul.link_menu li {

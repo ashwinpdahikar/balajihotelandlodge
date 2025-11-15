@@ -184,6 +184,51 @@
     .d_none {
         display: none;
     }
+    
+    /*-- Footer Mobile Responsive --*/
+    .footer {
+        padding-top: 40px;
+        margin-top: 60px;
+    }
+    
+    .footer h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    ul.conta li {
+        font-size: 14px;
+        padding-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    ul.conta li i {
+        font-size: 18px;
+        padding-right: 12px;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    
+    ul.conta li.email-item {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+    }
+    
+    ul.conta li.email-item i {
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    
+    ul.conta li.email-item .email-link {
+        word-break: break-all;
+        font-size: 13px;
+        line-height: 1.5;
+        display: inline;
+        flex: 1;
+        min-width: 0;
+    }
 }
 
 
