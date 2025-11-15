@@ -71,7 +71,7 @@ try {
     $settings = [
         ['address', 'Address'],
         ['phone', '+91 7350255026'],
-        ['email', 'demo@gmail.com'],
+        ['email', 'balajirestaurantandlodge@gmail.com'],
         ['upi_id', '7350255026@upi'],
         ['upi_name', 'Balaji Hotel And Lodge Chimur'],
     ];
