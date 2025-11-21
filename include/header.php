@@ -12,6 +12,7 @@
         <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
         <li class="nav-item"><a class="nav-link" href="room.php">Our Rooms</a></li>
         <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="chimur-tourism.php">Chimur Travel Guide</a></li>
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
         <li class="nav-item cta"><a class="nav-link btn-cta" href="contact.php">Contact Us</a></li>
       </ul>
@@ -39,6 +40,7 @@
           <li class="off-item"><a href="about.php">About</a></li>
           <li class="off-item"><a href="room.php">Our Rooms</a></li>
           <li class="off-item"><a href="gallery.php">Gallery</a></li>
+          <li class="off-item"><a href="chimur-tourism.php">Chimur Travel Guide</a></li>
           <li class="off-item"><a href="blog.php">Blog</a></li>
           <li class="off-item cta"><a href="contact.php">Contact Us</a></li>
         </ul>

@@ -18,6 +18,7 @@
                         <li><a href="about.php"> about</a></li>
                         <li><a href="room.php">Our Room</a></li>
                         <li><a href="gallery.php">Gallery</a></li>
+                        <li><a href="chimur-tourism.php">Chimur Travel Guide</a></li>
                         <li><a href="blog.php">Blog</a></li>
                         <li><a href="contact.php">Contact Us</a></li>
                      </ul>
