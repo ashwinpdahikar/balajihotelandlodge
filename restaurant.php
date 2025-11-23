@@ -1,11 +1,15 @@
+<?php
+require_once __DIR__ . '/include/functions.php';
+start_session_secure(); // Start session before any output
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
       <?php include 'include/header-section.php'; ?>
-      <title>Gallery - Balaji Hotel And Lodge Chimur</title>
+      <title>Restaurant - Balaji Hotel And Lodge Chimur</title>
    </head>
    <!-- body -->
-   <body class="main-layout inner_page">
+   <body class="main-layout">
       <!-- loader  -->
       <?php include 'include/loader.php'; ?>
       <!-- end loader -->
@@ -22,23 +26,21 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2><span>Gallery</span></h2>
-                     <p class="subtitle">Explore Our Hotel, Rooms & Facilities Through Images</p>
+                     <h2><span>Our Restaurant</span></h2>
+                     <p class="subtitle">Pure Veg, Non-Veg & South Indian Dishes - Fresh & Homely Taste</p>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- gallery -->
-      <?php 
-      $hide_section_title = true; // Hide duplicate title section on gallery.php page
-      include 'include/gallery.php'; 
-      ?>
-      <!-- end gallery -->
-    
+      <!-- restaurant -->
+      <?php include 'include/restaurant.php'; ?>
+      <!-- end restaurant -->
+     
       <!--  footer -->
       <?php include 'include/footer.php'; ?>
       <!-- end footer -->
       <?php include 'include/footer-section.php'; ?>
    </body>
 </html>
+

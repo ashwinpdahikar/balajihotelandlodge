@@ -1,7 +1,11 @@
 <?php 
 require_once __DIR__ . '/functions.php'; 
 $pdo = get_pdo(); 
-$rooms = $pdo->query('SELECT id, title, price, description, max_adults, max_children, extra_guest_charge FROM rooms WHERE status=1 ORDER BY title')->fetchAll(); 
+// Get unique rooms - Use subquery to get first room of each title type
+$rooms = $pdo->query('SELECT r.* FROM rooms r 
+                      INNER JOIN (SELECT title, MIN(id) as min_id FROM rooms WHERE status=1 GROUP BY title) as unique_rooms 
+                      ON r.id = unique_rooms.min_id AND r.title = unique_rooms.title 
+                      WHERE r.status=1 ORDER BY r.title')->fetchAll(); 
 $upiId = get_setting('upi_id',''); 
 $upiName = get_setting('upi_name',''); 
 $phone = get_setting('phone', '+91 7350255026');
@@ -355,18 +359,38 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
               <label>Choose Room <span class="required">*</span></label>
               <select class="form-control" name="room_id" id="bm_room" required>
                 <option value="">-- Select a room --</option>
-                <?php foreach($rooms as $r): ?>
-                  <option value="<?php echo (int)$r['id']; ?>" 
+                <?php 
+                $processedRoomIds = []; // Track processed room IDs to avoid duplicates
+                foreach($rooms as $r): 
+                  $roomId = (int)$r['id'];
+                  
+                  // Skip if this room ID already processed
+                  if (in_array($roomId, $processedRoomIds)) {
+                      continue;
+                  }
+                  $processedRoomIds[] = $roomId;
+                  
+                  // Check availability for each room
+                  $approvedCount = $pdo->prepare('SELECT COUNT(*) FROM booking_inquiries WHERE room_id = ? AND status = ?');
+                  $approvedCount->execute([$roomId, 'approved']);
+                  $approvedBookings = (int)$approvedCount->fetchColumn();
+                  $quantity = array_key_exists('quantity', $r) && isset($r['quantity']) && $r['quantity'] !== null ? (int)$r['quantity'] : 1;
+                  $available = max(0, $quantity - $approvedBookings);
+                  $isSoldOut = $available <= 0;
+                ?>
+                  <option value="<?php echo $roomId; ?>" 
                           data-price="<?php echo (float)($r['price'] ?? 0); ?>"
                           data-adults="<?php echo (int)($r['max_adults'] ?? 2); ?>"
                           data-kids="<?php echo (int)($r['max_children'] ?? 2); ?>"
-                          data-extra="<?php echo (float)($r['extra_guest_charge'] ?? 0); ?>">
+                          data-extra="<?php echo (float)($r['extra_guest_charge'] ?? 0); ?>"
+                          <?php if ($isSoldOut): ?>disabled style="color: #dc3545;"<?php endif; ?>>
                     <?php echo h($r['title']); ?> 
                     <?php if ($r['price']): ?>- ₹<?php echo number_format((float)$r['price'], 0); ?>/night<?php endif; ?>
+                    <?php if ($isSoldOut): ?> - SOLD OUT<?php elseif ($available < $quantity): ?> - Available (<?php echo $available; ?>)<?php endif; ?>
                   </option>
                 <?php endforeach; ?>
               </select>
-              <div class="help-text">Select the room type you want to book</div>
+              <div class="help-text">Select the room type you want to book. Sold out rooms are disabled.</div>
             </div>
           </div>
 

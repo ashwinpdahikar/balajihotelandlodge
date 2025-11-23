@@ -13,19 +13,27 @@
       <?php include 'include/header.php'; ?>
       <!-- end header inner -->
       <!-- end header -->
-        <div class="back_re">
+      <div class="back_re">
+         <div class="decorative-corner top-left"></div>
+         <div class="decorative-corner top-right"></div>
+         <div class="decorative-corner bottom-left"></div>
+         <div class="decorative-corner bottom-right"></div>
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                      <h2>Blog</h2>
+                     <h2><span>Blog</span></h2>
+                     <p class="subtitle">Latest News, Travel Tips & Updates from Balaji Hotel</p>
                   </div>
                </div>
             </div>
          </div>
       </div>
       <!-- blog -->
-      <?php include 'include/blog.php'; ?>
+      <?php 
+      $hide_section_title = true;
+      include 'include/blog.php'; 
+      ?>
       <!-- end blog -->
      
       <!--  footer -->

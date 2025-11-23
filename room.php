@@ -14,18 +14,26 @@
       <!-- end header inner -->
       <!-- end header -->
       <div class="back_re">
+         <div class="decorative-corner top-left"></div>
+         <div class="decorative-corner top-right"></div>
+         <div class="decorative-corner bottom-left"></div>
+         <div class="decorative-corner bottom-right"></div>
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2>Our Room</h2>
+                     <h2><span>Our Rooms</span></h2>
+                     <p class="subtitle">Comfortable AC & Non-AC Rooms for Your Perfect Stay</p>
                   </div>
                </div>
             </div>
          </div>
       </div>
       <!-- our_room -->
-      <?php include 'include/our_room.php'; ?>
+      <?php 
+      $hide_section_title = true; // Hide duplicate title section on room.php page
+      include 'include/our_room.php'; 
+      ?>
       <!-- end our_room -->
      
       <!--  footer -->

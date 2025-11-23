@@ -13,12 +13,17 @@
       <?php include 'include/header.php'; ?>
       <!-- end header inner -->
       <!-- end header -->
-     <div class="back_re">
+      <div class="back_re">
+         <div class="decorative-corner top-left"></div>
+         <div class="decorative-corner top-right"></div>
+         <div class="decorative-corner bottom-left"></div>
+         <div class="decorative-corner bottom-right"></div>
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                      <h2>Contact Us</h2>
+                     <h2><span>Contact Us</span></h2>
+                     <p class="subtitle">Get in Touch - We're Here to Help You Plan Your Stay</p>
                   </div>
                </div>
             </div>

@@ -31,13 +31,52 @@
 
   <!-- Booking Box -->
   <div class="booking_ocline py-4">
-    <?php require_once __DIR__ . '/functions.php'; $pdo = get_pdo(); $rooms = $pdo->query("SELECT id,title FROM rooms WHERE status=1 ORDER BY title ASC")->fetchAll(); ?>
+    <?php 
+    require_once __DIR__ . '/functions.php';
+    start_session_secure(); // Ensure session is started for CSRF token
+    $pdo = get_pdo(); 
+    // Get unique rooms - Use MIN(id) to get first room of each title type
+    $rooms = $pdo->query("SELECT MIN(id) as id, title FROM rooms WHERE status=1 GROUP BY title ORDER BY title ASC")->fetchAll(); 
+    ?>
 
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8">
           <div class="book_room p-4 shadow-lg rounded" style="background:#ffffffd9; backdrop-filter:blur(5px);">
             <h1 class="text-center mb-3" style="font-size:28px;font-weight:700;color:#0b3d2e;">Quick Booking</h1>
+
+            <?php 
+            start_session_secure();
+            if (!empty($_SESSION['booking_msg'])): 
+                $msgType = $_SESSION['booking_msg_type'] ?? 'info';
+            ?>
+            <div id="bookingAlert" class="alert alert-<?php echo $msgType === 'success' ? 'success' : ($msgType === 'error' ? 'danger' : 'info'); ?> alert-dismissible fade show" role="alert" style="margin-bottom:20px;transition:opacity 0.5s ease;">
+              <strong><?php echo $msgType === 'success' ? '✓' : ($msgType === 'error' ? '✗' : 'ℹ'); ?></strong>
+              <?php echo h($_SESSION['booking_msg']); ?>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="document.getElementById('bookingAlert').remove();">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <script>
+            (function() {
+              var alertDiv = document.getElementById('bookingAlert');
+              if (alertDiv) {
+                // Auto-hide after 8 seconds
+                setTimeout(function() {
+                  alertDiv.style.opacity = '0';
+                  setTimeout(function() {
+                    alertDiv.style.display = 'none';
+                    alertDiv.remove();
+                  }, 500); // Wait for fade transition
+                }, 8000); // 8 seconds
+              }
+            })();
+            </script>
+            <?php 
+            unset($_SESSION['booking_msg']);
+            unset($_SESSION['booking_msg_type']);
+            endif; 
+            ?>
 
             <form class="book_now" method="post" action="book_room.php">
               <input type="hidden" name="csrf" value="<?php echo h(csrf_token()); ?>">
@@ -47,8 +86,37 @@
                 <label>Select Room<span class="required-star">*</span></label>
                 <select class="form-control" name="room_id" id="banner_room_id" required>
                   <option value="">Choose a room</option>
-                  <?php foreach ($rooms as $r): ?>
-                    <option value="<?php echo (int)$r['id']; ?>"><?php echo h($r['title']); ?></option>
+                  <?php 
+                  $processedRoomIds = []; // Track processed room IDs to avoid duplicates
+                  foreach ($rooms as $r): 
+                    $roomId = (int)$r['id'];
+                    
+                    // Skip if this room ID already processed
+                    if (in_array($roomId, $processedRoomIds)) {
+                        continue;
+                    }
+                    $processedRoomIds[] = $roomId;
+                    
+                    // Check availability for each room
+                    $approvedCount = $pdo->prepare('SELECT COUNT(*) FROM booking_inquiries WHERE room_id = ? AND status = ?');
+                    $approvedCount->execute([$roomId, 'approved']);
+                    $approvedBookings = (int)$approvedCount->fetchColumn();
+                    // Get room quantity (default to 1 if not set)
+                    $roomQty = $pdo->prepare('SELECT quantity FROM rooms WHERE id = ?');
+                    $roomQty->execute([$roomId]);
+                    $qtyRow = $roomQty->fetch();
+                    $quantity = ($qtyRow && isset($qtyRow['quantity']) && $qtyRow['quantity'] !== null) ? (int)$qtyRow['quantity'] : 1;
+                    $available = max(0, $quantity - $approvedBookings);
+                    $isSoldOut = $available <= 0;
+                  ?>
+                    <option value="<?php echo $roomId; ?>" <?php if ($isSoldOut): ?>disabled style="color: #dc3545;"<?php endif; ?>>
+                      <?php echo h($r['title']); ?>
+                      <?php if ($isSoldOut): ?>
+                        - SOLD OUT
+                      <?php elseif ($available < $quantity): ?>
+                        - Available (<?php echo $available; ?>)
+                      <?php endif; ?>
+                    </option>
                   <?php endforeach; ?>
                 </select>
                 <div class="error-message" id="error_room" style="display:none;"></div>

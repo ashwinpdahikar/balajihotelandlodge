@@ -1,6 +1,7 @@
   <?php require_once __DIR__ . '/functions.php'; $galleryItems = list_gallery_images(8); ?>
   <div class="gallery">
       <div class="container">
+         <?php if (!isset($hide_section_title) || !$hide_section_title): ?>
          <div class="row">
             <div class="col-md-12">
                <div class="titlepage">
@@ -8,6 +9,7 @@
                </div>
             </div>
          </div>
+         <?php endif; ?>
          <div class="row">
             <?php foreach ($galleryItems as $g): ?>
             <div class="col-md-3 col-sm-6">

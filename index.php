@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/include/functions.php';
+start_session_secure(); // Start session before any output
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,20 +25,19 @@
    <?php include 'include/banner.php'; ?>
    <!-- end banner -->
    <!-- about -->
-   <?php require_once __DIR__ . '/include/functions.php'; $page = get_page_by_slug('about'); ?>
    <div class="about">
-      <div class="container-fluid">
+      <div class="container-fluid pt-5">
          <div class="row">
             <div class="col-md-5">
                <div class="titlepage">
-                  <h2><?php echo h($page['title'] ?? 'About Us'); ?></h2>
-                  <p><?php echo h(mb_substr(strip_tags($page['content'] ?? ''), 0, 250)); ?>...</p>
+                  <h2>About Us</h2>
+                  <p>Balaji Hotel & Restaurant is a clean, comfortable, and family-friendly place to stay in Chimur. We offer well-maintained AC and Non-AC rooms for travelers, families, and tourists visiting Chimur and nearby attractions. Our restaurant serves pure veg, non-veg, and South Indian dishes, prepared fresh with good quality and homely taste.</p>
                   <a class="read_more" href="about.php"> Read More</a>
                </div>
             </div>
             <div class="col-md-7">
                <div class="about_img">
-                  <figure><img src="images/about.png" alt="#" /></figure>
+                  <figure><img src="images/about.png" alt="Balaji Hotel & Restaurant Chimur" /></figure>
                </div>
             </div>
          </div>

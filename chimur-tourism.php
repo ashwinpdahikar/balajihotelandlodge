@@ -15,7 +15,7 @@ $tour_spots = [
     [
         'name'        => 'Tadoba-Andhari Tiger Reserve',
         'tag'         => 'Wildlife Safari',
-        'image'       => 'images/gallery1.jpg',
+        'image'       => 'images/tadoba.png',
         'distance'    => '46 km from Balaji Hotel, ~1 hr drive',
         'best_time'   => 'October to May for peak sightings',
         'summary'     => 'India’s legendary tiger reserve with core and buffer safaris, birding trails, and night drives that begin just a short drive from Chimur.',
@@ -29,7 +29,7 @@ $tour_spots = [
     [
         'name'        => 'Shri Mahakali Temple, Chimur',
         'tag'         => 'Heritage & Spiritual',
-        'image'       => 'images/gallery2.jpg',
+        'image'       => 'images/MahakaliMandir.png',
         'distance'    => '1.2 km | 5 min walk',
         'best_time'   => 'Year-round, special aartis in Shravan/Navratri',
         'summary'     => 'An 800-year-old temple dedicated to Maa Mahakali and Bhimashankar—perfect for sunrise darshan before you start your excursions.',
@@ -43,7 +43,7 @@ $tour_spots = [
     [
         'name'        => 'Ramdegi Forest & Shiv Temple',
         'tag'         => 'Nature + Pilgrimage',
-        'image'       => 'images/gallery3.jpg',
+        'image'       => 'images/RamdegiTemple.png',
         'distance'    => '18 km | 25 min drive',
         'best_time'   => 'Monsoon & winter mornings',
         'summary'     => 'Dense teak forest, a peaceful lake, and the historic Shri Ramdegi temple complex known for meditation camps and serene walks.',
@@ -57,7 +57,7 @@ $tour_spots = [
     [
         'name'        => 'Irai Dam & Boat Ride Point',
         'tag'         => 'Scenic Sunset',
-        'image'       => 'images/gallery4.jpg',
+        'image'       => 'images/iraiLake.png',
         'distance'    => '33 km | 45 min drive',
         'best_time'   => 'Sunset hours, September to February',
         'summary'     => 'Catch dreamy sunsets over Tadoba’s lifeline reservoir, opt for buffer safari plus boat ride combination, and photograph migratory birds.',
@@ -71,7 +71,7 @@ $tour_spots = [
     [
         'name'        => 'Zero Mile Nagpur & Sitabuldi Fort',
         'tag'         => 'City Excursion',
-        'image'       => 'images/gallery5.jpg',
+        'image'       => 'images/sitaburdifort.png',
         'distance'    => '116 km | 2.5 hr drive',
         'best_time'   => 'Weekend day trips',
         'summary'     => 'Trace India’s geographical centre, go cafe hopping, explore Futala Lake evenings, and return to the serenity of Balaji Hotel the same night.',
@@ -85,7 +85,7 @@ $tour_spots = [
     [
         'name'        => 'Sevagram Ashram, Wardha',
         'tag'         => 'Heritage Circuit',
-        'image'       => 'images/gallery6.jpg',
+        'image'       => 'images/sevagram.png',
         'distance'    => '97 km | 2 hr drive',
         'best_time'   => 'October to March mornings',
         'summary'     => 'Walk through Mahatma Gandhi’s Sevagram, spin the charkha, and learn about India’s freedom movement before looping back via Hinganghat food stops.',
@@ -166,268 +166,7 @@ $breadcrumb_data = json_encode([
     <?php include 'include/loader.php'; ?>
     <?php include 'include/header.php'; ?>
 
-    <main>
-      <!-- Breadcrumb Navigation -->
-      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-        <div class="container">
-          <ol class="breadcrumb-list">
-            <li><a href="index.php">Home</a></li>
-            <li aria-current="page">Chimur Tourism Guide</li>
-          </ol>
-        </div>
-      </nav>
-
-      <section class="tour-hero" style="background-image:url('images/banner1.jpg');">
-        <div class="overlay"></div>
-        <div class="container hero-content">
-          <p class="eyebrow">Tourist Places in Chimur · Chandrapur</p>
-          <h1>Discover Chimur: Your Gateway to Tadoba & Heritage Tourism</h1>
-          <p class="lead"><?php echo h($page_description); ?></p>
-          <div class="hero-cta">
-              <a class="btn primary" href="#" data-book-room>Plan Tadoba Stay</a>
-            <a class="btn ghost" href="room.php">View Our Rooms</a>
-            <a class="btn ghost" href="contact.php">Contact Us</a>
-          </div>
-          <ul class="hero-badges">
-            <li><i class="fa fa-check-circle"></i> Local concierge for safari permits</li>
-            <li><i class="fa fa-check-circle"></i> Sunrise breakfast for early darshan</li>
-            <li><i class="fa fa-check-circle"></i> 24x7 support for Nagpur/Chandrapur guests</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="tour-grid container">
-        <header class="section-head">
-          <span class="eyebrow">Curated Nearby Attractions</span>
-          <h2>Top Tourist Places Around Chimur</h2>
-          <p>Shortlist your itinerary with drive times, best seasons, and on-ground tips from the Balaji Hotel team.</p>
-        </header>
-        <div class="grid">
-          <?php foreach ($tour_spots as $index => $spot): ?>
-          <article class="tour-card" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
-            <figure>
-              <img src="<?php echo h($spot['image']); ?>" alt="<?php echo h($spot['name']); ?> - <?php echo h($spot['tag']); ?>" loading="lazy">
-              <figcaption><?php echo h($spot['tag']); ?></figcaption>
-              <div class="card-overlay">
-                <a href="<?php echo h($spot['map_url']); ?>" target="_blank" rel="noopener" class="overlay-btn" title="View on Map">
-                  <i class="fa fa-map-marker"></i>
-                </a>
-              </div>
-            </figure>
-            <div class="card-body">
-              <div class="meta">
-                <span class="meta-item"><i class="fa fa-road"></i> <?php echo h($spot['distance']); ?></span>
-                <span class="meta-item"><i class="fa fa-calendar"></i> <?php echo h($spot['best_time']); ?></span>
-              </div>
-              <h3><?php echo h($spot['name']); ?></h3>
-              <p><?php echo h($spot['summary']); ?></p>
-              <ul class="highlights">
-                <?php foreach ($spot['highlights'] as $tip): ?>
-                <li><i class="fa fa-star"></i> <?php echo h($tip); ?></li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-            <div class="card-footer">
-              <a class="btn-link" href="<?php echo h($spot['map_url']); ?>" target="_blank" rel="noopener">
-                <i class="fa fa-map-marker"></i> Open in Google Maps
-              </a>
-              <a class="btn primary small" href="#" data-book-room>
-                <i class="fa fa-bed"></i> Book Stay
-              </a>
-            </div>
-          </article>
-          <?php endforeach; ?>
-        </div>
-      </section>
-
-      <section class="itinerary">
-        <div class="container itinerary-inner">
-          <div class="itinerary-header">
-            <span class="eyebrow">Suggested Mini-Itineraries</span>
-            <h2>Make the Most of Your Chimur Trip</h2>
-            <p>Mix wildlife, heritage, and food-trails without wasting time searching for stays. Our team handles taxi partners, safari permits, and meal timings.</p>
-          </div>
-          <div class="itinerary-cards">
-            <article class="itinerary-card">
-              <div class="itinerary-icon"><i class="fa fa-paw"></i></div>
-              <h3>48-Hour Tadoba Sprint</h3>
-              <p>Day 1 evening buffer safari + Irai sunset. Day 2 sunrise core safari, temple darshan, depart post brunch.</p>
-              <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
-            </article>
-            <article class="itinerary-card">
-              <div class="itinerary-icon"><i class="fa fa-building"></i></div>
-              <h3>Weekend Heritage Loop</h3>
-              <p>Day 1 Mahakali & Ramdegi. Day 2 Sevagram Ashram + Hinganghat shopping halt.</p>
-              <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
-            </article>
-            <article class="itinerary-card">
-              <div class="itinerary-icon"><i class="fa fa-laptop"></i></div>
-              <h3>Nagpur Workation</h3>
-              <p>Morning drive from Nagpur, spend 2 nights at Balaji, plug-and-play Wi-Fi, evening safaris or nature walks.</p>
-              <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="stay-benefits container">
-        <header class="section-head">
-          <span class="eyebrow">Why Balaji Hotel & Lodge</span>
-          <h2>Stay Strategically Between Nagpur, Chandrapur & Tadoba</h2>
-          <p>We are 200 meters from Chimur bus stand, offer private parking, and arrange meals that match your safari slots.</p>
-        </header>
-        <div class="benefit-grid">
-          <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-camera-retro"></i></div>
-            <h3>Safari-Ready Services</h3>
-            <p>Wake-up calls at 4:30 AM, packed breakfast, and on-call local jeeps for last-minute buffer permits.</p>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-users"></i></div>
-            <h3>Family-Friendly Rooms</h3>
-            <p>AC/non-AC options, extra bedding, and hygiene-focused housekeeping for multi-generational travel.</p>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-map-signs"></i></div>
-            <h3>Hyper-local Insights</h3>
-            <p>Get directions to hidden ghats, seasonal fairs, and trusted food joints in Chandrapur & Nagpur.</p>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-wifi"></i></div>
-            <h3>High-Speed Wi-Fi</h3>
-            <p>Reliable internet connection for remote work and staying connected with family and friends.</p>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-car"></i></div>
-            <h3>Free Parking</h3>
-            <p>Secure private parking space available for all guests, perfect for self-drive travelers.</p>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-utensils"></i></div>
-            <h3>Delicious Meals</h3>
-            <p>Fresh, home-cooked meals available throughout the day, customized to your safari schedule.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="rooms container">
-        <header class="section-head">
-          <span class="eyebrow">Pick Your Room</span>
-          <h2>Popular Stays for Tourist Travellers</h2>
-          <p>Choose a room category and mention "Tourist Guide Page" while booking to unlock curated itineraries.</p>
-        </header>
-        <div class="room-grid">
-          <?php foreach ($rooms as $room): ?>
-          <article class="room-card">
-            <div class="room-image-wrapper">
-              <img src="<?php echo h($room['image_path'] ?? 'images/room1.jpg'); ?>" alt="<?php echo h($room['title']); ?> - Balaji Hotel" loading="lazy">
-              <div class="room-overlay">
-                <a href="book_room.php?room_id=<?php echo (int)$room['id']; ?>" class="room-view-btn">View Details</a>
-              </div>
-            </div>
-            <div class="room-content">
-              <h3><?php echo h($room['title']); ?></h3>
-              <?php if (!empty($room['description'])): ?>
-              <p><?php echo h(mb_substr($room['description'], 0, 120)); ?><?php echo mb_strlen($room['description']) > 120 ? '...' : ''; ?></p>
-              <?php endif; ?>
-              <a class="btn primary" href="book_room.php?room_id=<?php echo (int)$room['id']; ?>">
-                <i class="fa fa-calendar-check"></i> Check Availability
-              </a>
-            </div>
-          </article>
-          <?php endforeach; ?>
-        </div>
-        <div class="room-cta">
-          <a href="room.php" class="btn ghost">View All Rooms <i class="fa fa-arrow-right"></i></a>
-        </div>
-      </section>
-
-      <section class="faq container">
-        <header class="section-head">
-          <span class="eyebrow">Traveller FAQs</span>
-          <h2>Questions Guests Ask Us Most</h2>
-        </header>
-        <div class="faq-list">
-          <details open>
-            <summary><i class="fa fa-question-circle"></i> How do I reach Balaji Hotel from Nagpur or Chandrapur?</summary>
-            <div class="faq-content">
-              <p>Drive via Umred-Bhiwapur road from Nagpur (2.5 hrs) or take NH930 from Chandrapur (1.5 hrs). We can schedule cabs or guide bus timings. For detailed directions, <a href="contact.php">contact us</a>.</p>
-            </div>
-          </details>
-          <details>
-            <summary><i class="fa fa-question-circle"></i> Can you arrange Tadoba safari permits?</summary>
-            <div class="faq-content">
-              <p>Yes. Share your preferred gate (Moharli, Chimur, Kolara) and dates. We coordinate with authorized operators while you enjoy your stay. Advance booking recommended during peak season (Oct-May).</p>
-            </div>
-          </details>
-          <details>
-            <summary><i class="fa fa-question-circle"></i> Do you have Wi-Fi and workspace for workations?</summary>
-            <div class="faq-content">
-              <p>Every floor has high-speed Wi-Fi, backup power, and ergonomic chairs on request—ideal for remote workers planning longer stays. We also offer flexible meal timings for workation guests.</p>
-            </div>
-          </details>
-          <details>
-            <summary><i class="fa fa-question-circle"></i> Is early check-in possible for morning safaris?</summary>
-            <div class="faq-content">
-              <p>Absolutely. Let us know your arrival time; we prioritize safari guests for early check-in/late checkout when rooms are available. Contact us in advance to arrange this.</p>
-            </div>
-          </details>
-          <details>
-            <summary><i class="fa fa-question-circle"></i> What are the best months to visit Tadoba?</summary>
-            <div class="faq-content">
-              <p>October to May is the best time for wildlife sightings. Monsoon (June-September) offers lush greenery but limited safari access. Peak season is December to February.</p>
-            </div>
-          </details>
-          <details>
-            <summary><i class="fa fa-question-circle"></i> Do you provide transportation services?</summary>
-            <div class="faq-content">
-              <p>We can arrange local taxis and jeeps for safaris and sightseeing. Contact us in advance to book transportation services at competitive rates.</p>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <!-- Social Share Section -->
-      <section class="social-share container">
-        <div class="share-content">
-          <h3>Share This Guide</h3>
-          <p>Help others discover the beauty of Chimur and Tadoba</p>
-          <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($canonical_url); ?>" target="_blank" rel="noopener" class="share-btn facebook" title="Share on Facebook">
-              <i class="fa fa-facebook"></i> Facebook
-            </a>
-            <a href="https://wa.me/?text=<?php echo urlencode($page_title . ' - ' . $canonical_url); ?>" target="_blank" rel="noopener" class="share-btn whatsapp" title="Share on WhatsApp">
-              <i class="fa fa-whatsapp"></i> WhatsApp
-            </a>
-            <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($canonical_url); ?>&text=<?php echo urlencode($page_title); ?>" target="_blank" rel="noopener" class="share-btn twitter" title="Share on Twitter">
-              <i class="fa fa-twitter"></i> Twitter
-            </a>
-            <a href="mailto:?subject=<?php echo urlencode($page_title); ?>&body=<?php echo urlencode($canonical_url); ?>" class="share-btn email" title="Share via Email">
-              <i class="fa fa-envelope"></i> Email
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Call to Action Section -->
-      <section class="cta-section">
-        <div class="container">
-          <div class="cta-content">
-            <h2>Ready to Explore Chimur & Tadoba?</h2>
-            <p>Book your stay with Balaji Hotel and experience the best of wildlife, heritage, and nature tourism.</p>
-            <div class="cta-buttons">
-              <a href="book_room.php" class="btn primary large">Book Your Room Now</a>
-              <a href="contact.php" class="btn ghost large">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <?php include 'include/footer.php'; ?>
-    <?php include 'include/footer-section.php'; ?>
-
-    <style>
+     <style>
       /* Base Styles */
       .tourist-guide main{background:#fdfaf6;padding-top:0;}
       
@@ -604,6 +343,301 @@ $breadcrumb_data = json_encode([
         .tour-card .card-footer .btn{width:100%;justify-content:center;}
       }
     </style>
+    <main>
+      <!-- Breadcrumb Navigation
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+          <ol class="breadcrumb-list">
+            <li><a href="index.php">Home</a></li>
+            <li aria-current="page">Chimur Tourism Guide</li>
+          </ol>
+        </div>
+      </nav> -->
+
+      <div class="back_re">
+         <div class="decorative-corner top-left"></div>
+         <div class="decorative-corner top-right"></div>
+         <div class="decorative-corner bottom-left"></div>
+         <div class="decorative-corner bottom-right"></div>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="title">
+                     <h2><span>Chimur Travel Guide</span></h2>
+                     <p class="subtitle">Discover Tourist Places, Tadoba Safari & Heritage Sites Near Chimur</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <section class="tour-grid container">
+        <header class="section-head">
+          <span class="eyebrow">Curated Nearby Attractions</span>
+          <h2>Top Tourist Places Around Chimur</h2>
+          <p>Shortlist your itinerary with drive times, best seasons, and on-ground tips from the Balaji Hotel team.</p>
+        </header>
+        <div class="grid">
+          <?php foreach ($tour_spots as $index => $spot): ?>
+          <article class="tour-card" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
+            <figure>
+              <img src="<?php echo h($spot['image']); ?>" alt="<?php echo h($spot['name']); ?> - <?php echo h($spot['tag']); ?>" loading="lazy">
+              <figcaption><?php echo h($spot['tag']); ?></figcaption>
+              <div class="card-overlay">
+                <a href="<?php echo h($spot['map_url']); ?>" target="_blank" rel="noopener" class="overlay-btn" title="View on Map">
+                  <i class="fa fa-map-marker"></i>
+                </a>
+              </div>
+            </figure>
+            <div class="card-body">
+              <div class="meta">
+                <span class="meta-item"><i class="fa fa-road"></i> <?php echo h($spot['distance']); ?></span>
+                <span class="meta-item"><i class="fa fa-calendar"></i> <?php echo h($spot['best_time']); ?></span>
+              </div>
+              <h3><?php echo h($spot['name']); ?></h3>
+              <p><?php echo h($spot['summary']); ?></p>
+              <ul class="highlights">
+                <?php foreach ($spot['highlights'] as $tip): ?>
+                <li><i class="fa fa-star"></i> <?php echo h($tip); ?></li>
+                <?php endforeach; ?>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a class="btn-link" href="<?php echo h($spot['map_url']); ?>" target="_blank" rel="noopener">
+                <i class="fa fa-map-marker"></i> Open in Google Maps
+              </a>
+              <a class="btn primary small" href="#" data-book-room>
+                <i class="fa fa-bed"></i> Book Stay
+              </a>
+            </div>
+          </article>
+          <?php endforeach; ?>
+        </div>
+      </section>
+
+      <section class="itinerary">
+        <div class="container itinerary-inner">
+          <div class="itinerary-header">
+            <span class="eyebrow">Suggested Mini-Itineraries</span>
+            <h2>Make the Most of Your Chimur Trip</h2>
+            <p>Mix wildlife, heritage, and food-trails without wasting time searching for stays. Our team handles taxi partners, safari permits, and meal timings.</p>
+          </div>
+          <div class="itinerary-cards">
+            <article class="itinerary-card">
+              <div class="itinerary-icon"><i class="fa fa-paw"></i></div>
+              <h3>48-Hour Tadoba Sprint</h3>
+              <p>Day 1 evening buffer safari + Irai sunset. Day 2 sunrise core safari, temple darshan, depart post brunch.</p>
+              <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
+            </article>
+            <article class="itinerary-card">
+              <div class="itinerary-icon"><i class="fa fa-building"></i></div>
+              <h3>Weekend Heritage Loop</h3>
+              <p>Day 1 Mahakali & Ramdegi. Day 2 Sevagram Ashram + Hinganghat shopping halt.</p>
+              <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
+            </article>
+            <article class="itinerary-card">
+              <div class="itinerary-icon"><i class="fa fa-laptop"></i></div>
+              <h3>Nagpur Workation</h3>
+              <p>Morning drive from Nagpur, spend 2 nights at Balaji, plug-and-play Wi-Fi, evening safaris or nature walks.</p>
+              <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stay-benefits container">
+        <header class="section-head">
+          <span class="eyebrow">Why Balaji Hotel & Lodge</span>
+          <h2>Stay Strategically Between Nagpur, Chandrapur & Tadoba</h2>
+          <p>We are 200 meters from Chimur bus stand, offer private parking, and arrange meals that match your safari slots.</p>
+        </header>
+        <div class="benefit-grid">
+          <div class="benefit">
+            <div class="benefit-icon"><i class="fa fa-camera-retro"></i></div>
+            <h3>Safari-Ready Services</h3>
+            <p>Wake-up calls at 4:30 AM, packed breakfast, and on-call local jeeps for last-minute buffer permits.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><i class="fa fa-users"></i></div>
+            <h3>Family-Friendly Rooms</h3>
+            <p>AC/non-AC options, extra bedding, and hygiene-focused housekeeping for multi-generational travel.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><i class="fa fa-map-signs"></i></div>
+            <h3>Hyper-local Insights</h3>
+            <p>Get directions to hidden ghats, seasonal fairs, and trusted food joints in Chandrapur & Nagpur.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><i class="fa fa-wifi"></i></div>
+            <h3>High-Speed Wi-Fi</h3>
+            <p>Reliable internet connection for remote work and staying connected with family and friends.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><i class="fa fa-car"></i></div>
+            <h3>Free Parking</h3>
+            <p>Secure private parking space available for all guests, perfect for self-drive travelers.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><i class="fa fa-utensils"></i></div>
+            <h3>Delicious Meals</h3>
+            <p>Fresh, home-cooked meals available throughout the day, customized to your safari schedule.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="rooms container">
+        <header class="section-head">
+          <span class="eyebrow">Pick Your Room</span>
+          <h2>Popular Stays for Tourist Travellers</h2>
+          <p>Choose a room category and mention "Tourist Guide Page" while booking to unlock curated itineraries.</p>
+        </header>
+        <div class="room-grid">
+          <?php 
+          foreach ($rooms as $room): 
+            // Check availability for each room
+            $approvedCount = $pdo->prepare('SELECT COUNT(*) FROM booking_inquiries WHERE room_id = ? AND status = ?');
+            $approvedCount->execute([(int)$room['id'], 'approved']);
+            $approvedBookings = (int)$approvedCount->fetchColumn();
+            $quantity = isset($room['quantity']) && $room['quantity'] !== null ? (int)$room['quantity'] : 1;
+            $available = max(0, $quantity - $approvedBookings);
+            $isSoldOut = $available <= 0;
+          ?>
+          <article class="room-card" <?php if ($isSoldOut): ?>style="opacity: 0.7;"<?php endif; ?>>
+            <div class="room-image-wrapper">
+              <img src="<?php echo h($room['image_path'] ?? 'images/room1.jpg'); ?>" alt="<?php echo h($room['title']); ?> - Balaji Hotel" loading="lazy">
+              <?php if ($isSoldOut): ?>
+              <div class="room-sold-out-badge" style="position: absolute; top: 10px; right: 10px; background: #dc3545; color: #fff; padding: 5px 12px; border-radius: 4px; font-weight: 600; font-size: 12px; z-index: 2;">
+                <i class="fa fa-times-circle"></i> Sold Out
+              </div>
+              <?php endif; ?>
+              <div class="room-overlay">
+                <?php if (!$isSoldOut): ?>
+                <a href="book_room.php?room_id=<?php echo (int)$room['id']; ?>" class="room-view-btn">View Details</a>
+                <?php else: ?>
+                <div class="room-view-btn" style="cursor: not-allowed; opacity: 0.8;">Sold Out</div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <div class="room-content">
+              <h3>
+                <?php echo h($room['title']); ?>
+                <?php if ($isSoldOut): ?>
+                  <span style="color: #dc3545; font-size: 12px; font-weight: 600;">
+                    <i class="fa fa-ban"></i> Sold Out
+                  </span>
+                <?php elseif ($available < $quantity): ?>
+                  <span style="color: #28a745; font-size: 12px; font-weight: 600;">
+                    <i class="fa fa-check-circle"></i> Available (<?php echo $available; ?>)
+                  </span>
+                <?php endif; ?>
+              </h3>
+              <?php if (!empty($room['description'])): ?>
+              <p><?php echo h(mb_substr($room['description'], 0, 120)); ?><?php echo mb_strlen($room['description']) > 120 ? '...' : ''; ?></p>
+              <?php endif; ?>
+              <?php if (!$isSoldOut): ?>
+              <a class="btn primary" href="book_room.php?room_id=<?php echo (int)$room['id']; ?>">
+                <i class="fa fa-calendar-check"></i> Check Availability
+              </a>
+              <?php else: ?>
+              <a class="btn primary" href="#" style="background: #6c757d; cursor: not-allowed; pointer-events: none;" onclick="return false;">
+                <i class="fa fa-ban"></i> Sold Out
+              </a>
+              <?php endif; ?>
+            </div>
+          </article>
+          <?php endforeach; ?>
+        </div>
+        <div class="room-cta">
+          <a href="room.php" class="btn ghost">View All Rooms <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </section>
+
+      <section class="faq container">
+        <header class="section-head">
+          <span class="eyebrow">Traveller FAQs</span>
+          <h2>Questions Guests Ask Us Most</h2>
+        </header>
+        <div class="faq-list">
+          <details open>
+            <summary><i class="fa fa-question-circle"></i> How do I reach Balaji Hotel from Nagpur or Chandrapur?</summary>
+            <div class="faq-content">
+              <p>Drive via Umred-Bhiwapur road from Nagpur (2.5 hrs) or take NH930 from Chandrapur (1.5 hrs). We can schedule cabs or guide bus timings. For detailed directions, <a href="contact.php">contact us</a>.</p>
+            </div>
+          </details>
+          <details>
+            <summary><i class="fa fa-question-circle"></i> Can you arrange Tadoba safari permits?</summary>
+            <div class="faq-content">
+              <p>Yes. Share your preferred gate (Moharli, Chimur, Kolara) and dates. We coordinate with authorized operators while you enjoy your stay. Advance booking recommended during peak season (Oct-May).</p>
+            </div>
+          </details>
+          <details>
+            <summary><i class="fa fa-question-circle"></i> Do you have Wi-Fi and workspace for workations?</summary>
+            <div class="faq-content">
+              <p>Every floor has high-speed Wi-Fi, backup power, and ergonomic chairs on request—ideal for remote workers planning longer stays. We also offer flexible meal timings for workation guests.</p>
+            </div>
+          </details>
+          <details>
+            <summary><i class="fa fa-question-circle"></i> Is early check-in possible for morning safaris?</summary>
+            <div class="faq-content">
+              <p>Absolutely. Let us know your arrival time; we prioritize safari guests for early check-in/late checkout when rooms are available. Contact us in advance to arrange this.</p>
+            </div>
+          </details>
+          <details>
+            <summary><i class="fa fa-question-circle"></i> What are the best months to visit Tadoba?</summary>
+            <div class="faq-content">
+              <p>October to May is the best time for wildlife sightings. Monsoon (June-September) offers lush greenery but limited safari access. Peak season is December to February.</p>
+            </div>
+          </details>
+          <details>
+            <summary><i class="fa fa-question-circle"></i> Do you provide transportation services?</summary>
+            <div class="faq-content">
+              <p>We can arrange local taxis and jeeps for safaris and sightseeing. Contact us in advance to book transportation services at competitive rates.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Social Share Section -->
+      <section class="social-share container">
+        <div class="share-content">
+          <h3>Share This Guide</h3>
+          <p>Help others discover the beauty of Chimur and Tadoba</p>
+          <div class="share-buttons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($canonical_url); ?>" target="_blank" rel="noopener" class="share-btn facebook" title="Share on Facebook">
+              <i class="fa fa-facebook"></i> Facebook
+            </a>
+            <a href="https://wa.me/?text=<?php echo urlencode($page_title . ' - ' . $canonical_url); ?>" target="_blank" rel="noopener" class="share-btn whatsapp" title="Share on WhatsApp">
+              <i class="fa fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($canonical_url); ?>&text=<?php echo urlencode($page_title); ?>" target="_blank" rel="noopener" class="share-btn twitter" title="Share on Twitter">
+              <i class="fa fa-twitter"></i> Twitter
+            </a>
+            <a href="mailto:?subject=<?php echo urlencode($page_title); ?>&body=<?php echo urlencode($canonical_url); ?>" class="share-btn email" title="Share via Email">
+              <i class="fa fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to Explore Chimur & Tadoba?</h2>
+            <p>Book your stay with Balaji Hotel and experience the best of wildlife, heritage, and nature tourism.</p>
+            <div class="cta-buttons">
+              <a href="book_room.php" class="btn primary large">Book Your Room Now</a>
+              <a href="contact.php" class="btn ghost large">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <?php include 'include/footer.php'; ?>
+    <?php include 'include/footer-section.php'; ?>
+
+   
   </body>
 </html>
 
