@@ -41,7 +41,7 @@ function get_menu_by_category($pdo, $category) {
       </div>
 
       <!-- Table Booking Section -->
-      <div class="row mb-5">
+      <div class="row mb-5" id="table-booking">
          <div class="col-md-12">
             <div class="table-booking-card">
                <div class="row align-items-center">
@@ -117,110 +117,4 @@ function get_menu_by_category($pdo, $category) {
    </div>
 </div>
 
-<!-- Table Booking Modal -->
-<div class="modal fade" id="tableBookingModal" tabindex="-1" role="dialog" aria-labelledby="tableBookingModalLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-         <div class="modal-header">
-            <h5 class="modal-title" id="tableBookingModalLabel">
-               <i class="fa fa-calendar"></i> Book a Table
-            </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-            </button>
-         </div>
-         <form id="tableBookingForm" method="POST" action="book_table.php">
-            <div class="modal-body">
-               <?php if (!empty($_SESSION['table_booking_msg'])): ?>
-               <div class="alert alert-<?php echo $_SESSION['table_booking_msg_type'] === 'success' ? 'success' : 'danger'; ?> alert-dismissible fade show">
-                  <?php echo h($_SESSION['table_booking_msg']); ?>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                  </button>
-               </div>
-               <?php 
-               unset($_SESSION['table_booking_msg']);
-               unset($_SESSION['table_booking_msg_type']);
-               endif; ?>
-               
-               <input type="hidden" name="csrf" value="<?php echo h(csrf_token()); ?>">
-               
-               <div class="form-group">
-                  <label for="customer_name">Your Name <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="customer_name" name="customer_name" required minlength="2" placeholder="Enter your full name">
-               </div>
-               
-               <div class="form-group">
-                  <label for="phone">Phone Number <span class="text-danger">*</span></label>
-                  <input type="tel" class="form-control" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10 digit mobile number">
-               </div>
-               
-               <div class="form-group">
-                  <label for="email">Email (Optional)</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com">
-               </div>
-               
-               <div class="row">
-                  <div class="col-md-6">
-                     <div class="form-group">
-                        <label for="booking_date">Booking Date <span class="text-danger">*</span></label>
-                        <input type="date" class="form-control" id="booking_date" name="booking_date" required min="<?php echo date('Y-m-d'); ?>">
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="form-group">
-                        <label for="booking_time">Booking Time <span class="text-danger">*</span></label>
-                        <input type="time" class="form-control" id="booking_time" name="booking_time" required>
-                     </div>
-                  </div>
-               </div>
-               
-               <div class="form-group">
-                  <label for="guests">Number of Guests <span class="text-danger">*</span></label>
-                  <select class="form-control" id="guests" name="guests" required>
-                     <option value="">Select guests</option>
-                     <?php for ($i = 1; $i <= 20; $i++): ?>
-                     <option value="<?php echo $i; ?>"><?php echo $i; ?> <?php echo $i === 1 ? 'Guest' : 'Guests'; ?></option>
-                     <?php endfor; ?>
-                  </select>
-               </div>
-               
-               <div class="form-group">
-                  <label for="special_requests">Special Requests (Optional)</label>
-                  <textarea class="form-control" id="special_requests" name="special_requests" rows="3" placeholder="Any special requirements or preferences..."></textarea>
-               </div>
-            </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-               <button type="submit" class="btn btn-primary">
-                  <i class="fa fa-check"></i> Confirm Booking
-               </button>
-            </div>
-         </form>
-      </div>
-   </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-   // Set minimum date to today
-   const dateInput = document.getElementById('booking_date');
-   if (dateInput) {
-      dateInput.min = new Date().toISOString().split('T')[0];
-   }
-   
-   // Form validation
-   const form = document.getElementById('tableBookingForm');
-   if (form) {
-      form.addEventListener('submit', function(e) {
-         const phone = document.getElementById('phone').value;
-         if (phone && !/^[6-9]\d{9}$/.test(phone)) {
-            e.preventDefault();
-            alert('Please enter a valid 10-digit phone number starting with 6-9');
-            return false;
-         }
-      });
-   }
-});
-</script>
-
+<?php include __DIR__ . '/table_booking_modal.php'; ?>

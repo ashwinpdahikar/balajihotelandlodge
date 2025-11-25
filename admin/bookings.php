@@ -178,6 +178,22 @@ $stats = [
     
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Force table scrolling on mobile
+    (function() {
+        if (window.innerWidth <= 767) {
+            var tables = document.querySelectorAll('.table-responsive');
+            tables.forEach(function(table) {
+                table.style.overflowX = 'scroll';
+                table.style.webkitOverflowScrolling = 'touch';
+                // Ensure touch events work
+                table.addEventListener('touchstart', function(e) {
+                    this.style.overflowX = 'scroll';
+                }, {passive: true});
+            });
+        }
+    })();
+    </script>
 </body>
 </html>
 
