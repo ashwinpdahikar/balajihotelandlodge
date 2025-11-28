@@ -13,7 +13,7 @@
         <li class="nav-item"><a class="nav-link" href="room.php">Our Rooms</a></li>
         <li class="nav-item"><a class="nav-link" href="restaurant.php">Restaurant</a></li>
         <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="chimur-tourism.php">Chimur Travel Guide</a></li>
+        <li class="nav-item"><a class="nav-link" href="tourist_place.php">Tourist Places Chimur</a></li>
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
         <li class="nav-item cta"><a class="nav-link btn-cta" href="contact.php">Contact Us</a></li>
       </ul>

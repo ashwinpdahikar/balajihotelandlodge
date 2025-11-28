@@ -164,7 +164,7 @@
         </div>
 
         <div class="text-center">
-          <a class="btn btn-outline-success mr-2 mb-md-0 mb-2 d-md-inline d-block" href="#rooms">See All Rooms</a>
+          <a class="btn btn-outline-success mr-2 mb-md-0 mb-2 d-md-inline d-block" href="room.php">See All Rooms</a>
           <button type="submit" class="btn btn-success" id="banner_submit_btn">Book Now</button>
         </div>
       </form>
