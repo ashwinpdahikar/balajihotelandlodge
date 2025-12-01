@@ -13,7 +13,13 @@
         <li class="nav-item"><a class="nav-link" href="room.php">Our Rooms</a></li>
         <li class="nav-item"><a class="nav-link" href="restaurant.php">Restaurant</a></li>
         <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="tourist_place.php">Tourist Places Chimur</a></li>
+        <li class="nav-item has-dropdown">
+          <a class="nav-link" href="tourist-place.php">Tourist Places Chimur <i class="fa fa-chevron-down" style="font-size:10px;margin-left:4px;"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="tourist-place.php">All Tourist Places</a></li>
+            <li><a href="tadoba-tiger-reserve.php">Tadoba Safari Guide</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
         <li class="nav-item cta"><a class="nav-link btn-cta" href="contact.php">Contact Us</a></li>
       </ul>
@@ -42,7 +48,8 @@
           <li class="off-item"><a href="room.php">Our Rooms</a></li>
           <li class="off-item"><a href="restaurant.php">Restaurant</a></li>
           <li class="off-item"><a href="gallery.php">Gallery</a></li>
-          <li class="off-item"><a href="chimur-tourism.php">Chimur Travel Guide</a></li>
+          <li class="off-item"><a href="tourist_place.php">Tourist Places Chimur</a></li>
+          <li class="off-item" style="padding-left:24px;"><a href="tadoba-tiger-reserve.php" style="font-size:0.9rem;color:#666;">→ Tadoba Safari Guide</a></li>
           <li class="off-item"><a href="blog.php">Blog</a></li>
           <li class="off-item cta"><a href="contact.php">Contact Us</a></li>
         </ul>
@@ -65,23 +72,37 @@
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif}
-  .container{max-width:1140px;margin:0 auto;padding:0 16px}
+  .container{max-width:1140px;margin:0 auto;padding:0 16px;overflow:visible}
 
   /* Header */
-  .site-header{background:var(--bg);position:sticky;top:0;z-index:1100;border-bottom:1px solid rgba(0,0,0,0.06)}
-  .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--header-h)}
+  .site-header{background:var(--bg);position:sticky;top:0;z-index:1100;border-bottom:1px solid rgba(0,0,0,0.06);overflow:visible}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--header-h);position:relative;overflow:visible}
   .brand-img{max-height:75px;transition:transform .25s ease}
   .brand-img:hover{transform:scale(1.03)}
 
   /* Desktop nav */
-  .main-nav{display:block}
-  .nav-list{display:flex;gap:6px;align-items:center;margin:0;padding:0;list-style:none}
-  .nav-item{position:relative}
-  .nav-link{display:inline-block;padding:10px 14px;color:var(--dark);text-decoration:none;font-weight:600;transition:color .18s ease}
+  .main-nav{display:block;position:relative;z-index:1110}
+  .nav-list{display:flex;gap:6px;align-items:center;margin:0;padding:0;list-style:none;position:relative}
+  .nav-item{position:relative;overflow:visible}
+  .nav-link{display:inline-block;padding:10px 14px;color:var(--dark);text-decoration:none;font-weight:600;transition:color .18s ease;position:relative;z-index:1}
   .nav-link:hover{color:var(--accent)}
   /* underline */
   .nav-link::after{content:'';position:absolute;left:0;bottom:6px;height:3px;background:var(--accent);width:0;transition:width .28s ease}
   .nav-item.active .nav-link::after,.nav-link:hover::after{width:100%}
+  
+  /* Dropdown */
+  .nav-item.has-dropdown{position:relative}
+  .nav-item.has-dropdown .dropdown-menu{position:absolute;top:calc(100% + 5px);left:0;background:#fff;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.15);border-radius:8px;opacity:0;visibility:hidden;transform:translateY(-5px);transition:all .3s ease;padding:8px 0;list-style:none;z-index:9999;margin:0;pointer-events:none;border:1px solid rgba(0,0,0,0.08);display:block}
+  .nav-item.has-dropdown:hover .dropdown-menu,
+  .nav-item.has-dropdown.dropdown-open .dropdown-menu,
+  .nav-item.has-dropdown .dropdown-menu:hover{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+  .nav-item.has-dropdown .nav-link::after{display:none}
+  .dropdown-menu li{margin:0;list-style:none}
+  .dropdown-menu a{display:block;padding:12px 20px;color:var(--dark);text-decoration:none;font-weight:500;font-size:0.95rem;transition:all .2s ease;white-space:nowrap}
+  .dropdown-menu a:hover{background:rgba(211,84,0,0.1);color:var(--accent);padding-left:24px}
+  
+  /* Bridge gap between nav-link and dropdown to maintain hover */
+  .nav-item.has-dropdown::before{content:'';position:absolute;top:100%;left:0;right:0;height:5px;background:transparent;z-index:9998;pointer-events:auto}
 
   /* CTA */
   .cta .nav-link{background:var(--accent);color:#fff;padding:8px 18px;border-radius:30px}
@@ -138,11 +159,20 @@
 
   // Desktop
   document.querySelectorAll(".nav-item").forEach(li => {
-    const a = li.querySelector("a");
+    const a = li.querySelector(".nav-link");
     if(a && a.getAttribute("href") === currentPage){
       li.classList.add("active");
     } else {
-      li.classList.remove("active");
+      // Check dropdown items
+      const dropdownLinks = li.querySelectorAll(".dropdown-menu a");
+      dropdownLinks.forEach(dropdownLink => {
+        if(dropdownLink.getAttribute("href") === currentPage){
+          li.classList.add("active");
+        }
+      });
+      if(!li.querySelector(".dropdown-menu a[href='" + currentPage + "']")){
+        li.classList.remove("active");
+      }
     }
   });
 
@@ -159,12 +189,81 @@
 
 
 // ----------------------------
+// DROPDOWN TOGGLE (CLICK & HOVER)
+// ----------------------------
+(function(){
+  function initDropdown() {
+    const dropdownItems = document.querySelectorAll('.nav-item.has-dropdown');
+    
+    dropdownItems.forEach(item => {
+      const navLink = item.querySelector('.nav-link');
+      const dropdownMenu = item.querySelector('.dropdown-menu');
+      
+      if(!navLink || !dropdownMenu) return;
+      
+      // Click handler - toggle dropdown on click
+      navLink.addEventListener('click', function(e) {
+        // Don't prevent default if clicking dropdown items
+        if(e.target.closest('.dropdown-menu')) return;
+        
+        // Toggle dropdown
+        const isOpen = item.classList.contains('dropdown-open');
+        
+        // Close all dropdowns first
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(dd => {
+          dd.classList.remove('dropdown-open');
+        });
+        
+        // Toggle current dropdown
+        if(!isOpen) {
+          e.preventDefault();
+          e.stopPropagation();
+          item.classList.add('dropdown-open');
+        } else {
+          // If already open, allow link to work
+          item.classList.remove('dropdown-open');
+        }
+      });
+      
+      // Hover support - keep dropdown open when hovering
+      item.addEventListener('mouseenter', function() {
+        item.classList.add('dropdown-open');
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        item.classList.remove('dropdown-open');
+      });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if(!e.target.closest('.nav-item.has-dropdown')) {
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(dd => {
+          dd.classList.remove('dropdown-open');
+        });
+      }
+    });
+  }
+  
+  // Initialize when DOM is ready
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDropdown);
+  } else {
+    initDropdown();
+  }
+})();
+
+// ----------------------------
 // CLICK ACTIVE HIGHLIGHT
 // ----------------------------
 const allLinks = document.querySelectorAll('.nav-list .nav-link, .offcanvas-nav a');
 
 allLinks.forEach(link => {
-  link.addEventListener('click', function() {
+  link.addEventListener('click', function(e) {
+    // Don't interfere with dropdown clicks
+    if(this.closest('.has-dropdown') && !this.closest('.dropdown-menu')) {
+      return;
+    }
 
     document.querySelectorAll('.nav-item').forEach(item =>
       item.classList.remove('active')

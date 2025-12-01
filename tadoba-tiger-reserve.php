@@ -1,112 +1,118 @@
 <?php
 require_once __DIR__ . '/include/functions.php';
 
-$page_title       = 'Chimur Tourist Places & Travel Guide | Balaji Hotel Stay';
-$page_description = 'Explore the best tourist places near Chimur, Tadoba and Chandrapur with Balaji Hotel as your stay partner for wildlife safaris and heritage getaways. Discover Tadoba Tiger Reserve, Mahakali Temple, Ramdegi Forest, Irai Dam, and more.';
-$page_keywords    = 'tourist places in Chimur, Tadoba safari stay, Nagpur weekend trip, Chandrapur tourism, Balaji Hotel Chimur, Tadoba-Andhari Tiger Reserve, Mahakali Temple Chimur, Ramdegi Forest, Irai Dam, places to visit near Chimur, hotels near Tadoba, budget stay Chimur';
+$page_title       = 'Tadoba Tiger Reserve Safari Guide | Balaji Hotel Chimur';
+$page_description = 'Complete guide to Tadoba-Andhari Tiger Reserve safari booking, best time to visit, gates, permits, and wildlife sightings. Stay at Balaji Hotel Chimur for the perfect Tadoba safari experience.';
+$page_keywords    = 'Tadoba Tiger Reserve, Tadoba safari booking, Tadoba gates, Moharli gate, Kolara gate, Chimur gate, Tadoba permits, tiger safari Maharashtra, wildlife photography, Balaji Hotel Tadoba';
 $scheme           = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 $host             = $_SERVER['HTTP_HOST'] ?? 'localhost';
 $basePath         = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '')), '/');
 $basePath         = $basePath === '.' ? '' : $basePath;
-$canonical_url    = $scheme . '://' . $host . $basePath . '/chimur-tourism.php';
-$og_image         = $scheme . '://' . $host . $basePath . '/images/banner1.jpg';
+$canonical_url    = $scheme . '://' . $host . $basePath . '/tadoba-tiger-reserve.php';
+$og_image         = $scheme . '://' . $host . $basePath . '/images/tadoba.png';
 
-$tour_spots = [
+$safari_gates = [
     [
-        'name'        => 'Tadoba-Andhari Tiger Reserve',
-        'tag'         => 'Wildlife Safari',
+        'name'        => 'Moharli Gate',
+        'tag'         => 'Main Entry Point',
         'image'       => 'images/tadoba.png',
-        'distance'    => '46 km from Balaji Hotel, ~1 hr drive',
-        'best_time'   => 'October to May for peak sightings',
-        'summary'     => 'India’s legendary tiger reserve with core and buffer safaris, birding trails, and night drives that begin just a short drive from Chimur.',
+        'distance'    => '52 km from Balaji Hotel, ~1.2 hr drive',
+        'best_time'   => 'Morning 6 AM & Evening 3 PM safaris',
+        'summary'     => 'The most popular gate with highest tiger sighting probability. Core zone access with well-maintained routes and experienced guides.',
         'highlights'  => [
-            'Book morning or evening jeep safaris from Moharli/Chimur gates',
-            'Carry telephoto lens for tiger, leopard, and sloth bear sightings',
-            'Combine with buffer zone night safari for a 360° Tadoba experience'
+            'Highest tiger density zone in Tadoba',
+            'Book permits 120 days in advance for peak season',
+            'Morning safaris offer best photography light',
+            'Evening safaris for golden hour wildlife viewing'
         ],
         'map_url'     => 'https://maps.app.goo.gl/hCw3q1yQe1pSew7m9'
     ],
     [
-        'name'        => 'Shri Mahakali Temple, Chimur',
-        'tag'         => 'Heritage & Spiritual',
-        'image'       => 'images/MahakaliMandir.png',
-        'distance'    => '1.2 km | 5 min walk',
-        'best_time'   => 'Year-round, special aartis in Shravan/Navratri',
-        'summary'     => 'An 800-year-old temple dedicated to Maa Mahakali and Bhimashankar—perfect for sunrise darshan before you start your excursions.',
+        'name'        => 'Kolara Gate',
+        'tag'         => 'Alternative Entry',
+        'image'       => 'images/tadoba.png',
+        'distance'    => '48 km from Balaji Hotel, ~1.1 hr drive',
+        'best_time'   => 'Year-round, less crowded than Moharli',
+        'summary'     => 'Less crowded alternative with good tiger sightings. Ideal for photographers seeking quieter safari experiences.',
         'highlights'  => [
-            'Experience early morning arti followed by local breakfast',
-            'Shop brass diyas and locally made prasad items in the bazaar',
-            'Join the evening palkhi procession during major festivals'
+            'Better availability during peak season',
+            'Scenic routes through dense teak forests',
+            'Good for bird watching and leopard sightings',
+            'Less commercial, more authentic experience'
         ],
-        'map_url'     => 'https://maps.app.goo.gl/5FQfWq2A5z4F7Aix7'
+        'map_url'     => 'https://maps.app.goo.gl/hCw3q1yQe1pSew7m9'
     ],
     [
-        'name'        => 'Ramdegi Forest & Shiv Temple',
-        'tag'         => 'Nature + Pilgrimage',
-        'image'       => 'images/RamdegiTemple.png',
-        'distance'    => '18 km | 25 min drive',
-        'best_time'   => 'Monsoon & winter mornings',
-        'summary'     => 'Dense teak forest, a peaceful lake, and the historic Shri Ramdegi temple complex known for meditation camps and serene walks.',
+        'name'        => 'Chimur Gate',
+        'tag'         => 'Nearest Gate',
+        'image'       => 'images/tadoba.png',
+        'distance'    => '46 km from Balaji Hotel, ~1 hr drive',
+        'best_time'   => 'Buffer zone safaris available year-round',
+        'summary'     => 'Closest gate to Balaji Hotel. Perfect for buffer zone safaris and night drives. Great for families and first-time visitors.',
         'highlights'  => [
-            'Climb to the hilltop shrine for panoramic Chimur views',
-            'Picnic by the Ramdegi lake (carry waste-back bags)',
-            'Watch for peacocks and deer during golden hour'
+            'Shortest drive time from hotel',
+            'Buffer zone permits easier to get',
+            'Night safari options available',
+            'Less strict timing, more flexible'
         ],
-        'map_url'     => 'https://maps.app.goo.gl/7g8Eu7gB5gzA1ENX7'
+        'map_url'     => 'https://maps.app.goo.gl/hCw3q1yQe1pSew7m9'
     ],
     [
-        'name'        => 'Irai Dam & Boat Ride Point',
-        'tag'         => 'Scenic Sunset',
-        'image'       => 'images/iraiLake.png',
-        'distance'    => '33 km | 45 min drive',
-        'best_time'   => 'Sunset hours, September to February',
-        'summary'     => 'Catch dreamy sunsets over Tadoba’s lifeline reservoir, opt for buffer safari plus boat ride combination, and photograph migratory birds.',
+        'name'        => 'Navegaon Gate',
+        'tag'         => 'Buffer Zone',
+        'image'       => 'images/tadoba.png',
+        'distance'    => '55 km from Balaji Hotel, ~1.3 hr drive',
+        'best_time'   => 'Monsoon and winter seasons',
+        'summary'     => 'Buffer zone entry with beautiful landscapes and good wildlife diversity. Less crowded with more flexible booking.',
         'highlights'  => [
-            'Golden-hour photography with Tadoba backwaters',
-            'Chance to spot crocodiles and bar-headed geese',
-            'Pack Balaji’s takeaway snacks for a sunset picnic'
+            'Beautiful water bodies and scenic routes',
+            'Good for sloth bear and wild dog sightings',
+            'More affordable safari options',
+            'Flexible timing and booking'
         ],
-        'map_url'     => 'https://maps.app.goo.gl/dBQpgUULYzRXfaSd9'
+        'map_url'     => 'https://maps.app.goo.gl/hCw3q1yQe1pSew7m9'
     ],
     [
-        'name'        => 'Zero Mile Nagpur & Sitabuldi Fort',
-        'tag'         => 'City Excursion',
-        'image'       => 'images/sitaburdifort.png',
-        'distance'    => '116 km | 2.5 hr drive',
-        'best_time'   => 'Weekend day trips',
-        'summary'     => 'Trace India’s geographical centre, go cafe hopping, explore Futala Lake evenings, and return to the serenity of Balaji Hotel the same night.',
+        'name'        => 'Pangdi Gate',
+        'tag'         => 'Buffer Zone',
+        'image'       => 'images/tadoba.png',
+        'distance'    => '50 km from Balaji Hotel, ~1.2 hr drive',
+        'best_time'   => 'October to May',
+        'summary'     => 'Buffer zone gate with excellent birding opportunities and diverse wildlife. Great for nature enthusiasts.',
         'highlights'  => [
-            'Street food crawl at Sadar Bazaar',
-            'Visit Deekshabhoomi & Sitabuldi fort museum',
-            'Shop orange sweets for your return journey'
+            'Excellent bird watching opportunities',
+            'Diverse flora and fauna',
+            'Less commercial, peaceful experience',
+            'Good for extended wildlife photography'
         ],
-        'map_url'     => 'https://maps.app.goo.gl/NVP1zQ6w7mYgsh5T8'
+        'map_url'     => 'https://maps.app.goo.gl/hCw3q1yQe1pSew7m9'
     ],
     [
-        'name'        => 'Sevagram Ashram, Wardha',
-        'tag'         => 'Heritage Circuit',
-        'image'       => 'images/sevagram.png',
-        'distance'    => '97 km | 2 hr drive',
-        'best_time'   => 'October to March mornings',
-        'summary'     => 'Walk through Mahatma Gandhi’s Sevagram, spin the charkha, and learn about India’s freedom movement before looping back via Hinganghat food stops.',
+        'name'        => 'Zari Gate',
+        'tag'         => 'Core Zone',
+        'image'       => 'images/tadoba.png',
+        'distance'    => '58 km from Balaji Hotel, ~1.4 hr drive',
+        'best_time'   => 'Peak season December to February',
+        'summary'     => 'Core zone entry with pristine forest areas. Known for excellent tiger and leopard sightings with professional guides.',
         'highlights'  => [
-            'Attend guided heritage walk (10 AM & 3 PM batches)',
-            'Explore Magan Sangrahalaya Khadi museum',
-            'Pair with Hinganghat cotton & saree shopping'
+            'Pristine core zone forest',
+            'Professional and experienced guides',
+            'High probability of big cat sightings',
+            'Well-maintained safari routes'
         ],
-        'map_url'     => 'https://maps.app.goo.gl/FxH7ZSQqkWKFfpJw9'
+        'map_url'     => 'https://maps.app.goo.gl/hCw3q1yQe1pSew7m9'
     ],
 ];
 
-$rooms         = list_rooms(3);
+$rooms = list_rooms(3);
 
 // Enhanced Structured Data for SEO
 $structured_data = json_encode([
     '@context' => 'https://schema.org',
     '@type'    => 'TouristDestination',
-    'name'     => 'Chimur & Tadoba Tourist Guide | Balaji Hotel And Lodge',
+    'name'     => 'Tadoba-Andhari Tiger Reserve Safari Guide | Balaji Hotel',
     'description' => $page_description,
-    'touristType' => ['Wildlife', 'Spiritual', 'Weekend-getaway'],
+    'touristType' => ['Wildlife', 'Safari', 'Photography'],
     'url' => $canonical_url,
     'image' => $og_image,
     'provider' => [
@@ -125,12 +131,12 @@ $structured_data = json_encode([
         'email'     => get_setting('email', 'balajirestaurantandlodge@gmail.com'),
         'priceRange' => '₹₹'
     ],
-    'hasPart' => array_map(static fn($spot) => [
+    'hasPart' => array_map(static fn($gate) => [
         '@type' => 'TouristAttraction',
-        'name'  => $spot['name'],
-        'description' => $spot['summary'],
-        'url' => $spot['map_url']
-    ], $tour_spots)
+        'name'  => $gate['name'],
+        'description' => $gate['summary'],
+        'url' => $gate['map_url']
+    ], $safari_gates)
 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 
 // Breadcrumb Structured Data
@@ -147,7 +153,7 @@ $breadcrumb_data = json_encode([
         [
             '@type' => 'ListItem',
             'position' => 2,
-            'name' => 'Chimur Tourism Guide',
+            'name' => 'Tadoba Tiger Reserve Guide',
             'item' => $canonical_url
         ]
     ]
@@ -344,16 +350,6 @@ $breadcrumb_data = json_encode([
       }
     </style>
     <main>
-      <!-- Breadcrumb Navigation
-      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-        <div class="container">
-          <ol class="breadcrumb-list">
-            <li><a href="index.php">Home</a></li>
-            <li aria-current="page">Chimur Tourism Guide</li>
-          </ol>
-        </div>
-      </nav> -->
-
       <div class="back_re">
          <div class="decorative-corner top-left"></div>
          <div class="decorative-corner top-right"></div>
@@ -363,8 +359,8 @@ $breadcrumb_data = json_encode([
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2><span>Chimur Travel Guide</span></h2>
-                     <p class="subtitle">Discover Tourist Places, Tadoba Safari & Heritage Sites Near Chimur</p>
+                     <h2>Tadoba Tiger Reserve Safari Guide</h2>
+                     <p class="subtitle">Complete Guide to Safari Booking, Gates, Permits & Wildlife Sightings</p>
                   </div>
                </div>
             </div>
@@ -373,41 +369,41 @@ $breadcrumb_data = json_encode([
 
       <section class="tour-grid container">
         <header class="section-head">
-          <span class="eyebrow">Curated Nearby Attractions</span>
-          <h2>Top Tourist Places Around Chimur</h2>
-          <p>Shortlist your itinerary with drive times, best seasons, and on-ground tips from the Balaji Hotel team.</p>
+          <span class="eyebrow">Safari Entry Gates</span>
+          <h2>Tadoba Safari Gates & Entry Points</h2>
+          <p>Choose the right gate based on your preferences, distance, and safari type. We help you book permits and arrange transportation.</p>
         </header>
         <div class="grid">
-          <?php foreach ($tour_spots as $index => $spot): ?>
+          <?php foreach ($safari_gates as $index => $gate): ?>
           <article class="tour-card" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
             <figure>
-              <img src="<?php echo h($spot['image']); ?>" alt="<?php echo h($spot['name']); ?> - <?php echo h($spot['tag']); ?>" loading="lazy">
-              <figcaption><?php echo h($spot['tag']); ?></figcaption>
+              <img src="<?php echo h($gate['image']); ?>" alt="<?php echo h($gate['name']); ?> - <?php echo h($gate['tag']); ?>" loading="lazy">
+              <figcaption><?php echo h($gate['tag']); ?></figcaption>
               <div class="card-overlay">
-                <a href="<?php echo h($spot['map_url']); ?>" target="_blank" rel="noopener" class="overlay-btn" title="View on Map">
+                <a href="<?php echo h($gate['map_url']); ?>" target="_blank" rel="noopener" class="overlay-btn" title="View on Map">
                   <i class="fa fa-map-marker"></i>
                 </a>
               </div>
             </figure>
             <div class="card-body">
               <div class="meta">
-                <span class="meta-item"><i class="fa fa-road"></i> <?php echo h($spot['distance']); ?></span>
-                <span class="meta-item"><i class="fa fa-calendar"></i> <?php echo h($spot['best_time']); ?></span>
+                <span class="meta-item"><i class="fa fa-road"></i> <?php echo h($gate['distance']); ?></span>
+                <span class="meta-item"><i class="fa fa-clock-o"></i> <?php echo h($gate['best_time']); ?></span>
               </div>
-              <h3><?php echo h($spot['name']); ?></h3>
-              <p><?php echo h($spot['summary']); ?></p>
+              <h3><?php echo h($gate['name']); ?></h3>
+              <p><?php echo h($gate['summary']); ?></p>
               <ul class="highlights">
-                <?php foreach ($spot['highlights'] as $tip): ?>
+                <?php foreach ($gate['highlights'] as $tip): ?>
                 <li><i class="fa fa-star"></i> <?php echo h($tip); ?></li>
                 <?php endforeach; ?>
               </ul>
             </div>
             <div class="card-footer">
-              <a class="btn-link" href="<?php echo h($spot['map_url']); ?>" target="_blank" rel="noopener">
-                <i class="fa fa-map-marker"></i> Open in Google Maps
+              <a class="btn-link" href="<?php echo h($gate['map_url']); ?>" target="_blank" rel="noopener">
+                <i class="fa fa-map-marker"></i> View Location
               </a>
-              <a class="btn primary small" href="#" data-book-room>
-                <i class="fa fa-bed"></i> Book Stay
+              <a class="btn primary small" href="book_room.php" data-book-room>
+                <i class="fa fa-calendar"></i> Book Safari Stay
               </a>
             </div>
           </article>
@@ -418,27 +414,27 @@ $breadcrumb_data = json_encode([
       <section class="itinerary">
         <div class="container itinerary-inner">
           <div class="itinerary-header">
-            <span class="eyebrow">Suggested Mini-Itineraries</span>
-            <h2>Make the Most of Your Chimur Trip</h2>
-            <p>Mix wildlife, heritage, and food-trails without wasting time searching for stays. Our team handles taxi partners, safari permits, and meal timings.</p>
+            <span class="eyebrow">Safari Packages</span>
+            <h2>Complete Tadoba Safari Experience</h2>
+            <p>From permit booking to transportation, we handle everything for your perfect Tadoba safari adventure. Stay with us and focus on wildlife.</p>
           </div>
           <div class="itinerary-cards">
             <article class="itinerary-card">
-              <div class="itinerary-icon"><i class="fa fa-paw"></i></div>
-              <h3>48-Hour Tadoba Sprint</h3>
-              <p>Day 1 evening buffer safari + Irai sunset. Day 2 sunrise core safari, temple darshan, depart post brunch.</p>
+              <div class="itinerary-icon"><i class="fa fa-sun-o"></i></div>
+              <h3>Morning Safari Package</h3>
+              <p>Early morning 6 AM safari with packed breakfast. Wake-up call at 4:30 AM, transportation arranged, and return to hotel by 10 AM for brunch.</p>
               <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
             </article>
             <article class="itinerary-card">
-              <div class="itinerary-icon"><i class="fa fa-building"></i></div>
-              <h3>Weekend Heritage Loop</h3>
-              <p>Day 1 Mahakali & Ramdegi. Day 2 Sevagram Ashram + Hinganghat shopping halt.</p>
+              <div class="itinerary-icon"><i class="fa fa-moon-o"></i></div>
+              <h3>Evening Safari Package</h3>
+              <p>Afternoon 3 PM safari with golden hour photography. Leave hotel at 2 PM, enjoy 3-hour safari, return by 6:30 PM for dinner.</p>
               <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
             </article>
             <article class="itinerary-card">
-              <div class="itinerary-icon"><i class="fa fa-laptop"></i></div>
-              <h3>Nagpur Workation</h3>
-              <p>Morning drive from Nagpur, spend 2 nights at Balaji, plug-and-play Wi-Fi, evening safaris or nature walks.</p>
+              <div class="itinerary-icon"><i class="fa fa-camera"></i></div>
+              <h3>Full Day Safari</h3>
+              <p>Morning + Evening safaris with lunch break. Perfect for photographers and wildlife enthusiasts. Maximum wildlife viewing opportunities.</p>
               <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
             </article>
           </div>
@@ -447,40 +443,40 @@ $breadcrumb_data = json_encode([
 
       <section class="stay-benefits container">
         <header class="section-head">
-          <span class="eyebrow">Why Balaji Hotel & Lodge</span>
-          <h2>Stay Strategically Between Nagpur, Chandrapur & Tadoba</h2>
-          <p>We are 200 meters from Chimur bus stand, offer private parking, and arrange meals that match your safari slots.</p>
+          <span class="eyebrow">Why Stay With Us</span>
+          <h2>Perfect Base for Tadoba Safari Adventures</h2>
+          <p>Located just 46 km from Tadoba, we offer safari-ready services, early wake-up calls, and expert guidance for your wildlife experience.</p>
         </header>
         <div class="benefit-grid">
           <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-camera-retro"></i></div>
-            <h3>Safari-Ready Services</h3>
-            <p>Wake-up calls at 4:30 AM, packed breakfast, and on-call local jeeps for last-minute buffer permits.</p>
+            <div class="benefit-icon"><i class="fa fa-clock-o"></i></div>
+            <h3>Early Wake-Up Service</h3>
+            <p>Wake-up calls at 4:30 AM for morning safaris. Packed breakfast ready before departure.</p>
           </div>
           <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-users"></i></div>
-            <h3>Family-Friendly Rooms</h3>
-            <p>AC/non-AC options, extra bedding, and hygiene-focused housekeeping for multi-generational travel.</p>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-map-signs"></i></div>
-            <h3>Hyper-local Insights</h3>
-            <p>Get directions to hidden ghats, seasonal fairs, and trusted food joints in Chandrapur & Nagpur.</p>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-wifi"></i></div>
-            <h3>High-Speed Wi-Fi</h3>
-            <p>Reliable internet connection for remote work and staying connected with family and friends.</p>
+            <div class="benefit-icon"><i class="fa fa-ticket"></i></div>
+            <h3>Safari Permit Assistance</h3>
+            <p>We help you book Tadoba safari permits in advance. Guidance on gate selection and timing.</p>
           </div>
           <div class="benefit">
             <div class="benefit-icon"><i class="fa fa-car"></i></div>
-            <h3>Free Parking</h3>
-            <p>Secure private parking space available for all guests, perfect for self-drive travelers.</p>
+            <h3>Transportation Arranged</h3>
+            <p>Reliable local jeeps and vehicles arranged for safari trips. Experienced drivers familiar with routes.</p>
           </div>
           <div class="benefit">
-            <div class="benefit-icon"><i class="fa fa-utensils"></i></div>
-            <h3>Delicious Meals</h3>
-            <p>Fresh, home-cooked meals available throughout the day, customized to your safari schedule.</p>
+            <div class="benefit-icon"><i class="fa fa-camera-retro"></i></div>
+            <h3>Photography Support</h3>
+            <p>Tips on best photography spots, golden hour timings, and equipment storage facilities.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><i class="fa fa-cutlery"></i></div>
+            <h3>Flexible Meal Timings</h3>
+            <p>Meals adjusted to your safari schedule. Early breakfast, late dinner options available.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon"><i class="fa fa-users"></i></div>
+            <h3>Expert Guidance</h3>
+            <p>Local insights on best gates, wildlife sightings, and seasonal variations from our experienced team.</p>
           </div>
         </div>
       </section>
@@ -488,11 +484,12 @@ $breadcrumb_data = json_encode([
       <section class="rooms container">
         <header class="section-head">
           <span class="eyebrow">Pick Your Room</span>
-          <h2>Popular Stays for Tourist Travellers</h2>
-          <p>Choose a room category and mention "Tourist Guide Page" while booking to unlock curated itineraries.</p>
+          <h2>Comfortable Stay for Safari Guests</h2>
+          <p>Choose a room and mention "Tadoba Safari" while booking to get safari package assistance and early check-in.</p>
         </header>
         <div class="room-grid">
           <?php 
+          $pdo = get_pdo();
           foreach ($rooms as $room): 
             // Check availability for each room
             $approvedCount = $pdo->prepare('SELECT COUNT(*) FROM booking_inquiries WHERE room_id = ? AND status = ?');
@@ -554,44 +551,50 @@ $breadcrumb_data = json_encode([
 
       <section class="faq container">
         <header class="section-head">
-          <span class="eyebrow">Traveller FAQs</span>
-          <h2>Questions Guests Ask Us Most</h2>
+          <span class="eyebrow">Safari FAQs</span>
+          <h2>Frequently Asked Questions About Tadoba</h2>
         </header>
         <div class="faq-list">
           <details open>
-            <summary><i class="fa fa-question-circle"></i> How do I reach Balaji Hotel from Nagpur or Chandrapur?</summary>
+            <summary><i class="fa fa-question-circle"></i> How do I book Tadoba safari permits?</summary>
             <div class="faq-content">
-              <p>Drive via Umred-Bhiwapur road from Nagpur (2.5 hrs) or take NH930 from Chandrapur (1.5 hrs). We can schedule cabs or guide bus timings. For detailed directions, <a href="contact.php">contact us</a>.</p>
+              <p>Tadoba safari permits can be booked online 120 days in advance through the official Maharashtra Forest Department website. We assist our guests with permit booking guidance and can help arrange permits through authorized operators. Contact us in advance for assistance.</p>
             </div>
           </details>
           <details>
-            <summary><i class="fa fa-question-circle"></i> Can you arrange Tadoba safari permits?</summary>
+            <summary><i class="fa fa-question-circle"></i> Which gate is best for tiger sightings?</summary>
             <div class="faq-content">
-              <p>Yes. Share your preferred gate (Moharli, Chimur, Kolara) and dates. We coordinate with authorized operators while you enjoy your stay. Advance booking recommended during peak season (Oct-May).</p>
+              <p>Moharli Gate has the highest tiger density and best sighting probability. However, it's also the most popular and requires advance booking. Kolara and Chimur gates offer good alternatives with less crowd. Our team can guide you based on your preferences and availability.</p>
             </div>
           </details>
           <details>
-            <summary><i class="fa fa-question-circle"></i> Do you have Wi-Fi and workspace for workations?</summary>
+            <summary><i class="fa fa-question-circle"></i> What is the best time to visit Tadoba?</summary>
             <div class="faq-content">
-              <p>Every floor has high-speed Wi-Fi, backup power, and ergonomic chairs on request—ideal for remote workers planning longer stays. We also offer flexible meal timings for workation guests.</p>
+              <p>October to May is the best time for wildlife sightings. Peak season is December to February when tiger sightings are highest. Monsoon (June-September) offers lush greenery but limited safari access. Morning safaris (6 AM) and evening safaris (3 PM) are both excellent for different experiences.</p>
+            </div>
+          </details>
+          <details>
+            <summary><i class="fa fa-question-circle"></i> What should I carry for the safari?</summary>
+            <div class="faq-content">
+              <p>Carry binoculars, camera with telephoto lens, warm clothing (mornings are cold), water bottle, cap/hat, sunscreen, and insect repellent. Wear earth-toned clothes (avoid bright colors). We provide packed breakfast for morning safaris.</p>
+            </div>
+          </details>
+          <details>
+            <summary><i class="fa fa-question-circle"></i> Can you arrange transportation to Tadoba?</summary>
+            <div class="faq-content">
+              <p>Yes, we arrange reliable local jeeps and vehicles for Tadoba safaris. Our drivers are familiar with all gates and routes. Transportation can be arranged for both morning and evening safaris. Contact us in advance to book.</p>
+            </div>
+          </details>
+          <details>
+            <summary><i class="fa fa-question-circle"></i> What wildlife can I see in Tadoba?</summary>
+            <div class="faq-content">
+              <p>Tadoba is home to tigers, leopards, sloth bears, wild dogs, Indian bison (gaur), sambar deer, spotted deer, and over 195 species of birds. The reserve has one of the highest tiger densities in India, making it excellent for big cat sightings.</p>
             </div>
           </details>
           <details>
             <summary><i class="fa fa-question-circle"></i> Is early check-in possible for morning safaris?</summary>
             <div class="faq-content">
-              <p>Absolutely. Let us know your arrival time; we prioritize safari guests for early check-in/late checkout when rooms are available. Contact us in advance to arrange this.</p>
-            </div>
-          </details>
-          <details>
-            <summary><i class="fa fa-question-circle"></i> What are the best months to visit Tadoba?</summary>
-            <div class="faq-content">
-              <p>October to May is the best time for wildlife sightings. Monsoon (June-September) offers lush greenery but limited safari access. Peak season is December to February.</p>
-            </div>
-          </details>
-          <details>
-            <summary><i class="fa fa-question-circle"></i> Do you provide transportation services?</summary>
-            <div class="faq-content">
-              <p>We can arrange local taxis and jeeps for safaris and sightseeing. Contact us in advance to book transportation services at competitive rates.</p>
+              <p>Absolutely! We prioritize safari guests for early check-in. If you're arriving late night for an early morning safari, we can arrange early check-in when rooms are available. Contact us in advance to confirm.</p>
             </div>
           </details>
         </div>
@@ -601,7 +604,7 @@ $breadcrumb_data = json_encode([
       <section class="social-share container">
         <div class="share-content">
           <h3>Share This Guide</h3>
-          <p>Help others discover the beauty of Chimur and Tadoba</p>
+          <p>Help others plan their perfect Tadoba safari experience</p>
           <div class="share-buttons">
             <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($canonical_url); ?>" target="_blank" rel="noopener" class="share-btn facebook" title="Share on Facebook">
               <i class="fa fa-facebook"></i> Facebook
@@ -623,10 +626,10 @@ $breadcrumb_data = json_encode([
       <section class="cta-section">
         <div class="container">
           <div class="cta-content">
-            <h2>Ready to Explore Chimur & Tadoba?</h2>
-            <p>Book your stay with Balaji Hotel and experience the best of wildlife, heritage, and nature tourism.</p>
+            <h2>Ready for Your Tadoba Safari Adventure?</h2>
+            <p>Book your stay with Balaji Hotel and experience the best of Tadoba Tiger Reserve with our safari-ready services.</p>
             <div class="cta-buttons">
-              <a href="book_room.php" class="btn primary large">Book Your Room Now</a>
+              <a href="book_room.php" class="btn primary large">Book Your Safari Stay</a>
               <a href="contact.php" class="btn ghost large">Contact Us</a>
             </div>
           </div>
