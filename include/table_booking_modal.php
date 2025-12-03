@@ -112,6 +112,15 @@ start_session_secure();
       padding: 22px 20px;
     }
   }
+
+  @media (max-width: 575px) {
+  .table-booking-modal .btn-primary {
+    background: rgb(165, 42, 42) !important;  /* Brown */
+    color: #fff !important;
+    box-shadow: none !important;
+  }
+}
+
 </style>
 
 <!-- Table Booking Modal -->
@@ -222,5 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
 </script>
 

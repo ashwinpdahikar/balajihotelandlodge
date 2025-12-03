@@ -1,146 +1,179 @@
- <?php 
- require_once __DIR__ . '/functions.php'; 
- $pdo = get_pdo();
- // Fetch unique rooms fresh from database - Get first room of each title type
- $rooms = $pdo->query('SELECT r.* FROM rooms r 
-                       INNER JOIN (SELECT title, MIN(id) as min_id FROM rooms WHERE status=1 GROUP BY title) as unique_rooms 
-                       ON r.id = unique_rooms.min_id AND r.title = unique_rooms.title 
-                       WHERE r.status=1 ORDER BY r.title LIMIT 6')->fetchAll();
- ?>
- <div class="our_room " id="rooms">
-      <div class="container">
-         <?php if (!isset($hide_section_title) || !$hide_section_title): ?>
-         <div class="row">
-            <div class="col-md-12">
-               <div class="titlepage">
-                  <h2>Our Rooms</h2>
-                  <p>Explore our rooms and amenities</p>
-               </div>
-            </div>
-         </div>
-         <?php endif; ?>
-         <div class="row">
-            <?php foreach ($rooms as $r): ?>
+<div class="our_room">
+    
+    <div class="container">
+                <h1 style="text-align:center; margin-bottom:20px; font-size: 32px;
+    font-weight: 700;
+    color: #060606ff;">Our Rooms</h1> 
+
+        <div class="row">
+            
+
             <?php
-              // Check availability for each room - Count only approved bookings
-              $roomId = (int)$r['id'];
-              
-              // Count approved bookings for this room - Fresh query each time, no caching
-              try {
-                  $approvedCount = $pdo->prepare('SELECT COUNT(*) FROM booking_inquiries WHERE room_id = ? AND status = ?');
-                  $approvedCount->execute([$roomId, 'approved']);
-                  $approvedBookings = (int)$approvedCount->fetchColumn();
-              } catch (Exception $e) {
-                  error_log("Error counting approved bookings for room {$roomId}: " . $e->getMessage());
-                  $approvedBookings = 0;
-              }
-              
-              // Get room quantity - Always fetch fresh from database to ensure accuracy
-              try {
-                  $qtyStmt = $pdo->prepare('SELECT quantity FROM rooms WHERE id = ?');
-                  $qtyStmt->execute([$roomId]);
-                  $qtyResult = $qtyStmt->fetch();
-                  $quantity = ($qtyResult && isset($qtyResult['quantity']) && $qtyResult['quantity'] !== null && $qtyResult['quantity'] !== '') 
-                      ? (int)$qtyResult['quantity'] 
-                      : 1;
-              } catch (Exception $e) {
-                  error_log("Error fetching quantity for room {$roomId}: " . $e->getMessage());
-                  $quantity = 1;
-              }
-              
-              // Calculate available rooms
-              $available = max(0, $quantity - $approvedBookings);
-              $isSoldOut = ($available <= 0);
-              
-              // Ensure values are integers
-              $approvedBookings = (int)$approvedBookings;
-              $quantity = (int)$quantity;
-              $available = (int)$available;
-              
-              // Force fresh calculation - no caching
-              $available = max(0, $quantity - $approvedBookings);
-              $isSoldOut = ($available <= 0);
+            $rooms = [
+                [
+                    'id' => 1,
+                    'name' => 'Deluxe AC Room',
+                    'price' => '1200',
+                    'image' => 'images/room1.jpg',
+                    'desc' => 'A premium AC room with modern facilities.',
+                    'category' => 'AC Room',
+                    'available' => 'Available'
+                ],
+                [
+                    'id' => 2,
+                    'name' => 'Luxury Room',
+                    'price' => '1800',
+                    'image' => 'images/room2.jpg',
+                    'desc' => 'Spacious luxury room with elegant interiors.',
+                    'category' => 'Luxury AC Room',
+                    'available' => 'Available'
+                ],
+                [
+                    'id' => 3,
+                    'name' => 'Non-AC Budget Room',
+                    'price' => '700',
+                    'image' => 'images/room3.jpg',
+                    'desc' => 'Affordable non-AC room with all basic amenities.',
+                    'category' => 'Non-AC Room',
+                    'available' => 'Few Rooms Left'
+                ],
+                [
+                    'id' => 4,
+                    'name' => 'Family Suite',
+                    'price' => '2500',
+                    'image' => 'images/room4.jpg',
+                    'desc' => 'Perfect for families with spacious room and extra comfort.',
+                    'category' => 'Family Room',
+                    'available' => 'Available'
+                ],
+                [
+                    'id' => 5,
+                    'name' => 'Premium AC Room',
+                    'price' => '1500',
+                    'image' => 'images/room5.jpg',
+                    'desc' => 'A well-furnished premium AC room with king-size bed.',
+                    'category' => 'Premium AC',
+                    'available' => 'Not Available'
+                ],
+                [
+                    'id' => 6,
+                    'name' => 'Standard Room',
+                    'price' => '900',
+                    'image' => 'images/room6.jpg',
+                    'desc' => 'A simple and comfortable room for budget-friendly stays.',
+                    'category' => 'Standard Room',
+                    'available' => 'Available'
+                ],
+            ];
+
+            foreach ($rooms as $room) {
             ?>
-            <div class="col-md-4 col-sm-6">
-               <div id="serv_hover" class="room <?php if ($isSoldOut): ?>room-sold-out<?php endif; ?>">
-                  <div class="room_img">
-                     <figure><img src="<?php echo h($r['image_path']); ?>" alt="#" /></figure>
-                  </div>
-                  <div class="bed_room">
-                     <div class="room-header">
-                        <h3><?php echo h($r['title']); ?></h3>
-                        <?php 
-                        // Debug output - Always show in HTML comment for verification
-                        echo "<!-- DEBUG: Room ID=" . $roomId . " | Title=" . h($r['title']) . " | Qty=" . $quantity . " | Approved=" . $approvedBookings . " | Available=" . $available . " | SoldOut=" . ($isSoldOut ? 'YES' : 'NO') . " -->";
-                        
-                        // Visible debug if parameter set
-                        if (isset($_GET['debug']) || isset($_GET['show_debug'])) {
-                            echo "<div style='background:#fff3cd;padding:5px;margin:5px 0;font-size:11px;border:1px solid #ffc107;border-radius:4px;'>";
-                            echo "<strong>Debug Info:</strong><br>";
-                            echo "Room ID: " . $roomId . "<br>";
-                            echo "Room Title: " . h($r['title']) . "<br>";
-                            echo "Quantity: " . $quantity . "<br>";
-                            echo "Approved Bookings: " . $approvedBookings . "<br>";
-                            echo "Available: " . $available . "<br>";
-                            echo "Sold Out: " . ($isSoldOut ? 'YES' : 'NO');
-                            echo "</div>";
-                        }
-                        ?>
-                        <?php if ($isSoldOut): ?>
-                           <span class="room-badge room-badge-danger">
-                              <i class="fa fa-times-circle"></i> Sold Out
-                           </span>
-                        <?php else: ?>
-                           <span class="room-badge room-badge-success">
-                              <i class="fa fa-check-circle"></i> Available (<?php echo $available; ?>)
-                           </span>
-                        <?php endif; ?>
-                     </div>
-                     <div class="room-features">
-                        <?php 
-                        $features = explode('\n', $r['description']);
-                        foreach ($features as $feature):
-                           $feature = trim($feature);
-                           if (!empty($feature)):
-                        ?>
-                           <div class="room-feature-item">
-                              <i class="fa fa-check-circle"></i>
-                              <span><?php echo h($feature); ?></span>
-                           </div>
-                        <?php 
-                           endif;
-                        endforeach; 
-                        ?>
-                     </div>
-                     <div class="room-details">
-                        <div class="room-detail-row">
-                           <span class="detail-label"><i class="fa fa-users"></i> Capacity:</span>
-                           <span class="detail-value"><?php echo (int)($r['max_adults'] ?? 2); ?> Adults, <?php echo (int)($r['max_children'] ?? 2); ?> Children<?php if (isset($r['extra_guest_charge']) && $r['extra_guest_charge']!==null): ?><br><small>Extra 15+ guest: ₹<?php echo h(number_format((float)$r['extra_guest_charge'],2)); ?></small><?php endif; ?></span>
-                        </div>
-                        <?php if ($r['price'] !== null): ?>
-                        <div class="room-detail-row">
-                           <span class="detail-label"><i class="fa fa-rupee"></i> Rate:</span>
-                           <span class="detail-value price-value">₹<?php echo h(number_format((float)$r['price'], 2)); ?><small>/night</small></span>
-                        </div>
-                        <?php endif; ?>
-                     </div>
-                     <div class="room-action">
-                        <a href="#" class="btn-room-book" data-book-room data-room="<?php echo (int)$r['id']; ?>" <?php if ($isSoldOut): ?>aria-disabled="true" onclick="return false;"<?php endif; ?>>
-                           <?php if ($isSoldOut): ?>
-                              <i class="fa fa-ban"></i> Sold Out
-                           <?php else: ?>
-                              <i class="fa fa-calendar"></i> Book Now
-                           <?php endif; ?>
-                        </a>
-                     </div>
-                     <?php if (!empty($_SESSION['booking_msg'])): ?><div class="alert alert-info" style="margin-top:10px"><?php echo h($_SESSION['booking_msg']); unset($_SESSION['booking_msg']); ?></div><?php endif; ?>
-                  </div>
-               </div>
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="room_card">
+                    <img src="<?php echo $room['image']; ?>" class="img-fluid room_img" alt="">
+
+                    <h3 class="room_title"><?php echo $room['name']; ?></h3>
+
+                    <p class="room_desc"><?php echo $room['desc']; ?></p>
+
+                    <div class="room_details">
+                        <p><strong>Category:</strong> <?php echo $room['category']; ?></p>
+                        <p>
+                            <strong>Status:</strong> 
+                            <span class="status <?php echo strtolower(str_replace(' ', '_', $room['available'])); ?>">
+                                <?php echo $room['available']; ?>
+                            </span>
+                        </p>
+                    </div>
+
+                    <h4 class="room_price">₹<?php echo $room['price']; ?>/Night</h4>
+
+                    <button 
+                        class="book_btn"
+                        data-room-id="<?php echo $room['id']; ?>"
+                        data-room-name="<?php echo $room['name']; ?>"
+                        onclick="openBookingModal(this)"
+                    >
+                        Book Now
+                    </button>
+                </div>
             </div>
-            <?php endforeach; ?>
-            <?php if (!$rooms): ?>
-            <div class="col-12"><div class="text-muted">No rooms yet.</div></div>
-            <?php endif; ?>
-         </div>
-      </div>
-   </div>
+
+            <?php } ?>
+
+        </div>
+    </div>
+</div>
+
+<style>
+.room_card{
+    background:#fff;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+.room_img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:10px;
+}
+.room_title{
+    font-size:20px;
+    margin-top:10px;
+    font-weight:600;
+}
+.room_desc{
+    font-size:14px;
+    color:#555;
+}
+.room_details p{
+    margin:5px 0;
+    font-size:14px;
+    color:#444;
+}
+.room_price{
+    font-size:18px;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.book_btn{
+    padding:10px 18px;
+    background:#8e3a02; 
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+    transition:0.3s;
+}
+.book_btn:hover{
+    background:#8A5F45; 
+}
+
+/* Status Colors */
+.status.available { color: green; font-weight: bold; }
+.status.not_available { color: red; font-weight: bold; }
+.status.few_rooms_left { color: #d08800; font-weight: bold; }
+</style>
+
+<?php include 'booking_modal.php'; ?>
+
+<script>
+function openBookingModal(btn) {
+    const id = btn.getAttribute("data-room-id");
+    const name = btn.getAttribute("data-room-name");
+
+    document.getElementById("room_id").value = id;
+    document.getElementById("modalRoomTitle").innerText = name;
+
+    document.getElementById("bookingModal").style.display = "flex";
+}
+
+function closeBookingModal() {
+    document.getElementById("bookingModal").style.display = "none";
+}
+</script>

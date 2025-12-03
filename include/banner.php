@@ -557,4 +557,115 @@
       margin-bottom: 15px;
     }
   }
+
+  /* ============================
+   MOBILE VIEW IMPROVEMENTS
+   ============================ */
+@media(max-width: 768px) {
+
+  /* Banner Images */
+  .banner_main img {
+    height: 38vh !important;
+    object-fit: cover;
+  }
+
+  /* Hero text */
+  .hero-title {
+    font-size: 1.6rem !important;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 18px;
+  }
+
+  /* CTA Buttons */
+  .hero-cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn-hero {
+    font-size: 0.9rem !important;
+    padding: 10px 18px !important;
+    width: 100%;
+  }
+
+  /* Quick Booking Panel */
+  .quick-booking-panel .book_room {
+    width: 95% !important;
+    margin: auto;
+    padding: 20px !important;
+  }
+
+  h1.text-center {
+    font-size: 1.4rem !important;
+  }
+
+  /* Form fields spacing */
+  .book_now .form-group,
+  .book_now .col-md-6,
+  .book_now .col-4 {
+    margin-bottom: 12px !important;
+  }
+
+  /* Input and select size */
+  .book_now input,
+  .book_now select {
+    font-size: 0.92rem !important;
+    padding: 10px !important;
+  }
+
+  /* Error messages */
+  .error-message {
+    font-size: 0.8rem !important;
+  }
+
+  /* Close button */
+  #closeQuickBooking {
+    font-size: 1.8rem !important;
+    top: 8px;
+    right: 10px;
+  }
+
+  /* Marquee */
+  marquee {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* ============================
+   FIX HERO TITLE & TABLE BOOKING TEXT COLOR ON MOBILE
+   ============================ */
+@media(max-width: 768px) {
+
+  /* Hero main heading (Welcome to Balaji Hotel) */
+  .hero-title {
+    color: #111 !important;     /* Dark Black */
+    text-shadow: none !important;
+  }
+
+  /* Table booking main heading */
+  .book_room h1,
+  h1.text-center {
+    color: #111 !important;    /* Dark text for better visibility */
+  }
+
+  /* If subtitle is becoming white */
+  .hero-subtitle {
+    color: #222 !important;
+  }
+
+  /* If any text in table booking white ho raha ho */
+  .book_room, 
+  .book_room label,
+  .book_room p,
+  .book_room .form-group label {
+    color: #222 !important;
+  }
+}
+
+
 </style>

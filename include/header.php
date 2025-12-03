@@ -18,6 +18,8 @@
           <ul class="dropdown-menu">
             <li><a href="tourist-place.php">All Tourist Places</a></li>
             <li><a href="tadoba-tiger-reserve.php">Tadoba Safari Guide</a></li>
+            <li><a href="hari-balaji.php">Hari Balaji Temple</a></li>
+
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
@@ -42,18 +44,30 @@
       </div>
 
       <nav class="offcanvas-nav" aria-label="Mobile primary">
-        <ul>
-          <li class="off-item"><a href="index.php">Home</a></li>
-          <li class="off-item"><a href="about.php">About</a></li>
-          <li class="off-item"><a href="room.php">Our Rooms</a></li>
-          <li class="off-item"><a href="restaurant.php">Restaurant</a></li>
-          <li class="off-item"><a href="gallery.php">Gallery</a></li>
-          <li class="off-item"><a href="tourist_place.php">Tourist Places Chimur</a></li>
-          <li class="off-item" style="padding-left:24px;"><a href="tadoba-tiger-reserve.php" style="font-size:0.9rem;color:#666;">→ Tadoba Safari Guide</a></li>
-          <li class="off-item"><a href="blog.php">Blog</a></li>
-          <li class="off-item cta"><a href="contact.php">Contact Us</a></li>
-        </ul>
-      </nav>
+    <ul>
+        <li class="off-item"><a href="index.php">Home</a></li>
+        <li class="off-item"><a href="about.php">About</a></li>
+        <li class="off-item"><a href="room.php">Our Rooms</a></li>
+        <li class="off-item"><a href="restaurant.php">Restaurant</a></li>
+        <li class="off-item"><a href="gallery.php">Gallery</a></li>
+
+        <li class="off-item"><a href="tourist_place.php">Tourist Places Chimur</a></li>
+
+        <!-- Sub-items under Tourist Places -->
+        <li class="off-item" style="padding-left:24px;">
+            <a href="tadoba-tiger-reserve.php" style="font-size:0.9rem;color:#666;">→ Tadoba Safari Guide</a>
+        </li>
+
+        <!-- NEW: Hari Balaji Temple -->
+        <li class="off-item" style="padding-left:24px;">
+            <a href="hari-balaji.php" style="font-size:0.9rem;color:#666;">→ Hari Balaji Temple</a>
+        </li>
+
+        <li class="off-item"><a href="blog.php">Blog</a></li>
+        <li class="off-item cta"><a href="contact.php">Contact Us</a></li>
+    </ul>
+</nav>
+
     </div>
   </aside>
 
