@@ -203,7 +203,7 @@ start_session_secure(); // Start session before any output
       text-decoration:none;
       font-weight:600;
       margin-right:12px;
-      background:#8e3a02;       /* Solid color same as icon */
+      background:#8e3a02;       
       color:#fff;
       border:none;
    ">

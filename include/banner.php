@@ -636,36 +636,40 @@
   }
 }
 
-/* ============================
-   FIX HERO TITLE & TABLE BOOKING TEXT COLOR ON MOBILE
-   ============================ */
-@media(max-width: 768px) {
+/* ============================================
+   MOBILE FIXES FOR HERO TEXT COLORS ( <768px )
+   ============================================ */
+@media (max-width: 768px) {
 
-  /* Hero main heading (Welcome to Balaji Hotel) */
+  /* Hero main title on banner */
   .hero-title {
-    color: #111 !important;     /* Dark Black */
+    color: #111 !important;       /* Dark text for better visibility */
     text-shadow: none !important;
   }
 
-  /* Table booking main heading */
-  .book_room h1,
-  h1.text-center {
-    color: #111 !important;    /* Dark text for better visibility */
-  }
-
-  /* If subtitle is becoming white */
+  /* Hero subtitle */
   .hero-subtitle {
     color: #222 !important;
   }
 
-  /* If any text in table booking white ho raha ho */
-  .book_room, 
+  /* Buttons text fix (optional) */
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    font-weight: 600;
+  }
+
+  /* If table booking section exists below */
+  .book_room h1,
   .book_room label,
   .book_room p,
-  .book_room .form-group label {
-    color: #222 !important;
+  .book_room .form-group label,
+  h1.text-center {
+    color: #111 !important;
   }
+
 }
+
+
 
 
 </style>
