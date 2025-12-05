@@ -22,6 +22,7 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
   border: none;
   box-shadow: 0 20px 60px rgba(0,0,0,.3);
   overflow: hidden;
+  margin: 65px 0;
 }
 #bookingModal .modal-header {
   background: linear-gradient(135deg, #d35400 0%, #ff6b35 100%);
@@ -76,6 +77,7 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
   background: #f8f9fa;
   max-height: calc(100vh - 200px);
   overflow-y: auto;
+  height: 80% !important;
 }
 #bookingModal .form-section {
   background: #fff;
@@ -307,7 +309,7 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
     grid-template-columns: 1fr;
   }
   #bookingModal .modal-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   #bookingModal .section-title {
     font-size: 1.1rem;
@@ -530,141 +532,124 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
     </div>
   </div>
 </div>
-
 <script>
-(function(){
-  // Guest counter function
-  function changeGuestCount(id, delta) {
-    var input = document.getElementById(id);
-    if (!input) return;
-    var current = parseInt(input.value) || 0;
-    var min = id === 'bm_adults' ? 1 : 0;
-    var newValue = Math.max(min, current + delta);
-    input.value = newValue;
-  }
-  window.changeGuestCount = changeGuestCount;
-
-  // Open modal function
-  function openModalFor(roomId) {
-    var sel = document.getElementById('bm_room');
-    if (sel && roomId) {
-      sel.value = String(roomId);
-      // Trigger change to update any dependent fields
-      var event = new Event('change', { bubbles: true });
-      sel.dispatchEvent(event);
+  (function(){
+    // Guest counter function
+    function changeGuestCount(id, delta) {
+      var input = document.getElementById(id);
+      if (!input) return;
+      var current = parseInt(input.value) || 0;
+      var min = id === 'bm_adults' ? 1 : 0;
+      var newValue = Math.max(min, current + delta);
+      input.value = newValue;
     }
-    
-    // Open modal using Bootstrap or fallback
-    if (window.jQuery && typeof jQuery.fn.modal === 'function') {
-      jQuery('#bookingModal').modal('show');
-    } else {
-      var el = document.getElementById('bookingModal');
-      if (el) {
-        el.style.display = 'block';
-        el.classList.add('show');
-        document.body.classList.add('modal-open');
-        // Add backdrop
-        var backdrop = document.createElement('div');
-        backdrop.className = 'modal-backdrop fade show';
-        backdrop.id = 'modalBackdrop';
-        document.body.appendChild(backdrop);
-        backdrop.addEventListener('click', function() {
+    window.changeGuestCount = changeGuestCount;
+
+    // Open modal function with room selection
+    function openBookingModal(btn) {
+      const roomId = btn.getAttribute("data-room-id");
+
+      // Open modal using Bootstrap
+      $('#bookingModal').modal('show');
+
+      // When modal is fully shown, set the room dropdown
+      $('#bookingModal').off('shown.bs.modal').on('shown.bs.modal', function () {
+        const select = document.getElementById("bm_room");
+        if (select && roomId) {
+          select.value = roomId;       
+          select.dispatchEvent(new Event("change")); 
+        }
+      });
+    }
+    window.openBookingModal = openBookingModal;
+
+    // Close modal function
+    function closeModal() {
+      if (window.jQuery && typeof jQuery.fn.modal === 'function') {
+        jQuery('#bookingModal').modal('hide');
+      } else {
+        var el = document.getElementById('bookingModal');
+        if (el) {
+          el.style.display = 'none';
+          el.classList.remove('show');
+          document.body.classList.remove('modal-open');
+          var backdrop = document.getElementById('modalBackdrop');
+          if (backdrop) backdrop.remove();
+        }
+      }
+    }
+    window.closeBookingModal = closeModal;
+
+    // Handle clicks on data-book-room elements
+    document.addEventListener('click', function(e) {
+      var t = e.target.closest('[data-book-room]');
+      if (t) {
+        e.preventDefault();
+        openBookingModal(t);
+      }
+    });
+
+    // Close button handlers
+    var closeBtn = document.querySelector('#bookingModal .close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Update QR code when amount changes
+    var amount = document.getElementById('bm_amount');
+    var qr = document.getElementById('bm_qr');
+    if (amount && qr) {
+      amount.addEventListener('input', function() {
+        var v = parseFloat(this.value || '500');
+        if (isNaN(v) || v < 500) v = 500;
+        this.value = v;
+        <?php if ($upiId): ?>
+        try {
+          var base = 'upi://pay?pa=<?php echo rawurlencode($upiId); ?>&pn=<?php echo rawurlencode($upiName); ?>&cu=INR&tn=Advance%20payment&am=';
+          qr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(base + v.toFixed(2));
+        } catch(err) {
+          console.error('QR update error:', err);
+        }
+        <?php endif; ?>
+      });
+    }
+
+    // Form validation
+    var form = document.getElementById('bookingForm');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        var roomSelected = document.getElementById('bm_room').value;
+        var paymentRef = document.getElementById('bm_ref').value;
+
+        if (!roomSelected) {
+          e.preventDefault();
+          alert('कृपया एक कमरा चुनें (Please select a room)');
+          return false;
+        }
+
+        if (!paymentRef || paymentRef.trim() === '') {
+          e.preventDefault();
+          alert('कृपया भुगतान संदर्भ संख्या दर्ज करें (Please enter payment reference number)');
+          return false;
+        }
+
+        // Show loading state
+        var submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
+        }
+      });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        var modal = document.getElementById('bookingModal');
+        if (modal && modal.classList.contains('show')) {
           closeModal();
-        });
-      }
-    }
-  }
-
-  // Close modal function
-  function closeModal() {
-    if (window.jQuery && typeof jQuery.fn.modal === 'function') {
-      jQuery('#bookingModal').modal('hide');
-    } else {
-      var el = document.getElementById('bookingModal');
-      if (el) {
-        el.style.display = 'none';
-        el.classList.remove('show');
-        document.body.classList.remove('modal-open');
-        var backdrop = document.getElementById('modalBackdrop');
-        if (backdrop) backdrop.remove();
-      }
-    }
-  }
-
-  window.openBookingModal = openModalFor;
-  window.closeBookingModal = closeModal;
-
-  // Handle clicks on data-book-room elements
-  document.addEventListener('click', function(e) {
-    var t = e.target.closest('[data-book-room]');
-    if (t) {
-      e.preventDefault();
-      var roomId = t.getAttribute('data-room') || null;
-      openModalFor(roomId);
-    }
-  });
-
-  // Close button handlers
-  var closeBtn = document.querySelector('#bookingModal .close');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
-
-  // Update QR code when amount changes
-  var amount = document.getElementById('bm_amount');
-  var qr = document.getElementById('bm_qr');
-  if (amount && qr) {
-    amount.addEventListener('input', function() {
-      var v = parseFloat(this.value || '500');
-      if (isNaN(v) || v < 500) v = 500;
-      this.value = v;
-      <?php if ($upiId): ?>
-      try {
-        var base = 'upi://pay?pa=<?php echo rawurlencode($upiId); ?>&pn=<?php echo rawurlencode($upiName); ?>&cu=INR&tn=Advance%20payment&am=';
-        qr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(base + v.toFixed(2));
-      } catch(err) {
-        console.error('QR update error:', err);
-      }
-      <?php endif; ?>
-    });
-  }
-
-  // Form validation
-  var form = document.getElementById('bookingForm');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      var roomSelected = document.getElementById('bm_room').value;
-      var paymentRef = document.getElementById('bm_ref').value;
-
-      if (!roomSelected) {
-        e.preventDefault();
-        alert('कृपया एक कमरा चुनें (Please select a room)');
-        return false;
-      }
-
-      if (!paymentRef || paymentRef.trim() === '') {
-        e.preventDefault();
-        alert('कृपया भुगतान संदर्भ संख्या दर्ज करें (Please enter payment reference number)');
-        return false;
-      }
-
-      // Show loading state
-      var submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
+        }
       }
     });
-  }
-
-  // Close on Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      var modal = document.getElementById('bookingModal');
-      if (modal && modal.classList.contains('show')) {
-        closeModal();
-      }
-    }
-  });
-})();
+  })();
 </script>

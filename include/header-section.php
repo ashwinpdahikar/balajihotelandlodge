@@ -48,7 +48,9 @@ if (strpos($og_image, 'http') !== 0) {
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
+      <?php if (file_exists(__DIR__ . '/../images/fevicon.png')): ?>
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <?php endif; ?>
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
