@@ -9,15 +9,16 @@
 
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="images/banner1.jpg" alt="Slide 1" />
+        <img class="d-block w-100" src="images/banner.png" alt="Slide 1" />
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="images/talobaimage1.jpeg" alt="Slide 2" />
+        <img class="d-block w-100" src="images/banner1.png" alt="Slide 2" />
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="images/banner3.jpg" alt="Slide 3" />
+        <img class="d-block w-100" src="images/tadoba1.png" alt="Slide 3" />
       </div>
     </div>
+
 
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
@@ -361,7 +362,13 @@
 .carousel-item {
   transition: transform 1.1s ease-in-out, opacity 1s ease-in-out;
 }
-
+.carousel-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* overlay color */
+  pointer-events: none;
+}
 .hero-overlay {
   position: absolute !important;
   top: 0;
@@ -399,7 +406,7 @@
 }
 
 .hero-cta-buttons {
-  display: flex;
+  /* display: flex; */
   gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
