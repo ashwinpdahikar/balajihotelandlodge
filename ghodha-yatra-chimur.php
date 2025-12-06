@@ -585,15 +585,16 @@
              style="width:450px; height:300px; object-fit:cover; border-radius:10px;">
         <div class="about-text">
             <p>
-                Hari Balaji Temple is a peaceful and spiritual destination dedicated to Lord Balaji. 
-                Devotees visit this place to experience divine blessings, calm environment, and positive energy.
+                Ghoda Yatra in Chimur is an ancient festival centered around the old Shri Hari Balaji Temple. According to tradition, a wooden horse chariot carrying the idol of Lord Balaji is taken in a grand night-long procession through Chimur town. The festival begins around Magh (as per the Hindu calendar) and continues for about 15 days, culminating on Maha Shivratri.
+ABP Majha
++2
+Maharashtra Times
++2
+ Over the generations, this yatra has become a symbol of devotion, unity and cultural heritage for the people of Vidarbha.
             </p>
             <p>
-                Situated in a serene location, this temple offers a wonderful devotional atmosphere.
-                "Hari Balaji Temple" often refers to the famous Tirumala Venkateswara Temple (Balaji Temple) in Tirupati, Andhra Pradesh, a major pilgrimage site dedicated to Lord Venkateswara (Balaji/Hari). However, "Hari Balaji" can also refer to other local shrines, like the Shri Hari Balaji Devsthan in Chimur, Chandrapur, Maharashtra, dedicated to Lord Balaji, showing it's a common name for temples honoring this form of Vishnu. The most prominent is Tirupati, known for rituals like hair donation, while local ones serve regional communities.
-                Tirumala Venkateswara Temple (Tirupati, AP): The most famous, a major Hindu pilgrimage center under the Tirumala Tirupati Devasthanams (TTD).
-Shri Hari Balaji Devsthan (Chimur, Chandrapur, MH): A well-regarded local temple in Maharashtra.
-Mehandipur Balaji Temple (Dausa, Rajasthan): Though dedicated to Hanuman (Balaji), it's famous for exorcism and healing, attracting many devotees. 
+                Beyond religion, Ghoda Yatra is also a vibrant community event. Thousands of devotees and visitors from nearby districts gather to participate in the procession, prayers, and fair.
+ The streets come alive with energy, faith, and social interactions — for many, visiting Chimur during Ghoda Yatra becomes a pilgrimage of togetherness, faith, and tradition. 
             </p>
         </div>
     </div>
