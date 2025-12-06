@@ -611,11 +611,11 @@
   .book_now input,
   .book_now select { font-size: 0.92rem !important; padding: 10px !important; }
 
-  /* Table booking headings */
+ 
   .book_room h1,
   h1.text-center { color: #111 !important; font-size: 1.4rem !important; }
 
-  /* Text colors */
+
   .book_room, 
   .book_room label,
   .book_room p,
@@ -624,4 +624,17 @@
   /* Marquee */
   marquee { font-size: 0.85rem !important; }
 }
+
+@media (max-width: 768px) {
+  .hero-cta-buttons {
+    text-align: center;       
+  }
+
+  .hero-cta-buttons .btn-hero {
+    display: inline-block;    
+    width: 80%;               
+    margin: 8px auto;         
+  }
+}
+
 </style>

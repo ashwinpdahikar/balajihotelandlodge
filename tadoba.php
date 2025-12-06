@@ -613,7 +613,7 @@ $breadcrumb_data = json_encode([
               <i class="fa fa-whatsapp"></i> WhatsApp
             </a>
             <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($canonical_url); ?>&text=<?php echo urlencode($page_title); ?>" target="_blank" rel="noopener" class="share-btn twitter" title="Share on Twitter">
-              <i class="fa fa-twitter"></i> Twitter
+              <i class="fa fa-twitter"></i> Intsagram
             </a>
             <a href="mailto:?subject=<?php echo urlencode($page_title); ?>&body=<?php echo urlencode($canonical_url); ?>" class="share-btn email" title="Share via Email">
               <i class="fa fa-envelope"></i> Email

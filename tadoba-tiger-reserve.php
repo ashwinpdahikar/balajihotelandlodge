@@ -9,7 +9,8 @@ $host             = $_SERVER['HTTP_HOST'] ?? 'localhost';
 $basePath         = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '')), '/');
 $basePath         = $basePath === '.' ? '' : $basePath;
 $canonical_url    = $scheme . '://' . $host . $basePath . '/tadoba-tiger-reserve.php';
-$og_image         = $scheme . '://' . $host . $basePath . '/images/tadoba.png';
+$og_image         = $scheme . '://' . $host . $basePath . '/images/
+ng';
 
 $safari_gates = [
     [
@@ -301,8 +302,47 @@ $breadcrumb_data = json_encode([
       .share-btn:hover{transform:translateY(-3px);opacity:.9;}
       .share-btn.facebook{background:#1877f2;}
       .share-btn.whatsapp{background:#25d366;}
-      .share-btn.twitter{background:#1da1f2;}
+.share-btn.instagram{
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 24px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.share-btn.instagram:hover {
+    opacity: 0.85;
+}
       .share-btn.email{background:#d35400;}
+      /* Mobile View: Make all share buttons similar */
+@media (max-width: 768px) {
+
+  .share-btn {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 26px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* spacing between buttons */
+    text-align: center;
+  }
+
+  /* Remove inline-flex gaps for uniform look */
+  .share-btn.instagram {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 
       /* CTA Section */
       .cta-section{background:linear-gradient(135deg,#d35400,#ff6b35);color:#fff;padding:80px 0;margin:60px 0;}
@@ -348,6 +388,146 @@ $breadcrumb_data = json_encode([
         .tour-card .card-footer{flex-direction:column;}
         .tour-card .card-footer .btn{width:100%;justify-content:center;}
       }
+
+      .new-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 30px;
+}
+
+.new-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+}
+
+.new-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* image box */
+.new-img-box {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.new-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tag-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #8e3a02;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.new-content {
+  padding: 20px;
+}
+
+.new-content h3 {
+  margin-bottom: 8px;
+  color: #2c2c2c;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.summary {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.highlight-list {
+  list-style: none;
+  padding: 0;
+}
+
+.highlight-list li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.highlight-list i {
+  color: #8e3a02;
+  margin-right: 6px;
+}
+
+/* footer */
+.new-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.map-btn {
+  background: #f5f5f5;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.map-btn:hover {
+  background: #e8e8e8;
+}
+
+.primary-btn {
+  background: #8e3a02;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background: #722f02;
+}
+
+
+
+.details-box img {
+  width:100%;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+.room-sold-out-badge {
+  background:#dc3545; 
+  color:#fff; 
+  padding:6px 12px; 
+  font-weight:700; 
+  border-radius:5px;
+}
+
     </style>
     <main>
       <div class="back_re">
@@ -366,80 +546,103 @@ $breadcrumb_data = json_encode([
             </div>
          </div>
       </div>
+<section class="tour-grid container new-safari-section">
+  <header class="section-head">
+    <span class="eyebrow">Safari Entry Gates</span>
+    <h2>Tadoba Safari Gates & Entry Points</h2>
+    <p>Choose the right gate based on your preferences, distance, and safari type.</p>
+  </header>
 
-      <section class="tour-grid container">
-        <header class="section-head">
-          <span class="eyebrow">Safari Entry Gates</span>
-          <h2>Tadoba Safari Gates & Entry Points</h2>
-          <p>Choose the right gate based on your preferences, distance, and safari type. We help you book permits and arrange transportation.</p>
-        </header>
-        <div class="grid">
-          <?php foreach ($safari_gates as $index => $gate): ?>
-          <article class="tour-card" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
-            <figure>
-              <img src="<?php echo h($gate['image']); ?>" alt="<?php echo h($gate['name']); ?> - <?php echo h($gate['tag']); ?>" loading="lazy">
-              <figcaption><?php echo h($gate['tag']); ?></figcaption>
-              <div class="card-overlay">
-                <a href="<?php echo h($gate['map_url']); ?>" target="_blank" rel="noopener" class="overlay-btn" title="View on Map">
-                  <i class="fa fa-map-marker"></i>
-                </a>
-              </div>
-            </figure>
-            <div class="card-body">
-              <div class="meta">
-                <span class="meta-item"><i class="fa fa-road"></i> <?php echo h($gate['distance']); ?></span>
-                <span class="meta-item"><i class="fa fa-clock-o"></i> <?php echo h($gate['best_time']); ?></span>
-              </div>
-              <h3><?php echo h($gate['name']); ?></h3>
-              <p><?php echo h($gate['summary']); ?></p>
-              <ul class="highlights">
-                <?php foreach ($gate['highlights'] as $tip): ?>
-                <li><i class="fa fa-star"></i> <?php echo h($tip); ?></li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-            <div class="card-footer">
-              <a class="btn-link" href="<?php echo h($gate['map_url']); ?>" target="_blank" rel="noopener">
-                <i class="fa fa-map-marker"></i> View Location
-              </a>
-              <a class="btn primary small" href="book_room.php" data-book-room>
-                <i class="fa fa-calendar"></i> Book Safari Stay
-              </a>
-            </div>
-          </article>
-          <?php endforeach; ?>
+  <div class="new-grid">
+    <?php foreach ($safari_gates as $index => $gate): ?>
+    <article class="new-card" data-aos="fade-up" data-aos-delay="<?php echo $index * 120; ?>">
+
+      <!-- image section -->
+      <div class="new-img-box">
+        <img src="<?php echo h($gate['image']); ?>" alt="<?php echo h($gate['name']); ?>">
+        <span class="tag-badge"><?php echo h($gate['tag']); ?></span>
+      </div>
+
+      <!-- content -->
+      <div class="new-content">
+        <h3><?php echo h($gate['name']); ?></h3>
+
+        <div class="meta-row">
+          <span><i class="fa fa-road"></i> <?php echo h($gate['distance']); ?></span>
+          <span><i class="fa fa-clock-o"></i> <?php echo h($gate['best_time']); ?></span>
         </div>
-      </section>
+
+        <p class="summary"><?php echo h($gate['summary']); ?></p>
+
+        <ul class="highlight-list">
+          <?php foreach ($gate['highlights'] as $tip): ?>
+          <li><i class="fa fa-check-circle"></i> <?php echo h($tip); ?></li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+
+      <!-- footer buttons -->
+      <div class="new-footer">
+        <a href="<?php echo h($gate['map_url']); ?>" target="_blank" class="map-btn">
+          <i class="fa fa-map-marker"></i> Location
+        </a>
+
+        <a class="primary-btn" href="book_room.php" data-book-room>
+          <i class="fa fa-calendar"></i> Safari Stay
+        </a>
+      </div>
+    </article>
+    <?php endforeach; ?>
+  </div>
+</section>
+
 
       <section class="itinerary">
-        <div class="container itinerary-inner">
-          <div class="itinerary-header">
-            <span class="eyebrow">Safari Packages</span>
-            <h2>Complete Tadoba Safari Experience</h2>
-            <p>From permit booking to transportation, we handle everything for your perfect Tadoba safari adventure. Stay with us and focus on wildlife.</p>
-          </div>
-          <div class="itinerary-cards">
-            <article class="itinerary-card">
-              <div class="itinerary-icon"><i class="fa fa-sun-o"></i></div>
-              <h3>Morning Safari Package</h3>
-              <p>Early morning 6 AM safari with packed breakfast. Wake-up call at 4:30 AM, transportation arranged, and return to hotel by 10 AM for brunch.</p>
-              <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
-            </article>
-            <article class="itinerary-card">
-              <div class="itinerary-icon"><i class="fa fa-moon-o"></i></div>
-              <h3>Evening Safari Package</h3>
-              <p>Afternoon 3 PM safari with golden hour photography. Leave hotel at 2 PM, enjoy 3-hour safari, return by 6:30 PM for dinner.</p>
-              <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
-            </article>
-            <article class="itinerary-card">
-              <div class="itinerary-icon"><i class="fa fa-camera"></i></div>
-              <h3>Full Day Safari</h3>
-              <p>Morning + Evening safaris with lunch break. Perfect for photographers and wildlife enthusiasts. Maximum wildlife viewing opportunities.</p>
-              <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
-            </article>
-          </div>
-        </div>
-      </section>
+  <div class="container itinerary-inner">
+    <div class="itinerary-header">
+      <span class="eyebrow">Safari Packages</span>
+      <h2>Complete Tadoba Safari Experience</h2>
+      <p>From permit booking to transportation, we handle everything for your perfect Tadoba safari adventure. Stay with us and focus on wildlife.</p>
+    </div>
+
+    <div class="itinerary-cards">
+
+      <!-- Card 1 -->
+      <article class="itinerary-card">
+        <div class="itinerary-icon"><i class="fa fa-sun-o"></i></div>
+        <h3>Morning Safari Package</h3>
+        <p>Early morning 6 AM safari with packed breakfast. Wake-up call at 4:30 AM, transportation arranged, and return to hotel by 10 AM for brunch.</p>
+        <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="itinerary-card">
+        <div class="itinerary-icon"><i class="fa fa-moon-o"></i></div>
+        <h3>Evening Safari Package</h3>
+        <p>Afternoon 3 PM safari with golden hour photography. Leave hotel at 2 PM, enjoy 3-hour safari, return by 6:30 PM for dinner.</p>
+        <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="itinerary-card">
+        <div class="itinerary-icon"><i class="fa fa-camera"></i></div>
+        <h3>Full Day Safari</h3>
+        <p>Morning + Evening safaris with lunch break. Perfect for photographers and wildlife enthusiasts. Maximum wildlife viewing opportunities.</p>
+        <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
+      </article>
+
+      <!-- ⭐ New 4th Card -->
+      <article class="itinerary-card">
+        <div class="itinerary-icon"><i class="fa fa-binoculars"></i></div>
+        <h3>Special Tiger Tracking Tour</h3>
+        <p>Exclusive guided experience with expert naturalists. Focused tiger tracking, movement prediction, and premium wildlife spotting routes.</p>
+        <a href="book_room.php" class="itinerary-link">Book Now <i class="fa fa-arrow-right"></i></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
       <section class="stay-benefits container">
         <header class="section-head">
@@ -482,72 +685,96 @@ $breadcrumb_data = json_encode([
       </section>
 
       <section class="rooms container">
-        <header class="section-head">
-          <span class="eyebrow">Pick Your Room</span>
-          <h2>Comfortable Stay for Safari Guests</h2>
-          <p>Choose a room and mention "Tadoba Safari" while booking to get safari package assistance and early check-in.</p>
-        </header>
-        <div class="room-grid">
-          <?php 
-          $pdo = get_pdo();
-          foreach ($rooms as $room): 
-            // Check availability for each room
-            $approvedCount = $pdo->prepare('SELECT COUNT(*) FROM booking_inquiries WHERE room_id = ? AND status = ?');
-            $approvedCount->execute([(int)$room['id'], 'approved']);
-            $approvedBookings = (int)$approvedCount->fetchColumn();
-            $quantity = isset($room['quantity']) && $room['quantity'] !== null ? (int)$room['quantity'] : 1;
-            $available = max(0, $quantity - $approvedBookings);
-            $isSoldOut = $available <= 0;
-          ?>
-          <article class="room-card" <?php if ($isSoldOut): ?>style="opacity: 0.7;"<?php endif; ?>>
-            <div class="room-image-wrapper">
-              <img src="<?php echo h($room['image_path'] ?? 'images/room1.jpg'); ?>" alt="<?php echo h($room['title']); ?> - Balaji Hotel" loading="lazy">
-              <?php if ($isSoldOut): ?>
-              <div class="room-sold-out-badge" style="position: absolute; top: 10px; right: 10px; background: #dc3545; color: #fff; padding: 5px 12px; border-radius: 4px; font-weight: 600; font-size: 12px; z-index: 2;">
-                <i class="fa fa-times-circle"></i> Sold Out
-              </div>
-              <?php endif; ?>
-              <div class="room-overlay">
-                <?php if (!$isSoldOut): ?>
-                <a href="book_room.php?room_id=<?php echo (int)$room['id']; ?>" class="room-view-btn">View Details</a>
-                <?php else: ?>
-                <div class="room-view-btn" style="cursor: not-allowed; opacity: 0.8;">Sold Out</div>
-                <?php endif; ?>
-              </div>
-            </div>
-            <div class="room-content">
-              <h3>
-                <?php echo h($room['title']); ?>
-                <?php if ($isSoldOut): ?>
-                  <span style="color: #dc3545; font-size: 12px; font-weight: 600;">
-                    <i class="fa fa-ban"></i> Sold Out
-                  </span>
-                <?php elseif ($available < $quantity): ?>
-                  <span style="color: #28a745; font-size: 12px; font-weight: 600;">
-                    <i class="fa fa-check-circle"></i> Available (<?php echo $available; ?>)
-                  </span>
-                <?php endif; ?>
-              </h3>
-              <?php if (!empty($room['description'])): ?>
-              <p><?php echo h(mb_substr($room['description'], 0, 120)); ?><?php echo mb_strlen($room['description']) > 120 ? '...' : ''; ?></p>
-              <?php endif; ?>
-              <?php if (!$isSoldOut): ?>
-              <a class="btn primary" href="book_room.php?room_id=<?php echo (int)$room['id']; ?>">
-                <i class="fa fa-calendar-check"></i> Check Availability
-              </a>
-              <?php else: ?>
-              <a class="btn primary" href="#" style="background: #6c757d; cursor: not-allowed; pointer-events: none;" onclick="return false;">
-                <i class="fa fa-ban"></i> Sold Out
-              </a>
-              <?php endif; ?>
-            </div>
-          </article>
-          <?php endforeach; ?>
+
+  <header class="section-head">
+    <span class="eyebrow">Pick Your Room</span>
+    <h2>Comfortable Stay for Safari Guests</h2>
+    <p>Choose a room and mention "Tadoba Safari" while booking to get safari package assistance and early check-in.</p>
+  </header>
+
+  <div class="room-grid">
+    <?php 
+    $pdo = get_pdo();
+    foreach ($rooms as $room): 
+
+      // Check availability
+      $approved = $pdo->prepare('SELECT COUNT(*) FROM booking_inquiries WHERE room_id = ? AND status = ?');
+      $approved->execute([(int)$room['id'], 'approved']);
+      $approvedBookings = (int)$approved->fetchColumn();
+
+      $quantity = isset($room['quantity']) ? (int)$room['quantity'] : 1;
+      $available = max(0, $quantity - $approvedBookings);
+      $isSoldOut = $available <= 0;
+    ?>
+
+    <article class="room-card" <?php if ($isSoldOut): ?>style="opacity: 0.7;"<?php endif; ?>>
+      
+      <!-- IMAGE BLOCK -->
+      <div class="room-image-wrapper">
+        <img src="<?php echo h($room['image_path'] ?? 'images/room1.jpg'); ?>" 
+             alt="<?php echo h($room['title']); ?>" loading="lazy">
+
+        <!-- SOLD OUT BADGE -->
+        <?php if ($isSoldOut): ?>
+        <div class="room-sold-out-badge">Sold Out</div>
+        <?php endif; ?>
+
+        <!-- VIEW DETAILS OVERLAY -->
+        <div class="room-overlay">
+          <?php if (!$isSoldOut): ?>
+          <button class="room-view-btn" 
+                  onclick="openRoomDetails(`<?php echo h(addslashes($room['title'])); ?>`, `<?php echo h(addslashes($room['description'])); ?>`, `<?php echo h($room['image_path']); ?>`)">
+            View Details
+          </button>
+          <?php else: ?>
+          <div class="room-view-btn" style="cursor:not-allowed;">Sold Out</div>
+          <?php endif; ?>
         </div>
-        <div class="room-cta">
-          <a href="room.php" class="btn ghost">View All Rooms <i class="fa fa-arrow-right"></i></a>
-        </div>
-      </section>
+      </div>
+
+      <!-- ROOM CONTENT -->
+      <div class="room-content">
+        <h3>
+          <?php echo h($room['title']); ?>
+          <?php if ($isSoldOut): ?>
+            <span class="sold-out-text">Sold Out</span>
+          <?php elseif ($available < $quantity): ?>
+            <span class="available-text">Available (<?php echo $available; ?>)</span>
+          <?php endif; ?>
+        </h3>
+
+        <?php if (!empty($room['description'])): ?>
+        <p><?php echo h(mb_substr($room['description'], 0, 120)); ?>...</p>
+        <?php endif; ?>
+
+        <!-- CHECK AVAILABILITY = OPEN POPUP -->
+        <?php if (!$isSoldOut): ?>
+        <button class="btn primary"
+        onclick="window.location.href='room.php?room_id=<?php echo (int)$room['id']; ?>'">
+  Check Availability
+</button>
+
+        <?php else: ?>
+        <button class="btn primary" disabled style="background:#777;">
+          Sold Out
+        </button>
+        <?php endif; ?>
+      </div>
+
+    </article>
+
+    <?php endforeach; ?>
+  </div>
+
+  <div class="room-cta">
+    <a href="room.php" class="btn ghost">View All Rooms <i class="fa fa-arrow-right"></i></a>
+  </div>
+
+</section>
+
+
+
+
 
       <section class="faq container">
         <header class="section-head">
@@ -612,9 +839,14 @@ $breadcrumb_data = json_encode([
             <a href="https://wa.me/?text=<?php echo urlencode($page_title . ' - ' . $canonical_url); ?>" target="_blank" rel="noopener" class="share-btn whatsapp" title="Share on WhatsApp">
               <i class="fa fa-whatsapp"></i> WhatsApp
             </a>
-            <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($canonical_url); ?>&text=<?php echo urlencode($page_title); ?>" target="_blank" rel="noopener" class="share-btn twitter" title="Share on Twitter">
-              <i class="fa fa-twitter"></i> Twitter
-            </a>
+            <a href="https://www.instagram.com/" 
+   target="_blank" 
+   rel="noopener" 
+   class="share-btn instagram" 
+   title="Share on Instagram">
+    <i class="fa fa-instagram"></i> Instagram
+</a>
+
             <a href="mailto:?subject=<?php echo urlencode($page_title); ?>&body=<?php echo urlencode($canonical_url); ?>" class="share-btn email" title="Share via Email">
               <i class="fa fa-envelope"></i> Email
             </a>
@@ -640,6 +872,32 @@ $breadcrumb_data = json_encode([
     <?php include 'include/footer.php'; ?>
     <?php include 'include/footer-section.php'; ?>
 
+    <script>
+// OPEN BOOKING FORM
+function openBookingForm(id, title) {
+  document.getElementById('popupRoomId').value = id;
+  document.getElementById('popupRoomName').innerText = "Book – " + title;
+  document.getElementById('bookingPopup').classList.add('show');
+}
+
+// CLOSE BOOKING FORM
+function closeBookingForm() {
+  document.getElementById('bookingPopup').classList.remove('show');
+}
+
+// OPEN ROOM DETAILS VIEW
+function openRoomDetails(title, desc, img) {
+  document.getElementById('detailTitle').innerText = title;
+  document.getElementById('detailDescription').innerText = desc;
+  document.getElementById('detailImage').src = img;
+  document.getElementById('detailsPopup').classList.add('show');
+}
+
+// CLOSE DETAILS POPUP
+function closeDetailsPopup() {
+  document.getElementById('detailsPopup').classList.remove('show');
+}
+</script>
    
   </body>
 </html>
