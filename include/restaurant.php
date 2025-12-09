@@ -46,7 +46,7 @@ function get_menu_by_category($pdo, $category) {
             <div class="table-booking-card">
                <div class="row align-items-center">
                   <div class="col-lg-8 col-md-7">
-                     <h3><i class="fa fa-calendar"></i> Reserve Your Table</h3>
+                     <h3 class="title"><i class="fa fa-calendar"></i> Reserve Your Table</h3>
                      <p>Book a table in advance for a hassle-free dining experience. We accommodate groups of all sizes.</p>
                   </div>
                   <div class="col-lg-4 col-md-5 text-center">
