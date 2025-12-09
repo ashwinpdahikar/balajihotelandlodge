@@ -25,11 +25,11 @@
                      </ul>
                   </div>
                   <div class="col-md-4">
-                     <h3>News letter</h3>
-                     <form class="bottom_form">
+                     <h3>Follow Us </h3>
+                     <!-- <form class="bottom_form">
                         <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
                         <button class="sub_btn">subscribe</button>
-                     </form>
+                     </form> -->
                      <ul class="social_icon">
                         <li><a href="https://www.facebook.com/profile.php?id=61582915179431" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="https://wa.me/917350255026" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>

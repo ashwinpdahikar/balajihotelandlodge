@@ -23,7 +23,11 @@
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
-        <li class="nav-item cta"><a class="nav-link btn-cta" href="contact.php">Contact Us</a></li>
+<li class="nav-item cta">
+    <a class="nav-link btn-cta" href="contact.php" style="text-decoration: none; border-bottom: none; box-shadow: none;       
+    outline: none;">Contact Us</a>
+</li>
+
       </ul>
     </nav>
 
@@ -67,7 +71,11 @@
         </li>
 
         <li class="off-item"><a href="blog.php">Blog</a></li>
-        <li class="off-item cta"><a href="contact.php">Contact Us</a></li>
+<li class="nav-item cta">
+    <a class="nav-link btn-cta" href="contact.php" style="text-decoration: none; border-bottom: none;box-shadow: none;       
+    outline: none;">Contact Us</a>
+</li>
+
     </ul>
 </nav>
 

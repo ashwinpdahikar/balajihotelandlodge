@@ -1,4 +1,25 @@
   <?php require_once __DIR__ . '/functions.php'; $posts = list_blog_posts(3); ?>
+  <style>
+    .blog .blog_box {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .blog .blog_img {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+    .blog .blog_img figure {
+      margin: 0;
+      height: 100%;
+    }
+    .blog .blog_img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
   <div class="blog">
       <div class="container">
          <?php if (!isset($hide_section_title) || !$hide_section_title): ?>

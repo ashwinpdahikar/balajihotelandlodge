@@ -487,66 +487,7 @@ $breadcrumb_data = json_encode([
           <h2>Comfortable Stay for Safari Guests</h2>
           <p>Choose a room and mention "Tadoba Safari" while booking to get safari package assistance and early check-in.</p>
         </header>
-        <div class="room-grid">
-          <?php 
-          $pdo = get_pdo();
-          foreach ($rooms as $room): 
-            // Check availability for each room
-            $approvedCount = $pdo->prepare('SELECT COUNT(*) FROM booking_inquiries WHERE room_id = ? AND status = ?');
-            $approvedCount->execute([(int)$room['id'], 'approved']);
-            $approvedBookings = (int)$approvedCount->fetchColumn();
-            $quantity = isset($room['quantity']) && $room['quantity'] !== null ? (int)$room['quantity'] : 1;
-            $available = max(0, $quantity - $approvedBookings);
-            $isSoldOut = $available <= 0;
-          ?>
-          <article class="room-card" <?php if ($isSoldOut): ?>style="opacity: 0.7;"<?php endif; ?>>
-            <div class="room-image-wrapper">
-              <img src="<?php echo h($room['image_path'] ?? 'images/room1.jpg'); ?>" alt="<?php echo h($room['title']); ?> - Balaji Hotel" loading="lazy">
-              <?php if ($isSoldOut): ?>
-              <div class="room-sold-out-badge" style="position: absolute; top: 10px; right: 10px; background: #dc3545; color: #fff; padding: 5px 12px; border-radius: 4px; font-weight: 600; font-size: 12px; z-index: 2;">
-                <i class="fa fa-times-circle"></i> Sold Out
-              </div>
-              <?php endif; ?>
-              <div class="room-overlay">
-                <?php if (!$isSoldOut): ?>
-                <a href="book_room.php?room_id=<?php echo (int)$room['id']; ?>" class="room-view-btn">View Details</a>
-                <?php else: ?>
-                <div class="room-view-btn" style="cursor: not-allowed; opacity: 0.8;">Sold Out</div>
-                <?php endif; ?>
-              </div>
-            </div>
-            <div class="room-content">
-              <h3>
-                <?php echo h($room['title']); ?>
-                <?php if ($isSoldOut): ?>
-                  <span style="color: #dc3545; font-size: 12px; font-weight: 600;">
-                    <i class="fa fa-ban"></i> Sold Out
-                  </span>
-                <?php elseif ($available < $quantity): ?>
-                  <span style="color: #28a745; font-size: 12px; font-weight: 600;">
-                    <i class="fa fa-check-circle"></i> Available (<?php echo $available; ?>)
-                  </span>
-                <?php endif; ?>
-              </h3>
-              <?php if (!empty($room['description'])): ?>
-              <p><?php echo h(mb_substr($room['description'], 0, 120)); ?><?php echo mb_strlen($room['description']) > 120 ? '...' : ''; ?></p>
-              <?php endif; ?>
-              <?php if (!$isSoldOut): ?>
-              <a class="btn primary" href="book_room.php?room_id=<?php echo (int)$room['id']; ?>">
-                <i class="fa fa-calendar-check"></i> Check Availability
-              </a>
-              <?php else: ?>
-              <a class="btn primary" href="#" style="background: #6c757d; cursor: not-allowed; pointer-events: none;" onclick="return false;">
-                <i class="fa fa-ban"></i> Sold Out
-              </a>
-              <?php endif; ?>
-            </div>
-          </article>
-          <?php endforeach; ?>
-        </div>
-        <div class="room-cta">
-          <a href="room.php" class="btn ghost">View All Rooms <i class="fa fa-arrow-right"></i></a>
-        </div>
+       <?php include 'include/our_room.php'; ?>
       </section>
 
       <section class="faq container">

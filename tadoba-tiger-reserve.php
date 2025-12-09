@@ -263,7 +263,7 @@ $breadcrumb_data = json_encode([
       .benefit p{color:#666;line-height:1.7;margin:0;font-size:1rem;}
 
       /* Rooms Section */
-      .rooms{padding:80px 0;background:#fff;}
+      .rooms{padding:10px 0;background:#fff;}
       .room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-bottom:50px;}
       .room-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 35px rgba(0,0,0,.1);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;}
       .room-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.15);}
@@ -277,8 +277,9 @@ $breadcrumb_data = json_encode([
       .room-content{padding:24px;}
       .room-content h3{font-size:1.4rem;margin:0 0 12px;color:#2c3e50;font-weight:700;}
       .room-content p{color:#666;line-height:1.6;margin-bottom:20px;font-size:.95rem;}
-      .room-cta{text-align:center;margin-top:40px;}
+      .room-cta{text-align:center;}
 
+<<<<<<< HEAD
       //* FAQ Section */
 .faq {
     padding: 50px 0;
@@ -342,6 +343,20 @@ $breadcrumb_data = json_encode([
 .faq-content a:hover {
     text-decoration: underline;
 }
+=======
+      /* FAQ Section */
+      .faq{padding:10px 0;background:#f9f9f9;}
+      .faq-list{max-width:100%;margin:0 auto;}
+      .faq-list details{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:box-shadow .3s;}
+      .faq-list details:hover{box-shadow:0 6px 25px rgba(0,0,0,.1);}
+      .faq summary{cursor:pointer;font-weight:600;font-size:1.1rem;color:#2c3e50;display:flex;align-items:center;gap:12px;list-style:none;user-select:none;}
+      .faq summary::-webkit-details-marker{display:none;}
+      .faq summary::marker{display:none;}
+      .faq summary i{color:#d35400;font-size:1.2rem;}
+      .faq-content{padding:20px 0 0 32px;color:#555;line-height:1.8;}
+      .faq-content a{color:#d35400;text-decoration:none;}
+      .faq-content a:hover{text-decoration:underline;}
+>>>>>>> d05eb44dc05f98e160cf324f141bb69faf981e08
 
       /* Social Share */
       .social-share{padding:60px 0;background:#fff;border-top:1px solid #eee;border-bottom:1px solid #eee;}
@@ -737,90 +752,7 @@ $breadcrumb_data = json_encode([
 
       <section class="rooms container">
 
-  <header class="section-head">
-    <span class="eyebrow">Pick Your Room</span>
-    <h2>Comfortable Stay for Safari Guests</h2>
-    <p>Choose a room and mention "Tadoba Safari" while booking to get safari package assistance and early check-in.</p>
-  </header>
-
-  <div class="room-grid">
-    <?php 
-    $pdo = get_pdo();
-    foreach ($rooms as $room): 
-
-      // Check availability
-      $approved = $pdo->prepare('SELECT COUNT(*) FROM booking_inquiries WHERE room_id = ? AND status = ?');
-      $approved->execute([(int)$room['id'], 'approved']);
-      $approvedBookings = (int)$approved->fetchColumn();
-
-      $quantity = isset($room['quantity']) ? (int)$room['quantity'] : 1;
-      $available = max(0, $quantity - $approvedBookings);
-      $isSoldOut = $available <= 0;
-    ?>
-
-    <article class="room-card" <?php if ($isSoldOut): ?>style="opacity: 0.7;"<?php endif; ?>>
-      
-      <!-- IMAGE BLOCK -->
-      <div class="room-image-wrapper">
-        <img src="<?php echo h($room['image_path'] ?? 'images/room1.jpg'); ?>" 
-             alt="<?php echo h($room['title']); ?>" loading="lazy">
-
-        <!-- SOLD OUT BADGE -->
-        <?php if ($isSoldOut): ?>
-        <div class="room-sold-out-badge">Sold Out</div>
-        <?php endif; ?>
-
-        <!-- VIEW DETAILS OVERLAY -->
-        <div class="room-overlay">
-          <?php if (!$isSoldOut): ?>
-          <button class="room-view-btn" 
-                  onclick="openRoomDetails(`<?php echo h(addslashes($room['title'])); ?>`, `<?php echo h(addslashes($room['description'])); ?>`, `<?php echo h($room['image_path']); ?>`)">
-            View Details
-          </button>
-          <?php else: ?>
-          <div class="room-view-btn" style="cursor:not-allowed;">Sold Out</div>
-          <?php endif; ?>
-        </div>
-      </div>
-
-      <!-- ROOM CONTENT -->
-      <div class="room-content">
-        <h3>
-          <?php echo h($room['title']); ?>
-          <?php if ($isSoldOut): ?>
-            <span class="sold-out-text">Sold Out</span>
-          <?php elseif ($available < $quantity): ?>
-            <span class="available-text">Available (<?php echo $available; ?>)</span>
-          <?php endif; ?>
-        </h3>
-
-        <?php if (!empty($room['description'])): ?>
-        <p><?php echo h(mb_substr($room['description'], 0, 120)); ?>...</p>
-        <?php endif; ?>
-
-        <!-- CHECK AVAILABILITY = OPEN POPUP -->
-        <?php if (!$isSoldOut): ?>
-        <button class="btn primary"
-        onclick="window.location.href='room.php?room_id=<?php echo (int)$room['id']; ?>'">
-  Check Availability
-</button>
-
-        <?php else: ?>
-        <button class="btn primary" disabled style="background:#777;">
-          Sold Out
-        </button>
-        <?php endif; ?>
-      </div>
-
-    </article>
-
-    <?php endforeach; ?>
-  </div>
-
-  <div class="room-cta">
-    <a href="room.php" class="btn ghost">View All Rooms <i class="fa fa-arrow-right"></i></a>
-  </div>
-
+  <?php include 'include/our_room.php'; ?>
 </section>
 
 

@@ -620,6 +620,22 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
       form.addEventListener('submit', function(e) {
         var roomSelected = document.getElementById('bm_room').value;
         var paymentRef = document.getElementById('bm_ref').value;
+        var phoneInput = document.querySelector('input[name="phone"]');
+        var phoneValue = phoneInput ? phoneInput.value.trim() : '';
+        var phonePattern = /^[6-9][0-9]{9}$/;
+        var errorMsg = document.getElementById('phone-error-msg');
+
+        // Only digits allowed, no spaces, no alphabets, no special chars
+        if (!phonePattern.test(phoneValue)) {
+          e.preventDefault();
+          if (errorMsg && errorMsg.textContent) {
+            phoneInput.focus();
+            return false;
+          }
+          alert('सिर्फ सही 10-digit मोबाइल नंबर डालें (Only valid 10-digit mobile number starting with 6-9 is allowed)');
+          if (phoneInput) phoneInput.focus();
+          return false;
+        }
 
         if (!roomSelected) {
           e.preventDefault();
@@ -638,6 +654,36 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
+        }
+      });
+    }
+
+    // Prevent non-digit input in phone field
+    var phoneInput = document.querySelector('input[name="phone"]');
+    if (phoneInput) {
+      // Only create error message element if not already present
+      var errorMsg = document.getElementById('phone-error-msg');
+      if (!errorMsg) {
+        errorMsg = document.createElement('div');
+        errorMsg.style.color = 'red';
+        errorMsg.style.fontSize = '0.95em';
+        errorMsg.style.marginTop = '4px';
+        errorMsg.id = 'phone-error-msg';
+        phoneInput.parentNode.appendChild(errorMsg);
+      }
+
+      phoneInput.addEventListener('input', function(e) {
+        var cleaned = this.value.replace(/[^0-9]/g, '');
+        if (this.value !== cleaned) {
+          this.value = cleaned;
+        }
+        var val = this.value;
+        if (val.length > 0 && !/^[6-9]/.test(val)) {
+          errorMsg.textContent = 'Phone number should start from 6, 7, 8, or 9 only';
+        } else if (val.length === 10 && !/^[6-9][0-9]{9}$/.test(val)) {
+          errorMsg.textContent = 'Enter a valid 10-digit mobile number starting with 6-9';
+        } else {
+          errorMsg.textContent = '';
         }
       });
     }
