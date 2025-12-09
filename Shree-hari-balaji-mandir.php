@@ -15,550 +15,481 @@
             background:#f5f5f5;
         }
 
-/* ---------- Banner ---------- */
-.top-banner{
-    width: 100%;
-    height: 170px; 
-    background: 
-        linear-gradient(
-            rgba(169, 87, 10, 0.83),   /* Warm Orange */
-            rgba(138, 61, 2, 0.64)     /* Deep Brown */
-        ), 
-        url('images/balaji_img4.jpeg') no-repeat center center/cover;
+            /* ---------- Banner ---------- */
+            .top-banner{
+                width: 100%;
+                height: 170px; 
+                background: 
+                    linear-gradient(
+                        rgba(169, 87, 10, 0.83),   /* Warm Orange */
+                        rgba(138, 61, 2, 0.64)     /* Deep Brown */
+                    ), 
+                    url('images/balaji_img4.jpeg') no-repeat center center/cover;
 
-    display: flex;
-    flex-direction: column;      /* <-- FIX: title ke niche subtitle */
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
+                display: flex;
+                flex-direction: column;      /* <-- FIX: title ke niche subtitle */
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                font-size: 36px;
+                font-weight: bold;
+                text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+            }
 
-/* Main title */
-.main-title{
-    font-size: 36px;
-}
+            /* Main title */
+            .main-title{
+                font-size: 36px;
+            }
 
-/* Subtitle */
-.subtitle{
-    font-size: 18px;
-    margin-top: 5px;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: slideUp 1s ease-out forwards;
-}
+            /* Subtitle */
+            .subtitle{
+                font-size: 18px;
+                margin-top: 5px;
+                opacity: 0;
+                transform: translateY(10px);
+                animation: slideUp 1s ease-out forwards;
+            }
 
-/* Slide-up animation */
-@keyframes slideUp{
-    from{
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            /* Slide-up animation */
+            @keyframes slideUp{
+                from{
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-/* Responsive */
-@media(max-width:768px){
-    .main-title{ font-size: 26px; }
-    .subtitle{ font-size: 15px; }
-}
-/* ---------- Banner ---------- */
-.top-banner{
-    width: 100%;
-    height: 170px; 
-    background: 
-        linear-gradient(
-            rgba(169, 87, 10, 0.83),   /* Warm Orange */
-            rgba(138, 61, 2, 0.64)     /* Deep Brown */
-        ), 
-        url('images/balaji_img4.jpeg') no-repeat center center/cover;
+            /* Responsive */
+            @media(max-width:768px){
+                .main-title{ font-size: 26px; }
+                .subtitle{ font-size: 15px; }
+            }
+            /* ---------- Banner ---------- */
+            .top-banner{
+                width: 100%;
+                height: 170px; 
+                background: 
+                    linear-gradient(
+                        rgba(169, 87, 10, 0.83),   /* Warm Orange */
+                        rgba(138, 61, 2, 0.64)     /* Deep Brown */
+                    ), 
+                    url('images/balaji_img4.jpeg') no-repeat center center/cover;
 
-    display: flex;
-    flex-direction: column;      /* <-- FIX: title ke niche subtitle */
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
+                display: flex;
+                flex-direction: column;      /* <-- FIX: title ke niche subtitle */
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                font-size: 36px;
+                font-weight: bold;
+                text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+            }
 
-/* Main title */
-.main-title{
-    font-size: 36px;
-}
+            /* Main title */
+            .main-title{
+                font-size: 36px;
+            }
 
-/* Subtitle */
-.subtitle{
-    font-size: 18px;
-    margin-top: 5px;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: slideUp 1s ease-out forwards;
-}
+            /* Subtitle */
+            .subtitle{
+                font-size: 18px;
+                margin-top: 5px;
+                opacity: 0;
+                transform: translateY(10px);
+                animation: slideUp 1s ease-out forwards;
+            }
 
-/* Slide-up animation */
-@keyframes slideUp{
-    from{
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            /* Slide-up animation */
+            @keyframes slideUp{
+                from{
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-/* Responsive */
-@media(max-width:768px){
-    .main-title{ font-size: 26px; }
-    .subtitle{ font-size: 15px; }
-}
-
-
-
-        /* ---------- MAIN CONTAINER ---------- */
-        .section-box{
-    width:100%;
-    margin:20px 0;
-    padding:25px 40px;
-    background:white;
-    border-radius:0; 
-    box-shadow:none; 
-}
+            /* Responsive */
+            @media(max-width:768px){
+                .main-title{ font-size: 26px; }
+                .subtitle{ font-size: 15px; }
+            }
 
 
-        h2{
-            font-size:28px;
-            color:#8e3a02;
-            margin-bottom:15px;
-        }
 
-        p{
-            font-size:16px;
-            line-height:1.7;
-            color:#444;
-            
-        }
-
-        /* ---------- ABOUT SECTION ---------- */
-        .about-section{
-            display:flex;
-            flex-wrap:wrap;
-            gap:25px;
-            align-items:flex-start;
-            width: 100%;
-        }
-
-        .about-section img{
-            width:45%;
-            min-width:280px;
-            border-radius:10px;
-            border:3px solid #8e3a02;
-            flex-shrink: 0;
-        }
-
-        .about-text{
-            width:50%;
-            min-width:280px;
-            flex: 1;
-            margin-right: 0;
-        }
-        .about-text p {
-    margin-bottom: 12px;
-    line-height: 1.7;
-    
-}
-
-        /* ---------- Gallery ---------- */
-        .gallery{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:15px;
-            margin-top:25px;
-        }
-
-        .gallery img{
-            width:100%;
-            height:180px;
-            object-fit:cover;
-            border-radius:8px;
-            border:2px solid #8e3a02;
-        }
-
-        /* ---------- NEW SECTION STYLES ---------- */
-
-        .timing-box{
-            display:flex;
-            flex-wrap:wrap;
-            gap:20px;
-        }
-
-        .time-card{
-            flex:1 1 calc(50% - 20px);
-            background:#f9f2ed;
-            border-left:4px solid #8e3a02;
-            padding:18px;
-            border-radius:8px;
-        }
-
-        .testimonial-box{
-            display:flex;
-            flex-direction:column;
-            gap:15px;
-        }
-
-        .testimonial{
-            background:#fff7e9;
-            padding:15px;
-            border-radius:8px;
-            border-left:4px solid #8e3a02;
-        }
-
-        .nearby-list a{
-            text-decoration:none;
-            color:#8e3a02;
-            font-weight:bold;
-        }
-
-        /* ---------- MAP ---------- */
-        .map-box iframe{
-            width:100%;
-            height:350px;
-            border:0;
-            border-radius:10px;
-        }
-
-        .bottom-space{
-            height:40px;
-        }
-
-        /* ---------- OUR ROOMS ---------- */
-        .our_room .row{
-            display:flex;
-            flex-wrap:wrap;
-            gap:20px;
-            margin-top:20px;
-        }
-
-        .room_card{
-            background:#fff;
-            padding:15px;
-            border-radius:10px;
-            box-shadow:0 4px 10px rgba(0,0,0,0.1);
-            text-align:center;
-            flex:1 1 calc(33.333% - 20px);
-        }
-
-        .room_img{
-            width:100%;
-            height:230px;
-            object-fit:cover;
-            border-radius:10px;
-        }
-
-        .room_title{
-            font-size:20px;
-            margin-top:10px;
-            font-weight:600;
-        }
-
-        .room_desc{
-            font-size:14px;
-            color:#555;
-        }
-
-        .room_details p{
-            margin:5px 0;
-            font-size:14px;
-            color:#444;
-        }
-
-        .room_price{
-            font-size:18px;
-            font-weight:bold;
-            margin-top:5px;
-        }
-
-        .book_btn{
-            padding:10px 18px;
-            background:#8e3a02; 
-            color:#fff;
-            border:none;
-            border-radius:5px;
-            cursor:pointer;
-            margin-top:10px;
-            transition:0.3s;
-        }
-        .book_btn:hover{
-            background:#8A5F45; 
-        }
-
-        /* Status Colors */
-        .status.available { color: green; font-weight: bold; }
-        .status.not_available { color: red; font-weight: bold; }
-        .status.few_rooms_left { color: #d08800; font-weight: bold; }
-
-        /* ---------- RESPONSIVE ---------- */
-        @media(max-width:1024px){
-            .about-section img, .about-text{
+                    /* ---------- MAIN CONTAINER ---------- */
+                    .section-box{
                 width:100%;
+                margin:20px 0;
+                padding:25px 40px;
+                background:white;
+                border-radius:0; 
+                box-shadow:none; 
             }
 
-            .room_card{
-                flex:1 1 calc(50% - 20px);
+
+                    h2{
+                        font-size:28px;
+                        color:#8e3a02;
+                        margin-bottom:15px;
+                    }
+
+                    p{
+                        font-size:16px;
+                        line-height:1.7;
+                        color:#444;
+                        
+                    }
+
+                    /* ---------- ABOUT SECTION ---------- */
+                    .about-section{
+                        display:flex;
+                        flex-wrap:wrap;
+                        gap:25px;
+                        align-items:flex-start;
+                        width: 100%;
+                    }
+
+                    .about-section img{
+                        width:45%;
+                        min-width:280px;
+                        border-radius:10px;
+                        border:3px solid #8e3a02;
+                        flex-shrink: 0;
+                    }
+
+                    .about-text{
+                        width:50%;
+                        min-width:280px;
+                        flex: 1;
+                        margin-right: 0;
+                    }
+                    .about-text p {
+                margin-bottom: 12px;
+                line-height: 1.7;
+                
             }
-        }
 
-        @media(max-width:768px){
-            .top-banner{
-                font-size:32px;
-                height:250px;
+                    /* ---------- Gallery ---------- */
+                    .gallery{
+                        display:grid;
+                        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+                        gap:15px;
+                        margin-top:25px;
+                    }
+
+                    .gallery img{
+                        width:100%;
+                        height:180px;
+                        object-fit:cover;
+                        border-radius:8px;
+                        border:2px solid #8e3a02;
+                    }
+
+                    /* ---------- NEW SECTION STYLES ---------- */
+
+                    .timing-box{
+                        display:flex;
+                        flex-wrap:wrap;
+                        gap:20px;
+                    }
+
+                    .time-card{
+                        flex:1 1 calc(50% - 20px);
+                        background:#f9f2ed;
+                        border-left:4px solid #8e3a02;
+                        padding:18px;
+                        border-radius:8px;
+                    }
+
+                    .testimonial-box{
+                        display:flex;
+                        flex-direction:column;
+                        gap:15px;
+                    }
+
+                    .testimonial{
+                        background:#fff7e9;
+                        padding:15px;
+                        border-radius:8px;
+                        border-left:4px solid #8e3a02;
+                    }
+
+                    .nearby-list a{
+                        text-decoration:none;
+                        color:#8e3a02;
+                        font-weight:bold;
+                    }
+
+                    /* ---------- MAP ---------- */
+                    .map-box iframe{
+                        width:100%;
+                        height:350px;
+                        border:0;
+                        border-radius:10px;
+                    }
+
+                    .bottom-space{
+                        height:40px;
+                    }
+
+                    /* ---------- OUR ROOMS ---------- */
+                
+
+                    /* ---------- RESPONSIVE ---------- */
+                    @media(max-width:1024px){
+                        .about-section img, .about-text{
+                            width:100%;
+                        }
+
+                    }
+
+                    @media(max-width:768px){
+                        .top-banner{
+                            font-size:32px;
+                            height:250px;
+                        }
+
+                        .section-box{
+                            padding:20px;
+                            margin:30px 10px;
+                        }
+
+                    
+                        .gallery img{
+                            height:150px;
+                        }
+
+                        .map-box iframe{
+                            height:250px;
+                        }
+
+                        .time-card{
+                            flex:1 1 100%;
+                        }
+                    }
+
+                    @media(max-width:480px){
+                        h2{
+                            font-size:22px;
+                        }
+
+                        p{
+                            font-size:14px;
+                        }
+
+                        .top-banner{
+                            font-size:24px;
+                            height:200px;
+                        }
+                    }
+                    /*Visitor Guidelines Box Styling */
+            .guidelines-section {
+                background: #fff8e8;
+                padding: 25px 30px;
+                border-radius: 12px;
+                border-left: 5px solid #c47b00; 
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             }
 
-            .section-box{
-                padding:20px;
-                margin:30px 10px;
+            /* Heading style */
+            .guidelines-section h2 {
+                color: #8e3a02;   
+                font-weight: 700;
+                margin-bottom: 18px;
+                text-align: left;
             }
 
-            .room_card{
-                flex:1 1 100%;
+            /* List styling */
+            .guidelines-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
             }
 
-            .gallery img{
-                height:150px;
+            .guidelines-list li {
+                font-size: 16px;
+                color: #444;
+                margin-bottom: 12px;
+                padding: 10px 14px;
+                border-radius: 8px;
+                background: #ffffff;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+                transition: transform 0.2s ease, background 0.2s ease;
             }
 
-            .map-box iframe{
-                height:250px;
+            /* Icon style */
+            .guidelines-list li i {
+                color: #c47b00;
+                font-size: 18px;
             }
 
-            .time-card{
-                flex:1 1 100%;
-            }
-        }
-
-        @media(max-width:480px){
-            h2{
-                font-size:22px;
+            /* Hover animation */
+            .guidelines-list li:hover {
+                transform: translateX(6px);
+                background: #fff3d6;
             }
 
-            p{
-                font-size:14px;
+            /* Mobile */
+            @media (max-width: 768px) {
+                .guidelines-section {
+                    padding: 20px;
+                }
+
+                .guidelines-list li {
+                    font-size: 15px;
+                }
             }
 
-            .top-banner{
-                font-size:24px;
-                height:200px;
+            /* Nearby Places Section Styling */
+            .nearby-section {
+                margin: 40px 0;
+                padding: 30px;
+                background: #f7f4ef;
+                border-radius: 18px;
+                box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
             }
-        }
-        /*Visitor Guidelines Box Styling */
-.guidelines-section {
-    background: #fff8e8;
-    padding: 25px 30px;
-    border-radius: 12px;
-    border-left: 5px solid #c47b00; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
 
-/* Heading style */
-.guidelines-section h2 {
-    color: #8e3a02;   
-    font-weight: 700;
-    margin-bottom: 18px;
-    text-align: left;
-}
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 20px;
+                text-align: center;
+                color: #4c2e05;
+                font-weight: 700;
+            }
 
-/* List styling */
-.guidelines-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+            .nearby-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 20px;
+            }
 
-.guidelines-list li {
-    font-size: 16px;
-    color: #444;
-    margin-bottom: 12px;
-    padding: 10px 14px;
-    border-radius: 8px;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, background 0.2s ease;
-}
+            .nearby-card {
+                background: #ffffff;
+                border-radius: 16px;
+                padding: 20px;
+                border-left: 4px solid #8e3a02;
+                transition: 0.3s ease;
+                box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
+            }
 
-/* Icon style */
-.guidelines-list li i {
-    color: #c47b00;
-    font-size: 18px;
-}
+            .nearby-card .icon {
+                font-size: 36px;
+                margin-bottom: 10px;
+            }
 
-/* Hover animation */
-.guidelines-list li:hover {
-    transform: translateX(6px);
-    background: #fff3d6;
-}
+            .nearby-card h3 a,
+            .nearby-card h3 {
+                color: #8e3a02;
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: 600;
+            }
 
-/* Mobile */
-@media (max-width: 768px) {
-    .guidelines-section {
-        padding: 20px;
-    }
+            .nearby-card p {
+                font-size: 14px;
+                color: #444;
+                line-height: 1.6;
+            }
 
-    .guidelines-list li {
-        font-size: 15px;
-    }
-}
+            /* Hover Effect */
+            .nearby-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
+            }
 
-/* Nearby Places Section Styling */
-.nearby-section {
-    margin: 40px 0;
-    padding: 30px;
-    background: #f7f4ef;
-    border-radius: 18px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
-}
-
-.section-title {
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #4c2e05;
-    font-weight: 700;
-}
-
-.nearby-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-.nearby-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
-    border-left: 4px solid #8e3a02;
-    transition: 0.3s ease;
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
-}
-
-.nearby-card .icon {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.nearby-card h3 a,
-.nearby-card h3 {
-    color: #8e3a02;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.nearby-card p {
-    font-size: 14px;
-    color: #444;
-    line-height: 1.6;
-}
-
-/* Hover Effect */
-.nearby-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
-}
-
-/* Highlight Main Attraction */
-.highlight {
-    border-left: 6px solid #d47a24;
-    background: #fff9f3;
-}
+            /* Highlight Main Attraction */
+            .highlight {
+                border-left: 6px solid #d47a24;
+                background: #fff9f3;
+            }
 
 
-.faq-section {
-    background: #fdf5e6; /* Soft warm background */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    margin: 40px 0;
-}
+            .faq-section {
+                /* background: #fdf5e6; Soft warm background */
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+                margin: 40px 0;
+            }
 
-.faq-section .section-title {
-    color: #8e3a02;
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
+            .faq-section .section-title {
+                color: #8e3a02;
+                font-size: 28px;
+                text-align: center;
+                margin-bottom: 25px;
+                font-weight: 700;
+            }
 
-.faq-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+            .faq-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
 
-.faq-item {
-    background: #fff7e9;
-    padding: 18px 20px;
-    border-radius: 10px;
-    border-left: 4px solid #8e3a02;
-    cursor: pointer;
-    transition: 0.3s ease;
-    position: relative;
-}
+            .faq-item {
+                /* background: #fff7e9; */
+                padding: 18px 20px;
+                border-radius: 10px;
+                border-left: 4px solid #8e3a02;
+                cursor: pointer;
+                transition: 0.3s ease;
+                position: relative;
+            }
 
-.faq-item:hover {
-    transform: translateX(5px);
-    background: #fff3d6;
-}
+            .faq-item:hover {
+                transform: translateX(5px);
+                background: #fff3d6;
+            }
 
-.faq-question {
-    font-weight: 600;
-    font-size: 16px;
-    color: #4c2e05;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+            .faq-question {
+                font-weight: 600;
+                font-size: 16px;
+                color: #4c2e05;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-.faq-answer {
-    display: none; /* Hidden by default */
-    margin-top: 10px;
-    font-size: 14px;
-    color: #444;
-    line-height: 1.6;
-}
+            .faq-answer {
+                display: none; /* Hidden by default */
+                margin-top: 10px;
+                font-size: 14px;
+                color: #444;
+                line-height: 1.6;
+            }
 
-/* Plus/Minus Icon */
-.faq-icon {
-    font-weight: bold;
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
+            /* Plus/Minus Icon */
+            .faq-icon {
+                font-weight: bold;
+                font-size: 18px;
+                transition: transform 0.3s ease;
+            }
 
-/* Rotate icon when active */
-.faq-item.active .faq-icon {
-    transform: rotate(45deg);
-}
+            /* Rotate icon when active */
+            .faq-item.active .faq-icon {
+                transform: rotate(45deg);
+            }
 
-/* ---------- Responsive ---------- */
-@media(max-width:768px){
-    .faq-section {
-        padding: 20px;
-    }
-    .faq-section .section-title {
-        font-size: 24px;
-    }
-}
+            /* ---------- Responsive ---------- */
+            @media(max-width:768px){
+                .faq-section {
+                    padding: 20px;
+                }
+                .faq-section .section-title {
+                    font-size: 24px;
+                }
+            }
 
 
 
@@ -566,38 +497,39 @@
     </style>
 </head>
 
-<body>
+<body class="main-layout">
 
- <div class="top-banner">
-    <div class="main-title">Shree Hari Balaji Mandir</div>
-    <div class="subtitle">Blessings for Peace, Prosperity & Devotion</div>
-</div>
+    <div class="top-banner">
+        <div class="main-title">Shree Hari Balaji Mandir</div>
+        <div class="subtitle">Blessings for Peace, Prosperity & Devotion</div>
+    </div>
 
 
 
     <!-- ABOUT -->
-<div class="section-box">
+    <div class="section-box">
+    
     <h2>About Shree Hari Balaji Mandir
     </h2>
-    <div class="about-section">
-        <img src="images/balaji_img2.jpeg" 
-             alt="Temple Image" 
-             style="width:450px; height:300px; object-fit:cover; border-radius:10px;">
-        <div class="about-text">
-            <p>
-                Hari Balaji Temple is a peaceful and spiritual destination dedicated to Lord Balaji. 
-                Devotees visit this place to experience divine blessings, calm environment, and positive energy.
-            </p>
-            <p>
-                Situated in a serene location, this temple offers a wonderful devotional atmosphere.
-                "Hari Balaji Temple" often refers to the famous Tirumala Venkateswara Temple (Balaji Temple) in Tirupati, Andhra Pradesh, a major pilgrimage site dedicated to Lord Venkateswara (Balaji/Hari). However, "Hari Balaji" can also refer to other local shrines, like the Shri Hari Balaji Devsthan in Chimur, Chandrapur, Maharashtra, dedicated to Lord Balaji, showing it's a common name for temples honoring this form of Vishnu. The most prominent is Tirupati, known for rituals like hair donation, while local ones serve regional communities.
-                Tirumala Venkateswara Temple (Tirupati, AP): The most famous, a major Hindu pilgrimage center under the Tirumala Tirupati Devasthanams (TTD).
-Shri Hari Balaji Devsthan (Chimur, Chandrapur, MH): A well-regarded local temple in Maharashtra.
-Mehandipur Balaji Temple (Dausa, Rajasthan): Though dedicated to Hanuman (Balaji), it's famous for exorcism and healing, attracting many devotees. 
-            </p>
-        </div>
+            <div class="about-section">
+                <img src="images/balaji_img2.jpeg" 
+                    alt="Temple Image" 
+                    style="width:450px; height:300px; object-fit:cover; border-radius:10px;">
+                <div class="about-text">
+                    <p>
+                        Hari Balaji Temple is a peaceful and spiritual destination dedicated to Lord Balaji. 
+                        Devotees visit this place to experience divine blessings, calm environment, and positive energy.
+                    </p>
+                    <p>
+                        Situated in a serene location, this temple offers a wonderful devotional atmosphere.
+                        "Hari Balaji Temple" often refers to the famous Tirumala Venkateswara Temple (Balaji Temple) in Tirupati, Andhra Pradesh, a major pilgrimage site dedicated to Lord Venkateswara (Balaji/Hari). However, "Hari Balaji" can also refer to other local shrines, like the Shri Hari Balaji Devsthan in Chimur, Chandrapur, Maharashtra, dedicated to Lord Balaji, showing it's a common name for temples honoring this form of Vishnu. The most prominent is Tirupati, known for rituals like hair donation, while local ones serve regional communities.
+                        Tirumala Venkateswara Temple (Tirupati, AP): The most famous, a major Hindu pilgrimage center under the Tirumala Tirupati Devasthanams (TTD).
+        Shri Hari Balaji Devsthan (Chimur, Chandrapur, MH): A well-regarded local temple in Maharashtra.
+        Mehandipur Balaji Temple (Dausa, Rajasthan): Though dedicated to Hanuman (Balaji), it's famous for exorcism and healing, attracting many devotees. 
+                    </p>
+                </div>
+            </div>
     </div>
-</div>
 
     <!-- GALLERY -->
     <div class="section-box">
@@ -722,42 +654,12 @@ Mehandipur Balaji Temple (Dausa, Rajasthan): Though dedicated to Hanuman (Balaji
     <div class="section-box" id="accommodation">
         <h2>Accommodation</h2>
         <p>Comfortable rooms and guest facilities are available.</p>
-
-        <div class="our_room">
-            <div class="row">
-                <?php
-                $rooms = [
-                    ['id'=>1,'name'=>'Deluxe AC Room','price'=>'1200','image'=>'images/room1.jpg','desc'=>'A premium AC room with modern facilities.','category'=>'AC Room','available'=>'Available'],
-                    ['id'=>2,'name'=>'Luxury Room','price'=>'1800','image'=>'images/room2.jpg','desc'=>'Spacious luxury room with elegant interiors.','category'=>'Luxury AC Room','available'=>'Available'],
-                    ['id'=>3,'name'=>'Non-AC Budget Room','price'=>'700','image'=>'images/room3.jpg','desc'=>'Affordable non-AC room with all basic amenities.','category'=>'Non-AC Room','available'=>'Few Rooms Left'],
-                    ['id'=>4,'name'=>'Family Suite','price'=>'2500','image'=>'images/room4.jpg','desc'=>'Perfect for families with spacious room.','category'=>'Family Room','available'=>'Available'],
-                    ['id'=>5,'name'=>'Premium AC Room','price'=>'1500','image'=>'images/room5.jpg','desc'=>'Well-furnished premium room.','category'=>'Premium AC','available'=>'Not Available'],
-                    ['id'=>6,'name'=>'Standard Room','price'=>'900','image'=>'images/room6.jpg','desc'=>'Comfortable standard room.','category'=>'Standard Room','available'=>'Available']
-                ];
-
-                foreach($rooms as $room){ ?>
-                    <div class="room_card">
-                        <img src="<?php echo $room['image']; ?>" class="room_img">
-                        <h3 class="room_title"><?php echo $room['name']; ?></h3>
-                        <p class="room_desc"><?php echo $room['desc']; ?></p>
-                        <div class="room_details">
-                            <p><strong>Category:</strong> <?php echo $room['category']; ?></p>
-                            <p><strong>Status:</strong>
-                                <span class="status <?php echo strtolower(str_replace(' ', '_', $room['available'])); ?>">
-                                    <?php echo $room['available']; ?>
-                                </span>
-                            </p>
-                        </div>
-                        <h4 class="room_price">₹<?php echo $room['price']; ?>/Night</h4>
-                        <button class="book_btn">Book Now</button>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
+      
+        <?php include 'include/our_room.php'; ?>
     </div>
 
  <!-- ⭐ NEW SECTION: FAQ -->
-<div class="section-box faq-section">
+    <div class="section-box faq-section">
     <h2 class="section-title">❓ Frequently Asked Questions About Shree Hari Balaji Mandir</h2>
 
     <div class="faq-container">
@@ -812,36 +714,36 @@ Mehandipur Balaji Temple (Dausa, Rajasthan): Though dedicated to Hanuman (Balaji
         <p>Find the temple location on the map below:</p>
 
         <div class="map-box">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3737.317833786463!2d79.36532257524205!3d20.493193081025595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd34dcb15cd3cc1%3A0x3744c2711b092c13!2sShri%20balaji%20restaurant%20and%20lounge%20chimur!5e0!3m2!1sen!2sin!4v1764997340088!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3737.317833786463!2d79.36532257524205!3d20.493193081025595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd34dcb15cd3cc1%3A0x3744c2711b092c13!2sShri%20balaji%20restaurant%20and%20lounge%20chimur!5e0!3m2!1sen!2sin!4v1764997340088!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
 
     <div class="bottom-space"></div>
-
+   </div>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const answer = item.querySelector('.faq-answer');
-            const isActive = item.classList.contains('active');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const answer = item.querySelector('.faq-answer');
+                    const isActive = item.classList.contains('active');
 
-            // Close all answers
-            faqItems.forEach(i => {
-                i.classList.remove('active');
-                i.querySelector('.faq-answer').style.display = 'none';
+                    // Close all answers
+                    faqItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-answer').style.display = 'none';
+                    });
+
+                    // Toggle current
+                    if(!isActive){
+                        item.classList.add('active');
+                        answer.style.display = 'block';
+                    }
+                });
             });
-
-            // Toggle current
-            if(!isActive){
-                item.classList.add('active');
-                answer.style.display = 'block';
-            }
         });
-    });
-});
-</script>
+    </script>
+<?php include 'include/footer.php'; ?>
+
+<?php include 'include/footer-section.php'; ?>
 </body>
 </html>
-
-<?php include 'include/footer.php'; ?>
-<?php include 'include/footer-section.php'; ?>

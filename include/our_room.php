@@ -1,9 +1,9 @@
 <div class="our_room">
     
     <div class="container">
-                <h1 style="text-align:center; margin-bottom:20px; font-size: 32px;
+                <!-- <h1 style="text-align:center; margin-bottom:20px; font-size: 32px;
     font-weight: 700;
-    color: #060606ff;">Our Rooms</h1> 
+    color: #060606ff;">Our Rooms</h1>  -->
 
         <div class="row">
             

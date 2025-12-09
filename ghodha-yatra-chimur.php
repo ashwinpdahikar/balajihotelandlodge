@@ -241,70 +241,7 @@
         }
 
         /* ---------- OUR ROOMS ---------- */
-        .our_room .row{
-            display:flex;
-            flex-wrap:wrap;
-            gap:20px;
-            margin-top:20px;
-        }
-
-        .room_card{
-            background:#fff;
-            padding:15px;
-            border-radius:10px;
-            box-shadow:0 4px 10px rgba(0,0,0,0.1);
-            text-align:center;
-            flex:1 1 calc(33.333% - 20px);
-        }
-
-        .room_img{
-            width:100%;
-            height:230px;
-            object-fit:cover;
-            border-radius:10px;
-        }
-
-        .room_title{
-            font-size:20px;
-            margin-top:10px;
-            font-weight:600;
-        }
-
-        .room_desc{
-            font-size:14px;
-            color:#555;
-        }
-
-        .room_details p{
-            margin:5px 0;
-            font-size:14px;
-            color:#444;
-        }
-
-        .room_price{
-            font-size:18px;
-            font-weight:bold;
-            margin-top:5px;
-        }
-
-        .book_btn{
-            padding:10px 18px;
-            background:#8e3a02; 
-            color:#fff;
-            border:none;
-            border-radius:5px;
-            cursor:pointer;
-            margin-top:10px;
-            transition:0.3s;
-        }
-        .book_btn:hover{
-            background:#8A5F45; 
-        }
-
-        /* Status Colors */
-        .status.available { color: green; font-weight: bold; }
-        .status.not_available { color: red; font-weight: bold; }
-        .status.few_rooms_left { color: #d08800; font-weight: bold; }
+       
 
         /* ---------- RESPONSIVE ---------- */
         @media(max-width:1024px){
@@ -312,9 +249,7 @@
                 width:100%;
             }
 
-            .room_card{
-                flex:1 1 calc(50% - 20px);
-            }
+          
         }
 
         @media(max-width:768px){
@@ -328,9 +263,7 @@
                 margin:30px 10px;
             }
 
-            .room_card{
-                flex:1 1 100%;
-            }
+          
 
             .gallery img{
                 height:150px;
@@ -485,7 +418,7 @@
 
 
 .faq-section {
-    background: #fdf5e6; /* Soft warm background */
+    /* background: #fdf5e6; Soft warm background */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -507,7 +440,7 @@
 }
 
 .faq-item {
-    background: #fff7e9;
+    /* background: #fff7e9; */
     padding: 18px 20px;
     border-radius: 10px;
     border-left: 4px solid #8e3a02;
@@ -724,37 +657,8 @@ Maharashtra Times
         <h2>Accommodation</h2>
         <p>Comfortable rooms and guest facilities are available.</p>
 
-        <div class="our_room">
-            <div class="row">
-                <?php
-                $rooms = [
-                    ['id'=>1,'name'=>'Deluxe AC Room','price'=>'1200','image'=>'images/room1.jpg','desc'=>'A premium AC room with modern facilities.','category'=>'AC Room','available'=>'Available'],
-                    ['id'=>2,'name'=>'Luxury Room','price'=>'1800','image'=>'images/room2.jpg','desc'=>'Spacious luxury room with elegant interiors.','category'=>'Luxury AC Room','available'=>'Available'],
-                    ['id'=>3,'name'=>'Non-AC Budget Room','price'=>'700','image'=>'images/room3.jpg','desc'=>'Affordable non-AC room with all basic amenities.','category'=>'Non-AC Room','available'=>'Few Rooms Left'],
-                    ['id'=>4,'name'=>'Family Suite','price'=>'2500','image'=>'images/room4.jpg','desc'=>'Perfect for families with spacious room.','category'=>'Family Room','available'=>'Available'],
-                    ['id'=>5,'name'=>'Premium AC Room','price'=>'1500','image'=>'images/room5.jpg','desc'=>'Well-furnished premium room.','category'=>'Premium AC','available'=>'Not Available'],
-                    ['id'=>6,'name'=>'Standard Room','price'=>'900','image'=>'images/room6.jpg','desc'=>'Comfortable standard room.','category'=>'Standard Room','available'=>'Available']
-                ];
-
-                foreach($rooms as $room){ ?>
-                    <div class="room_card">
-                        <img src="<?php echo $room['image']; ?>" class="room_img">
-                        <h3 class="room_title"><?php echo $room['name']; ?></h3>
-                        <p class="room_desc"><?php echo $room['desc']; ?></p>
-                        <div class="room_details">
-                            <p><strong>Category:</strong> <?php echo $room['category']; ?></p>
-                            <p><strong>Status:</strong>
-                                <span class="status <?php echo strtolower(str_replace(' ', '_', $room['available'])); ?>">
-                                    <?php echo $room['available']; ?>
-                                </span>
-                            </p>
-                        </div>
-                        <h4 class="room_price">₹<?php echo $room['price']; ?>/Night</h4>
-                        <button class="book_btn">Book Now</button>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
+       
+        <?php include 'include/our_room.php'; ?>
     </div>
 
  <!-- ⭐ NEW SECTION: FAQ -->
@@ -815,36 +719,38 @@ Maharashtra Times
         <p>Find the temple location on the map below:</p>
 
         <div class="map-box">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3737.317833786463!2d79.36532257524205!3d20.493193081025595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd34dcb15cd3cc1%3A0x3744c2711b092c13!2sShri%20balaji%20restaurant%20and%20lounge%20chimur!5e0!3m2!1sen!2sin!4v1764997340088!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3737.317833786463!2d79.36532257524205!3d20.493193081025595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd34dcb15cd3cc1%3A0x3744c2711b092c13!2sShri%20balaji%20restaurant%20and%20lounge%20chimur!5e0!3m2!1sen!2sin!4v1764997340088!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
 
     <div class="bottom-space"></div>
+    </div>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const answer = item.querySelector('.faq-answer');
-            const isActive = item.classList.contains('active');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const answer = item.querySelector('.faq-answer');
+                    const isActive = item.classList.contains('active');
 
-            // Close all answers
-            faqItems.forEach(i => {
-                i.classList.remove('active');
-                i.querySelector('.faq-answer').style.display = 'none';
+                    // Close all answers
+                    faqItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-answer').style.display = 'none';
+                    });
+
+                    // Toggle current
+                    if(!isActive){
+                        item.classList.add('active');
+                        answer.style.display = 'block';
+                    }
+                });
             });
-
-            // Toggle current
-            if(!isActive){
-                item.classList.add('active');
-                answer.style.display = 'block';
-            }
         });
-    });
-});
-</script>
+    </script>
+    <?php include 'include/footer.php'; ?>
+<?php include 'include/footer-section.php'; ?>
 </body>
 </html>
 
-<?php include 'include/footer.php'; ?>
-<?php include 'include/footer-section.php'; ?>
+
