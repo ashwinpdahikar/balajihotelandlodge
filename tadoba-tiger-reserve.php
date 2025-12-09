@@ -9,8 +9,8 @@ $host             = $_SERVER['HTTP_HOST'] ?? 'localhost';
 $basePath         = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '')), '/');
 $basePath         = $basePath === '.' ? '' : $basePath;
 $canonical_url    = $scheme . '://' . $host . $basePath . '/tadoba-tiger-reserve.php';
-$og_image         = $scheme . '://' . $host . $basePath . '/images/
-ng';
+$og_image = $scheme . '://' . $host . $basePath . '/images/tadoba.png';
+
 
 $safari_gates = [
     [
@@ -279,6 +279,71 @@ $breadcrumb_data = json_encode([
       .room-content p{color:#666;line-height:1.6;margin-bottom:20px;font-size:.95rem;}
       .room-cta{text-align:center;}
 
+<<<<<<< HEAD
+      //* FAQ Section */
+.faq {
+    padding: 50px 0;
+    background: #f9f9f9;
+    width: 100%;
+}
+
+.faq-list {
+    width: 100%;
+    padding: 0 15px;   /* small side padding */
+    margin: 0 auto;
+}
+
+.faq-list details {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px; /* reduced */
+    margin-bottom: 12px; /* reduced */
+    box-shadow: 0 3px 15px rgba(0,0,0,.05);
+    transition: box-shadow .3s;
+    width: 100%;
+}
+
+.faq-list details:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    user-select: none;
+}
+
+.faq summary::-webkit-details-marker,
+.faq summary::marker {
+    display: none;
+}
+
+.faq summary i {
+    color: #d35400;
+    font-size: 1.1rem;
+}
+
+.faq-content {
+    padding: 12px 0 0 20px; /* reduced */
+    color: #555;
+    line-height: 1.6;       /* reduced */
+}
+
+.faq-content a {
+    color: #d35400;
+    text-decoration: none;
+}
+
+.faq-content a:hover {
+    text-decoration: underline;
+}
+=======
       /* FAQ Section */
       .faq{padding:10px 0;background:#f9f9f9;}
       .faq-list{max-width:100%;margin:0 auto;}
@@ -291,6 +356,7 @@ $breadcrumb_data = json_encode([
       .faq-content{padding:20px 0 0 32px;color:#555;line-height:1.8;}
       .faq-content a{color:#d35400;text-decoration:none;}
       .faq-content a:hover{text-decoration:underline;}
+>>>>>>> d05eb44dc05f98e160cf324f141bb69faf981e08
 
       /* Social Share */
       .social-share{padding:60px 0;background:#fff;border-top:1px solid #eee;border-bottom:1px solid #eee;}

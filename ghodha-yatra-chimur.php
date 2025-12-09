@@ -6,7 +6,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ghodha Yatra Chimur</title>
+<title>Ghodha Yatra Chimur | Shri Hari Balaji Temple Festival & Visit Guide</title>
+<meta name="description" content="Ghodha Yatra Chimur is a vibrant festival at Shri Hari Balaji Temple. Learn timings, visitor guidelines, nearby attractions, and explore gallery & accommodations.">
+<meta property="og:title" content="Ghodha Yatra Chimur | Shri Hari Balaji Temple Festival">
+<meta property="og:description" content="Discover Ghodha Yatra Chimur, festival details, timings, visitor guidelines, gallery & nearby attractions.">
+<meta property="og:image" content="images/ghoda-yatra.jpg">
+<meta property="og:url" content="https://www.yoursite.com/ghodha-yatra-chimur.php">
+<meta property="og:type" content="website">
 
     <style>
         body{
@@ -135,7 +141,7 @@
 }
 
 
-        h2{
+        h1,h2{
             font-size:28px;
             color:#8e3a02;
             margin-bottom:15px;
@@ -279,7 +285,7 @@
         }
 
         @media(max-width:480px){
-            h2{
+            h1,h2{
                 font-size:22px;
             }
 
@@ -302,7 +308,7 @@
 }
 
 /* Heading style */
-.guidelines-section h2 {
+.guidelines-section h1,h2 {
     color: #8e3a02;   
     font-weight: 700;
     margin-bottom: 18px;
@@ -397,7 +403,6 @@
     font-size: 20px;
     font-weight: 600;
 }
-
 .nearby-card p {
     font-size: 14px;
     color: #444;
@@ -415,17 +420,13 @@
     border-left: 6px solid #d47a24;
     background: #fff9f3;
 }
-
-
 .faq-section {
     /* background: #fdf5e6; Soft warm background */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     margin: 40px 0;
-}
-
-.faq-section .section-title {
+}.faq-section .section-title {
     color: #8e3a02;
     font-size: 28px;
     text-align: center;
@@ -440,7 +441,7 @@
 }
 
 .faq-item {
-    /* background: #fff7e9; */
+
     padding: 18px 20px;
     border-radius: 10px;
     border-left: 4px solid #8e3a02;
@@ -464,21 +465,19 @@
 }
 
 .faq-answer {
-    display: none; /* Hidden by default */
+    display: none; 
     margin-top: 10px;
     font-size: 14px;
     color: #444;
     line-height: 1.6;
 }
 
-/* Plus/Minus Icon */
 .faq-icon {
     font-weight: bold;
     font-size: 18px;
     transition: transform 0.3s ease;
 }
 
-/* Rotate icon when active */
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
 }
@@ -493,10 +492,8 @@
     }
 }
 
-
-
-
     </style>
+
 </head>
 
 <body>
@@ -506,23 +503,18 @@
     <div class="subtitle">Blessings for Peace, Prosperity & Devotion</div>
 </div>
 
-
-
     <!-- ABOUT -->
 <div class="section-box">
-    <h2>About Ghodha Yatra Chimur
-    </h2>
+    
+    <h1>About Ghodha Yatra Chimur
+    </h1>
     <div class="about-section">
         <img src="images/ghoda-yatra.jpg" 
-             alt="Temple Image" 
+             alt="Ghodha Yatra Chimur Festival at Shri Hari Balaji Temple" 
              style="width:450px; height:300px; object-fit:cover; border-radius:10px;">
         <div class="about-text">
             <p>
-                Ghoda Yatra in Chimur is an ancient festival centered around the old Shri Hari Balaji Temple. According to tradition, a wooden horse chariot carrying the idol of Lord Balaji is taken in a grand night-long procession through Chimur town. The festival begins around Magh (as per the Hindu calendar) and continues for about 15 days, culminating on Maha Shivratri.
-ABP Majha
-+2
-Maharashtra Times
-+2
+                Ghoda Yatra in Chimur is an ancient festival centered around the old Shri Hari Balaji Temple. According to tradition, a wooden horse chariot carrying the idol of Lord Balaji is taken in a grand night-long procession through Chimur town. The festival begins around Magh and continues for about 15 days, culminating on Maha Shivratri.
  Over the generations, this yatra has become a symbol of devotion, unity and cultural heritage for the people of Vidarbha.
             </p>
             <p>
@@ -651,24 +643,19 @@ Maharashtra Times
     </div>
 </div>
 
-
     <!-- ACCOMMODATION -->
     <div class="section-box" id="accommodation">
         <h2>Accommodation</h2>
         <p>Comfortable rooms and guest facilities are available.</p>
-
-       
         <?php include 'include/our_room.php'; ?>
     </div>
 
  <!-- ⭐ NEW SECTION: FAQ -->
 <div class="section-box faq-section">
     <h2 class="section-title">❓ Frequently Asked Questions About Ghodha Yatra Chimur
-
     </h2>
 
     <div class="faq-container">
-
         <!-- FAQ 1 -->
         <div class="faq-item">
             <div class="faq-question">What are the temple timings? <span class="faq-icon">+</span></div>
@@ -712,7 +699,6 @@ Maharashtra Times
     </div>
 </div>
 
-
     <!-- MAP SECTION -->
     <div class="section-box">
         <h2>Temple Location</h2>
@@ -733,7 +719,6 @@ Maharashtra Times
                     const answer = item.querySelector('.faq-answer');
                     const isActive = item.classList.contains('active');
 
-                    // Close all answers
                     faqItems.forEach(i => {
                         i.classList.remove('active');
                         i.querySelector('.faq-answer').style.display = 'none';
