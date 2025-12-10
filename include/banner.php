@@ -9,10 +9,10 @@
 
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="images/banner.png" alt="Slide 1" />
+        <img class="d-block w-100" src="images/room3.jpg" alt="Slide 1" />
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="images/banner1.png" alt="Slide 2" />
+        <img class="d-block w-100" src="images/banner.png" alt="Slide 2" />
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="images/tadoba1.png" alt="Slide 3" />
