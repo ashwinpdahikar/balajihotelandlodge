@@ -40,8 +40,56 @@ function get_menu_by_category($pdo, $category) {
          </div>
       </div>
 
+      <!-- Table Booking Message Display -->
+      <?php 
+      start_session_secure();
+      if (!empty($_SESSION['table_booking_msg'])): 
+          $msgType = $_SESSION['table_booking_msg_type'] ?? 'info';
+      ?>
+      <div class="row mb-4">
+         <div class="col-md-12">
+            <div id="tableBookingAlert" class="alert alert-<?php echo $msgType === 'success' ? 'success' : ($msgType === 'error' ? 'danger' : 'info'); ?> alert-dismissible fade show" role="alert" style="margin-bottom:20px;">
+               <strong><?php echo $msgType === 'success' ? '✓' : ($msgType === 'error' ? '✗' : 'ℹ'); ?></strong>
+               <?php echo h($_SESSION['table_booking_msg']); ?>
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="document.getElementById('tableBookingAlert').remove();">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <script>
+            (function() {
+               var alertDiv = document.getElementById('tableBookingAlert');
+               if (alertDiv) {
+                  // Auto-hide after 8 seconds
+                  setTimeout(function() {
+                     alertDiv.style.opacity = '0';
+                     setTimeout(function() {
+                        alertDiv.style.display = 'none';
+                        alertDiv.remove();
+                     }, 500);
+                  }, 8000);
+                  
+                  // Auto-open modal if error (so user can fix and resubmit)
+                  <?php if ($msgType === 'error'): ?>
+                  setTimeout(function() {
+                     var modal = document.getElementById('tableBookingModal');
+                     if (modal && typeof jQuery !== 'undefined' && jQuery.fn.modal) {
+                        jQuery('#tableBookingModal').modal('show');
+                     }
+                  }, 500);
+                  <?php endif; ?>
+               }
+            })();
+            </script>
+         </div>
+      </div>
+      <?php 
+      unset($_SESSION['table_booking_msg']);
+      unset($_SESSION['table_booking_msg_type']);
+      endif; 
+      ?>
+
       <!-- Table Booking Section -->
-      <div class="row mb-5" id="table-booking">
+      <div class="row mb-5" id="table-booking" style="scroll-margin-top: 100px;">
          <div class="col-md-12">
             <div class="table-booking-card">
                <div class="row align-items-center">
@@ -60,6 +108,7 @@ function get_menu_by_category($pdo, $category) {
       </div>
 
       <!-- Menu Categories -->
+      <div id="menu" style="scroll-margin-top: 100px;"></div>
       <?php foreach ($menu_categories as $cat_key => $cat_name): 
          $menu_items = get_menu_by_category($pdo, $cat_key);
          if (empty($menu_items)) continue;

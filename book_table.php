@@ -63,26 +63,53 @@ if (empty($errors)) {
     try {
         $pdo = get_pdo();
         
+        // Check if table exists, if not create it
+        $tableCheck = $pdo->query("SHOW TABLES LIKE 'table_bookings'")->fetch();
+        if (!$tableCheck) {
+            // Create table if it doesn't exist
+            $pdo->exec("CREATE TABLE IF NOT EXISTS table_bookings (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              customer_name VARCHAR(120) NOT NULL,
+              phone VARCHAR(30) NOT NULL,
+              email VARCHAR(150) NULL,
+              booking_date DATE NOT NULL,
+              booking_time TIME NOT NULL,
+              guests INT NOT NULL DEFAULT 2,
+              special_requests TEXT NULL,
+              status ENUM('pending','confirmed','cancelled','completed') DEFAULT 'pending',
+              is_read TINYINT(1) DEFAULT 0,
+              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+              updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB");
+        }
+        
         // Check for duplicate booking (same phone, date, and time within 1 hour)
-        $checkStmt = $pdo->prepare('SELECT id FROM table_bookings WHERE phone = ? AND booking_date = ? AND booking_time BETWEEN TIME_SUB(?, INTERVAL 1 HOUR) AND TIME_ADD(?, INTERVAL 1 HOUR) AND status != "cancelled" LIMIT 1');
-        $checkStmt->execute([$phone, $booking_date, $booking_time, $booking_time]);
+        // Convert time to datetime for comparison
+        $booking_datetime = $booking_date . ' ' . $booking_time;
+        $checkStmt = $pdo->prepare('SELECT id FROM table_bookings WHERE phone = ? AND booking_date = ? AND ABS(TIMESTAMPDIFF(MINUTE, CONCAT(booking_date, " ", booking_time), ?)) <= 60 AND status != "cancelled" LIMIT 1');
+        $checkStmt->execute([$phone, $booking_date, $booking_datetime]);
         if ($checkStmt->fetch()) {
             $errors[] = 'You already have a booking for this date and time. Please choose a different time.';
         } else {
-            $stmt = $pdo->prepare('INSERT INTO table_bookings (customer_name, phone, email, booking_date, booking_time, guests, special_requests) VALUES (?, ?, ?, ?, ?, ?, ?)');
-            $stmt->execute([
+            $stmt = $pdo->prepare('INSERT INTO table_bookings (customer_name, phone, email, booking_date, booking_time, guests, special_requests, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+            $result = $stmt->execute([
                 $customer_name,
                 $phone,
                 !empty($email) ? $email : null,
                 $booking_date,
                 $booking_time,
                 $guests,
-                !empty($special_requests) ? $special_requests : null
+                !empty($special_requests) ? $special_requests : null,
+                'pending' // Default status
             ]);
             
-            $success = true;
-            $_SESSION['table_booking_msg'] = 'Thank you! Your table booking request has been submitted. We will confirm shortly.';
-            $_SESSION['table_booking_msg_type'] = 'success';
+            if ($result && $stmt->rowCount() > 0) {
+                $success = true;
+                $_SESSION['table_booking_msg'] = 'Thank you! Your table booking request has been submitted successfully. We will confirm shortly.';
+                $_SESSION['table_booking_msg_type'] = 'success';
+            } else {
+                $errors[] = 'Failed to save booking. Please try again.';
+            }
         }
     } catch (PDOException $e) {
         error_log('Table booking error: ' . $e->getMessage());

@@ -19,6 +19,7 @@
       height: 100%;
       object-fit: cover;
     }
+	
   </style>
   <div class="blog">
       <div class="container">

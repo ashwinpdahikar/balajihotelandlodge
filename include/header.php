@@ -55,7 +55,7 @@
         <li class="off-item"><a href="restaurant.php">Restaurant</a></li>
         <li class="off-item"><a href="gallery.php">Gallery</a></li>
 
-        <li class="off-item"><a href="tourist_place.php">Tourist Places Chimur</a></li>
+        <li class="off-item"><a href="tourist-place.php">Tourist Places Chimur</a></li>
 
         <!-- Sub-items under Tourist Places -->
         <li class="off-item" style="padding-left:24px;">

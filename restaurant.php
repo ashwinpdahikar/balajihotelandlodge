@@ -17,22 +17,11 @@ start_session_secure(); // Start session before any output
       <?php include 'include/header.php'; ?>
       <!-- end header inner -->
       <!-- end header -->
-      <div class="back_re">
-         <div class="decorative-corner top-left"></div>
-         <div class="decorative-corner top-right"></div>
-         <div class="decorative-corner bottom-left"></div>
-         <div class="decorative-corner bottom-right"></div>
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="title">
-                     <h2><span>Our Restaurant</span></h2>
-                     <p class="subtitle">Pure Veg, Non-Veg & South Indian Dishes - Fresh & Homely Taste</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+      
+      <!-- Restaurant banner -->
+      <?php include 'include/banner-restaurant.php'; ?>
+      <!-- end banner -->
+      
       <!-- restaurant -->
       <?php include 'include/restaurant.php'; ?>
       <!-- end restaurant -->

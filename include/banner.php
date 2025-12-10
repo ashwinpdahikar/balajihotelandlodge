@@ -334,15 +334,17 @@
 /* ============================
   BANNER & HERO
 ============================ */
+
 .banner_main {
-  position: relative;
-  overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
+
 .banner_main img {
-  object-fit: cover;
-  width: 100%;
-  height: 75vh;
-  display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 75vh;
+	display: block;
 }
 
 .carousel-indicators li {

@@ -614,13 +614,24 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
       });
     }
 
-    // Form validation
+    // Form validation - Only for room booking form
     var form = document.getElementById('bookingForm');
     if (form) {
       form.addEventListener('submit', function(e) {
-        var roomSelected = document.getElementById('bm_room').value;
-        var paymentRef = document.getElementById('bm_ref').value;
-        var phoneInput = document.querySelector('input[name="phone"]');
+        // Make sure this is the room booking form, not table booking form
+        if (!form || form.id !== 'bookingForm') {
+          return; // Don't interfere with other forms
+        }
+        
+        // Check if this form has room selection (room booking form)
+        var roomSelect = document.getElementById('bm_room');
+        if (!roomSelect) {
+          return; // This is not the room booking form, skip validation
+        }
+        
+        var roomSelected = roomSelect.value;
+        var paymentRef = document.getElementById('bm_ref') ? document.getElementById('bm_ref').value : '';
+        var phoneInput = form.querySelector('input[name="phone"]');
         var phoneValue = phoneInput ? phoneInput.value.trim() : '';
         var phonePattern = /^[6-9][0-9]{9}$/;
         var errorMsg = document.getElementById('phone-error-msg');

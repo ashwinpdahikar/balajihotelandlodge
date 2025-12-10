@@ -187,7 +187,7 @@ $breadcrumb_data = json_encode([
       .tour-hero .lead{font-size:1.25rem;max-width:700px;color:#fff5d7;text-shadow:0 2px 10px rgba(0,0,0,.6);line-height:1.6;margin-bottom:32px;}
       .hero-cta{margin:32px 0;display:flex;gap:16px;flex-wrap:wrap;}
       .hero-cta .btn{padding:14px 28px;border-radius:50px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;font-size:1rem;}
-      .btn.primary{background:#d35400;color:#fff;box-shadow:0 4px 15px rgba(211,84,0,.4);}
+      .btn.primary{background:#156508;color:#fff;box-shadow:0 4px 15px rgba(211,84,0,.4);}
       .btn.primary:hover{background:#b84300;transform:translateY(-2px);box-shadow:0 6px 20px rgba(211,84,0,.5);}
       .btn.ghost{border:2px solid #fff;color:#fff;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);}
       .btn.ghost:hover{background:rgba(255,255,255,.2);transform:translateY(-2px);}
@@ -231,14 +231,14 @@ $breadcrumb_data = json_encode([
       .btn-link:hover{color:#b84300;text-decoration:underline;}
 
       /* Itinerary Section */
-      .itinerary{padding:90px 0;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);color:#fff;margin:80px 0;}
+      .itinerary{ 0;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);color:#fff; padding:20px 0;}
       .itinerary-inner{display:flex;gap:50px;flex-wrap:wrap;align-items:flex-start;}
       .itinerary-header{flex:1;min-width:300px;}
       .itinerary-header .eyebrow{color:#ffd9b3;}
       .itinerary-header h2{color:#fff;margin:16px 0;}
       .itinerary-header p{color:#e0e0e0;font-size:1.1rem;}
       .itinerary-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;flex:1.5;min-width:300px;}
-      .itinerary-card{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border-radius:20px;padding:32px;border:1px solid rgba(255,255,255,.1);transition:transform .3s,background .3s;}
+      .itinerary-card{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border-radius:20px;padding:12px;border:1px solid rgba(255,255,255,.1);transition:transform .3s,background .3s;}
       .itinerary-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.12);}
       .itinerary-icon{width:60px;height:60px;background:rgba(211,84,0,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.8rem;color:#ffa366;}
       .itinerary-card h3{font-size:1.5rem;margin:0 0 12px;color:#fff;}
@@ -247,7 +247,7 @@ $breadcrumb_data = json_encode([
       .itinerary-link:hover{gap:12px;}
 
       /* Benefits Section */
-      .stay-benefits{padding:80px 0;}
+      .stay-benefits{padding:10px 0;}
       .benefit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-bottom:60px;}
       .benefit{background:#fff;border-radius:20px;padding:32px;box-shadow:0 8px 30px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s;text-align:center;}
       .benefit:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,.12);}
@@ -256,8 +256,8 @@ $breadcrumb_data = json_encode([
       .benefit p{color:#666;line-height:1.7;margin:0;font-size:1rem;}
 
       /* Rooms Section */
-      .rooms{padding:80px 0;background:#fff;}
-      .room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-bottom:50px;}
+      .rooms{padding:10px 0;background:#fff;}
+      .room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-bottom:5px;}
       .room-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 35px rgba(0,0,0,.1);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;}
       .room-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.15);}
       .room-image-wrapper{position:relative;height:220px;overflow:hidden;}
@@ -270,10 +270,12 @@ $breadcrumb_data = json_encode([
       .room-content{padding:24px;}
       .room-content h3{font-size:1.4rem;margin:0 0 12px;color:#2c3e50;font-weight:700;}
       .room-content p{color:#666;line-height:1.6;margin-bottom:20px;font-size:.95rem;}
-      .room-cta{text-align:center;margin-top:40px;}
+      .room-cta{text-align:center;margin-top:25px;}
+	  .room-cta .btn{padding:14px 32px;border-radius:50px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;font-size:1rem;background:#d35400;color:#fff;box-shadow:0 4px 15px rgba(211,84,0,.4);}
+	  .room-cta .btn:hover{background:#b84300;transform:translateY(-2px);box-shadow:0 6px 20px rgba(211,84,0,.5);}
 
       /* FAQ Section */
-      .faq{padding:80px 0;background:#f9f9f9;}
+      .faq{padding:10px 0;background:#f9f9f9;}
       .faq-list{max-width:900px;margin:0 auto;}
       .faq-list details{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:box-shadow .3s;}
       .faq-list details:hover{box-shadow:0 6px 25px rgba(0,0,0,.1);}
@@ -299,7 +301,7 @@ $breadcrumb_data = json_encode([
       .share-btn.email{background:#d35400;}
 
       /* CTA Section */
-      .cta-section{background:linear-gradient(135deg,#d35400,#ff6b35);color:#fff;padding:80px 0;margin:60px 0;}
+      .cta-section{background:linear-gradient(135deg,#d35400,#ff6b35);color:#fff;padding:15px  0;}
       .cta-content{text-align:center;max-width:700px;margin:0 auto;}
       .cta-content h2{font-size:2.5rem;margin:0 0 16px;color:#fff;}
       .cta-content p{font-size:1.2rem;margin-bottom:40px;color:#fff5d7;}
