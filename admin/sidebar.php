@@ -28,6 +28,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <?php endif; ?>
             </a>
         </li>
+        <li>
+            <a href="menu_items.php" class="<?php echo $current_page === 'menu_items.php' ? 'active' : ''; ?>">
+                <i class="fa fa-list"></i> Menu Items
+            </a>
+        </li>
     </ul>
 </nav>
 
