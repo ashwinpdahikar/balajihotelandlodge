@@ -9,9 +9,9 @@
     <nav class="main-nav" aria-label="Primary">
       <ul class="nav-list">
         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="room.php">Our Rooms</a></li>
         <li class="nav-item"><a class="nav-link" href="restaurant.php">Restaurant</a></li>
+        <li class="nav-item"><a class="nav-link" href="room.php">Our Rooms</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
         <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
         <li class="nav-item has-dropdown">
           <a class="nav-link" href="tourist-place.php">Tourist Places Chimur <i class="fa fa-chevron-down" style="font-size:10px;margin-left:4px;"></i></a>
@@ -50,9 +50,10 @@
       <nav class="offcanvas-nav" aria-label="Mobile primary">
     <ul>
         <li class="off-item"><a href="index.php">Home</a></li>
-        <li class="off-item"><a href="about.php">About</a></li>
-        <li class="off-item"><a href="room.php">Our Rooms</a></li>
-        <li class="off-item"><a href="restaurant.php">Restaurant</a></li>
+<li class="off-item"><a href="restaurant.php">Restaurant</a></li> 
+       <li class="off-item"><a href="room.php">Our Rooms</a></li>
+        
+           <li class="off-item"><a href="about.php">About</a></li>
         <li class="off-item"><a href="gallery.php">Gallery</a></li>
 
         <li class="off-item"><a href="tourist-place.php">Tourist Places Chimur</a></li>

@@ -2,6 +2,31 @@
 <html lang="en">
    <head>
       <?php include 'include/header-section.php'; ?>
+
+      <!-- Primary SEO -->
+<meta name="title" content="About - Balaji Hotel And Lodge Chimur">
+<meta name="description" content="Learn about Balaji Hotel & Restaurant Chimur. Clean rooms, restaurant, prime location near Tadoba National Park, and excellent hospitality.">
+<meta name="keywords" content="Balaji Hotel Chimur, Lodge Chimur, Hotel near Tadoba, Rooms in Chimur, Restaurant Chimur">
+
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta http-equiv="Cache-control" content="public">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://yourwebsite.com/about.php" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="About - Balaji Hotel And Lodge Chimur">
+<meta property="og:description" content="Clean rooms, great food, and prime location near Tadoba National Park. Know more about us.">
+<meta property="og:image" content="https://yourwebsite.com/images/about-og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourwebsite.com/about.php">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+
+
       <title>About - Balaji Hotel And Lodge Chimur</title>
       <style>
          /* About Page Custom Styles */
@@ -236,6 +261,27 @@
             }
          }
       </style>
+
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Balaji Hotel And Lodge Chimur",
+  "image": "images/about.png",
+  "description": "Clean rooms, restaurant and best hospitality in Chimur near Tadoba National Park.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Chimur, Maharashtra",
+    "addressLocality": "Chimur",
+    "addressRegion": "MH",
+    "postalCode": "442903",
+    "addressCountry": "IN"
+  },
+  "telephone": "+91 7350255026",
+  "url": "https://localhost/hotel/balajihotelandlodge/about.php"
+}
+</script>
+
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -255,7 +301,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2><span>About Us</span></h2>
+<h1><span>About Us</span></h1>
                      <p class="subtitle">Discover Our Story, Hospitality & Commitment to Your Comfort</p>
                   </div>
                </div>
@@ -270,7 +316,9 @@
             <div class="row mb-2">
                <div class="col-lg-6 col-md-12 mb-2 mb-lg-0">
                   <div class="about_img">
-                     <figure><img src="images/about.png" alt="Balaji Hotel & Restaurant Chimur" class="img-fluid"/></figure>
+                     <figure>
+<img loading="lazy" src="images/about.png" alt="Balaji Hotel & Restaurant Chimur">
+</figure>
                   </div>
                </div>
                <div class="col-lg-6 col-md-12">
