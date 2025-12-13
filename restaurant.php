@@ -7,6 +7,16 @@ start_session_secure(); // Start session before any output
    <head>
       <?php include 'include/header-section.php'; ?>
       <title>Restaurant - Balaji Hotel And Lodge Chimur</title>
+      <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta name="description" content="Balaji Restaurant Chimur offers Pure Veg, Non-Veg, South Indian food, beverages and desserts. Fresh ingredients, homely taste and family dining experience.">
+
+<meta name="keywords" content="Balaji Restaurant Chimur, Pure Veg Restaurant Chimur, Non Veg Food Chimur, South Indian Dosa Chimur, Best Restaurant in Chimur">
+
+<meta name="author" content="Balaji Hotel Restaurant and Lodge">
+
+<meta name="robots" content="index, follow">
+
    </head>
    <!-- body -->
    <body class="main-layout">

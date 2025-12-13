@@ -28,6 +28,8 @@
 
 
       <title>About - Balaji Hotel And Lodge Chimur</title>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
       <style>
          /* About Page Custom Styles */
          .about {

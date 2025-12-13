@@ -26,6 +26,8 @@ start_session_secure(); // Start session before any output
 
    <link rel="stylesheet" href="css/style.css">
    <title>Balaji Hotel And Lodge Chimur</title>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <!-- body -->

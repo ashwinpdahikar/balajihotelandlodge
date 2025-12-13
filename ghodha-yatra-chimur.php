@@ -7,6 +7,8 @@
 <head>
     <meta charset="UTF-8">
 <title>Ghodha Yatra Chimur | Shri Hari Balaji Temple Festival & Visit Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <meta name="description" content="Ghodha Yatra Chimur is a vibrant festival at Shri Hari Balaji Temple. Learn timings, visitor guidelines, nearby attractions, and explore gallery & accommodations.">
 <meta property="og:title" content="Ghodha Yatra Chimur | Shri Hari Balaji Temple Festival">
 <meta property="og:description" content="Discover Ghodha Yatra Chimur, festival details, timings, visitor guidelines, gallery & nearby attractions.">

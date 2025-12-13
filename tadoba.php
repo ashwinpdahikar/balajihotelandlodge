@@ -164,6 +164,8 @@ $breadcrumb_data = json_encode([
   <head>
     <?php include 'include/header-section.php'; ?>
     <title><?php echo h($page_title); ?></title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <script type="application/ld+json">
 <?php echo $breadcrumb_data; ?>
     </script>

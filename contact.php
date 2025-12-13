@@ -2,30 +2,11 @@
 <html lang="en">
    <head>
       <?php include 'include/header-section.php'; ?>
-
-      <style>
-         /* remove underline, focus line, hover line, blue line, all lines */
-         a, a:hover, a:focus, a:active {
-            text-decoration: none !important;
-            outline: none !important;
-            box-shadow: none !important;
-            border: none !important;
-         }
-
-         /* remove button bottom line */
-         .btn, 
-         .btn:hover, 
-         .btn:focus, 
-         .btn:active {
-            outline: none !important;
-            box-shadow: none !important;
-            border: none !important;
-         }
-      </style>
-
+      
       <title>Contact - Balaji Hotel And Lodge Chimur</title>
-   </head>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+   </head>
    <!-- body -->
    <body class="main-layout">
       <!-- loader  -->

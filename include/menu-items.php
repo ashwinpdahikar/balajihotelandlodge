@@ -3,248 +3,189 @@ require_once __DIR__ . '/functions.php';
 $pdo = get_pdo();
 
 $menu_categories = [
-    'veg' => ['name' => 'Pure Vegetarian', 'icon' => 'fa-leaf', 'color' => '#28a745'],
-    'non-veg' => ['name' => 'Non-Vegetarian', 'icon' => 'fa-cutlery', 'color' => '#dc3545'],
-    'south-indian' => ['name' => 'South Indian', 'icon' => 'fa-spoon', 'color' => '#ffc107'],
-    'beverages' => ['name' => 'Beverages', 'icon' => 'fa-glass', 'color' => '#17a2b8'],
-    'desserts' => ['name' => 'Desserts', 'icon' => 'fa-birthday-cake', 'color' => '#e83e8c']
+    'veg' => [
+        'name' => 'Pure Vegetarian',
+        'desc' => 'Fresh and healthy vegetarian delicacies prepared with love.',
+        'icon' => 'fa-leaf',
+        'images' => [
+            'images/paneer angara.jpg',
+            'images/dal-veg.jpg',
+            'images/salad.jpg'
+        ],
+        'rating' => 4.8
+    ],
+    'non-veg' => [
+        'name' => 'Non-Vegetarian',
+        'desc' => 'Rich flavours with perfectly cooked non-veg specials.',
+        'icon' => 'fa-drumstick-bite',
+        'images' => [
+            'images/chiken pakoda.jpg',
+            'images/chicken 65.jpg',
+            'images/chicken tikka.jpg'
+        ],
+        'rating' => 4.7
+    ],
+    'south-indian' => [
+        'name' => 'South Indian',
+        'desc' => 'Authentic dosa, idli & traditional South Indian taste.',
+        'icon' => 'fa-bowl-rice',
+        'images' => [
+            'images/plain-dosa.jpg',
+            'images/chhole-bhature.jpg',
+            'images/idli.jpg'
+        ],
+        'rating' => 4.9
+    ],
+    'beverages' => [
+        'name' => 'Beverages',
+        'desc' => 'Fresh juices, chilled mocktails and hot beverages served with care.',
+        'icon' => 'fa-mug-hot',
+        'images' => [
+            'images/mojito.jpg',
+            'images/cold-coffee.jpg',
+            'images/tea.jpg'
+        ],
+        'rating' => 4.8
+    ],
+    'desserts' => [
+        'name' => 'Desserts',
+        'desc' => 'Sweet delights to perfectly end your meal.',
+        'icon' => 'fa-ice-cream',
+        'images' => [
+            'images/red-velvet.jpg',
+            'images/rasgulla.jpg',
+            'images/halwa.jpg'
+        ],
+        'rating' => 4.6
+    ]
 ];
 
-function get_menu_by_category($pdo, $category) {
-    try {
-        $tableCheck = $pdo->query("SHOW TABLES LIKE 'restaurant_menu'")->fetch();
-        if (!$tableCheck) return [];
-
-        $stmt = $pdo->prepare('SELECT * FROM restaurant_menu WHERE category = ? AND status = 1 AND is_available = 1 ORDER BY name ASC');
-        $stmt->execute([$category]);
-        return $stmt->fetchAll();
-    } catch(PDOException $e) {
-        error_log('Menu fetch error: '.$e->getMessage());
-        return [];
-    }
+function has_items($pdo, $category) {
+    $stmt = $pdo->prepare("SELECT id FROM restaurant_menu WHERE category=? AND status=1 AND is_available=1");
+    $stmt->execute([$category]);
+    return $stmt->rowCount();
 }
+
+$index = 0;
 ?>
 
-<!-- Menu Section Anchor -->
-<div id="menu" style="scroll-margin-top: 100px;"></div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- Menu Categories Display -->
-<?php 
-$has_any_items = false;
-foreach ($menu_categories as $cat_key => $cat_info): 
-    $menu_items = get_menu_by_category($pdo, $cat_key);
-    if (empty($menu_items)) continue;
-    $has_any_items = true;
-?>
-<div class="menu-category-section mb-5">
-    <div class="category-header">
-        <h3 class="category-title">
-            <i class="fa <?php echo h($cat_info['icon']); ?>" style="color: <?php echo h($cat_info['color']); ?>;"></i>
-            <?php echo h($cat_info['name']); ?>
-            <span class="badge badge-primary ml-2" style="background: <?php echo h($cat_info['color']); ?>;">
-                <?php echo count($menu_items); ?> Items
-            </span>
-        </h3>
-    </div>
-
-    <div class="row">
-        <?php foreach ($menu_items as $item): ?>
-           <div class="col-12 mb-3">
-                <div class="menu-item-list">
-
-            <!-- IMAGE -->
-                   <div class="menu-item-img">
-                <?php if (!empty($item['image_path'])): ?>
-                    <img src="<?php echo h($item['image_path']); ?>" alt="<?php echo h($item['name']); ?>" loading="lazy">
-                <?php else: ?>
-                    <div class="img-placeholder">
-                        <i class="fa fa-cutlery"></i>
-                    </div>
-                <?php endif; ?>
-            </div>
-
-            <!-- CONTENT -->
-            <div class="menu-item-details">
-                
-                <div class="menu-item-title-row">
-                    <h4 class="menu-item-name"><?php echo h($item['name']); ?></h4>
-
-                    <?php if ($item['category'] === 'veg'): ?>
-                    <span class="veg-mark"></span>
-                    <?php else: ?>
-                    <span class="nonveg-mark"></span>
-                    <?php endif; ?>
-                </div>
-
-                <?php if (!empty($item['description'])): ?>
-                <p class="menu-item-desc"><?php echo h($item['description']); ?></p>
-                <?php endif; ?>
-
-                <div class="menu-item-price">
-                    ₹<?php echo number_format((float)$item['price'], 2); ?>
-                </div>
-
-            </div>
-        </div>
-</div>
-
-        <?php endforeach; ?>
-    </div>
-</div>
-<?php endforeach; ?>
-
-<!-- Empty State Message -->
-<?php if (!$has_any_items): ?>
-<div class="row">
-    <div class="col-md-12">
-        <div class="alert alert-info text-center" style="padding: 40px; border-radius: 12px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
-            <i class="fa fa-info-circle" style="font-size: 48px; color: var(--warning); margin-bottom: 20px;"></i>
-            <h4 style="color: var(--text-primary); margin-bottom: 10px;">Menu Coming Soon</h4>
-            <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 0;">
-                Our delicious menu items will be available soon. Please contact us for more information or visit us to see our full menu.
-            </p>
-            <div class="mt-3">
-                <a href="tel:<?php echo preg_replace('/[^0-9]/', '', get_setting('phone', '+91 7350255026')); ?>" class="btn btn-primary">
-                    <i class="fa fa-phone"></i> Call Us
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<?php endif; ?>
 <style>
-   /* Main List Item Wrapper */
-.menu-item-list {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
-}
+.category-section { padding:20px; }
 
-/* IMAGE */
-.menu-item-img {
-    width: 95px;
-    height: 95px;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.menu-item-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Placeholder if no image */
-.img-placeholder {
-    width: 100%;
-    height: 100%;
-    background: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #888;
-    font-size: 22px;
-}
-
-/* CONTENT SECTION */
-.menu-item-details {
-    flex: 1;
-}
-
-/* Title Row */
-.menu-item-title-row {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.menu-item-name {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0;
-}
-
-/* Veg / Non-Veg DOT STYLE (Swiggy Style) */
-.veg-mark, .nonveg-mark {
-    width: 12px;
-    height: 12px;
-    border-radius: 2px;
-    border: 1px solid;
-    display: inline-block;
+.category-image-box {
     position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
 }
 
-.veg-mark {
-    border-color: #008000;
+.category-image-box img {
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    display:none;
 }
 
-.veg-mark::after {
+.category-image-box img.active {
+    display:block;
+}
+
+.category-section h2 { font-size:30px; }
+.category-section p { font-size:16px; line-height:1.6; }
+
+.rating {
+    margin-top:12px;
+    font-size:18px;
+    color:#f4b400;
+}
+
+.rating span {
+    margin-left:8px;
+    font-size:14px;
+    color:#555;
+}
+
+@media(max-width:768px){
+    .category-image-box img{ height:240px; }
+    .category-section h2{ font-size:24px; }
+}
+/* HOVER EFFECT */
+.category-image-box::after {
     content: "";
-    width: 6px;
-    height: 6px;
-    background: #008000;
     position: absolute;
-    top: 2px;
-    left: 2px;
-    border-radius: 1px;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
-.nonveg-mark {
-    border-color: #a10000;
+.category-image-box:hover::after {
+    opacity: 1;
 }
 
-.nonveg-mark::after {
-    content: "";
-    width: 6px;
-    height: 6px;
-    background: #a10000;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    border-radius: 1px;
+.category-image-box img {
+    transition: transform 0.6s ease;
 }
 
-/* Description */
-.menu-item-desc {
-    margin: 4px 0 6px;
-    color: #555;
-    font-size: 14px;
+.category-image-box:hover img {
+    transform: scale(1.12);
 }
-
-/* Price */
-.menu-item-price {
-    font-size: 16px;
-    font-weight: 600;
-    color: #000;
-}
-
-/* MOBILE RESPONSIVE */
-@media(max-width: 600px) {
-    .menu-item-list {
-        padding: 10px 0;
-        gap: 10px;
-    }
-
-    .menu-item-img {
-        width: 85px;
-        height: 85px;
-    }
-
-    .menu-item-name {
-        font-size: 15px;
-    }
-
-    .menu-item-desc {
-        font-size: 13px;
-    }
-
-    .menu-item-price {
-        font-size: 15px;
-    }
-}
-
 
 </style>
+
+<div class="container my-5">
+    <h1 class="text-center font-weight-bold mb-5">🍽 Our Food Categories</h1>
+
+    <?php foreach ($menu_categories as $key => $cat): ?>
+        <?php if (!has_items($pdo, $key)) continue; ?>
+        <?php $index++; ?>
+
+        <div class="row category-section align-items-center mb-5 <?= $index % 2 == 0 ? 'flex-row-reverse' : '' ?>">
+
+            <!-- IMAGE SLIDER -->
+            <div class="col-md-6 mb-3 mb-md-0">
+                <div class="category-image-box slider">
+                    <?php foreach ($cat['images'] as $i => $img): ?>
+                        <img src="<?= $img ?>" class="<?= $i==0?'active':'' ?>">
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            <!-- TEXT -->
+            <div class="col-md-6">
+                <h2 class="font-weight-bold">
+                    <i class="fa <?= $cat['icon']; ?> text-success mr-2"></i>
+                    <?= $cat['name']; ?>
+                </h2>
+
+                <p class="text-muted mt-2"><?= $cat['desc']; ?></p>
+
+                <div class="rating">
+                    <?php
+                        $full = floor($cat['rating']);
+                        for ($i=1;$i<=5;$i++){
+                            echo $i<=$full
+                            ? '<i class="fa fa-star"></i>'
+                            : '<i class="fa fa-star-o"></i>';
+                        }
+                    ?>
+                    <span><?= $cat['rating']; ?>/5</span>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<script>
+document.querySelectorAll('.slider').forEach(slider=>{
+    let imgs = slider.querySelectorAll('img');
+    let i = 0;
+    setInterval(()=>{
+        imgs[i].classList.remove('active');
+        i = (i+1) % imgs.length;
+        imgs[i].classList.add('active');
+    },3000);
+});
+</script>
