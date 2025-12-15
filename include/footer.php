@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer">
+    <div class="footer mt-2">
         <div class="container">
             <div class="row">
 

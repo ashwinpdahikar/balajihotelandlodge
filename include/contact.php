@@ -73,7 +73,7 @@
                             <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
                         </div>
                         <div class="col-md-12">
-                            <textarea class="textarea" placeholder="Message" type="type"
+                            <textarea class="textarea resize-none" placeholder="Message" type="type"
                                 Message="Name">Message</textarea>
                         </div>
                         <div class="col-md-12">
