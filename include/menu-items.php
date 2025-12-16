@@ -14,6 +14,17 @@ $menu_categories = [
         ],
         'rating' => 4.8
     ],
+	 'south-indian' => [
+        'name' => 'South Indian',
+        'desc' => 'Authentic dosa, idli & traditional South Indian taste.',
+        'icon' => 'fa-bowl-rice',
+        'images' => [
+            'images/plain-dosa.jpg',
+            'images/chhole-bhature.jpg',
+            'images/idli.jpg'
+        ],
+        'rating' => 4.9
+    ],
     'non-veg' => [
         'name' => 'Non-Vegetarian',
         'desc' => 'Rich flavours with perfectly cooked non-veg specials.',
@@ -25,17 +36,7 @@ $menu_categories = [
         ],
         'rating' => 4.7
     ],
-    'south-indian' => [
-        'name' => 'South Indian',
-        'desc' => 'Authentic dosa, idli & traditional South Indian taste.',
-        'icon' => 'fa-bowl-rice',
-        'images' => [
-            'images/plain-dosa.jpg',
-            'images/chhole-bhature.jpg',
-            'images/idli.jpg'
-        ],
-        'rating' => 4.9
-    ]
+   
 ];
 
 function has_items($pdo, $category) {
