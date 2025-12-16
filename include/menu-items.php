@@ -19,9 +19,9 @@ $menu_categories = [
         'desc' => 'Rich flavours with perfectly cooked non-veg specials.',
         'icon' => 'fa-drumstick-bite',
         'images' => [
-            'images/chiken pakoda.jpg',
-            'images/chicken 65.jpg',
-            'images/chicken tikka.jpg'
+            'images/chicken-leg.jpg',
+            'images/chicken-leg1.jpg',
+            'images/chicken-biryani.jpg'
         ],
         'rating' => 4.7
     ],
