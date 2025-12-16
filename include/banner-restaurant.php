@@ -16,9 +16,7 @@
         <a href="restaurant.php#table-booking" class="btn-hero btn-hero-primary">
           <i class="fa fa-cutlery"></i> Book a Table
         </a>
-        <a href="restaurant.php#menu" class="btn-hero btn-hero-secondary">
-          <i class="fa fa-list"></i> View Menu
-        </a>
+        
       </div>
     </div>
   </div>

@@ -35,28 +35,6 @@ $menu_categories = [
             'images/idli.jpg'
         ],
         'rating' => 4.9
-    ],
-    'beverages' => [
-        'name' => 'Beverages',
-        'desc' => 'Fresh juices, chilled mocktails and hot beverages served with care.',
-        'icon' => 'fa-mug-hot',
-        'images' => [
-            'images/mojito.jpg',
-            'images/cold-coffee.jpg',
-            'images/tea.jpg'
-        ],
-        'rating' => 4.8
-    ],
-    'desserts' => [
-        'name' => 'Desserts',
-        'desc' => 'Sweet delights to perfectly end your meal.',
-        'icon' => 'fa-ice-cream',
-        'images' => [
-            'images/red-velvet.jpg',
-            'images/rasgulla.jpg',
-            'images/halwa.jpg'
-        ],
-        'rating' => 4.6
     ]
 ];
 
@@ -148,7 +126,10 @@ $index = 0;
             <div class="col-md-6 mb-3 mb-md-0">
                 <div class="category-image-box slider">
                     <?php foreach ($cat['images'] as $i => $img): ?>
-                        <img src="<?= $img ?>" class="<?= $i==0?'active':'' ?>">
+<img 
+    src="<?= $img ?>" 
+    class="<?= $i==0?'active':'' ?>"
+    alt="<?= $cat['name']; ?> food at Balaji Restaurant Chimur">
                     <?php endforeach; ?>
                 </div>
             </div>

@@ -20,6 +20,8 @@
             <li><a href="tadoba-tiger-reserve.php">Tadoba Safari Guide</a></li>
             <li><a href="Shree-hari-balaji-mandir.php">Shree Hari Balaji Mandir</a></li>
 <li><a href="ghodha-yatra-chimur.php">Ghodha Yatra Chimur</a></li>
+            <li><a href="muktai-waterfall.php">Muktai Waterfall</a></li>
+
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
@@ -67,6 +69,8 @@
         <li class="off-item" style="padding-left:24px;">
             <a href="Shree-hari-balaji-mandir.php" style="font-size:0.9rem;color:#666;">→ Shree Hari Balaji Mandir</a>
         </li>
+        <li class="off-item" style="padding-left:24px;"><a href="muktai-waterfall.php">Muktai Waterfall</a></li>
+
         <li class="off-item" style="padding-left:24px;">
             <a href="ghodha-yatra-chimur.php" style="font-size:0.9rem;color:#666;">→ Ghodha Yatra Chimur</a>
         </li>
