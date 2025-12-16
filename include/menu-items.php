@@ -31,7 +31,7 @@ $menu_categories = [
         'icon' => 'fa-bowl-rice',
         'images' => [
             'images/plain-dosa.jpg',
-            'images/chhole-bhature.jpg',
+            'images/sambar-vada.jpg',
             'images/idli.jpg'
         ],
         'rating' => 4.9
