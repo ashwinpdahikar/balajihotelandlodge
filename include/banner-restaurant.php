@@ -4,6 +4,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block w-100" src="images/gallery2.jpg" alt="Restaurant Banner" />
+		<!-- <div class="image-overlay"></div> -->
       </div>
     </div>
   </div>
@@ -12,12 +13,13 @@
     <div class="hero-content">
       <h1 class="hero-title">Balaji Restaurant</h1>
       <p class="hero-subtitle">Fresh, homely meals — Pure Veg & Non-Veg specialties</p>
-      <div class="hero-cta-buttons">
-        <a href="restaurant.php#table-booking" class="btn-hero btn-hero-primary">
-          <i class="fa fa-cutlery"></i> Book a Table
-        </a>
+	   <p class="font-italic font-weight-normal mt-0">Book a table in advance for a hassle-free dining experience. We accommodate groups of all sizes.</p>
+	   <div class="hero-cta-buttons mt-4">
+		   <a data-toggle="modal" data-target="#tableBookingModal" class="btn-hero btn-hero-primary">
+			   <i class="fa fa-cutlery"></i> Book a Table
+			</a>
+		</div>
         
-      </div>
     </div>
   </div>
 
@@ -62,7 +64,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35); /* overlay color */
+  background: rgba(0,0,0,0.56); /* overlay color */
   pointer-events: none;
 }
 .hero-overlay {
@@ -97,7 +99,7 @@
   font-size: 1.3rem;
   color: #fff;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   font-weight: 400;
 }
 

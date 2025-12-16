@@ -63,7 +63,7 @@ $pdo = get_pdo(); ?>
       ?>
 
       <!-- Table Booking Section -->
-      <div class="row mb-5" id="table-booking" style="scroll-margin-top: 100px;">
+      <!-- <div class="row mb-5" id="table-booking" style="scroll-margin-top: 100px;">
          <div class="col-md-12">
             <div class="table-booking-card">
                <div class="row align-items-center">
@@ -79,7 +79,7 @@ $pdo = get_pdo(); ?>
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
 
       <!-- Menu Categories -->
       <?php include 'include/menu-items.php'?>

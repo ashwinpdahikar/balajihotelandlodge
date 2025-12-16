@@ -38,7 +38,7 @@
         <button type="button" class="btn-hero btn-hero-primary" data-action="open-room-form">
           <i class="fa fa-bed"></i> Book Room
         </button>
-        <a href="restaurant.php#table-booking" class="btn-hero btn-hero-secondary">
+        <a href="restaurant.php" class="btn-hero btn-hero-secondary">
           <i class="fa fa-cutlery"></i> Book Table
         </a>
       </div>
