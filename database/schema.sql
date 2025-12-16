@@ -104,18 +104,18 @@ CREATE TABLE IF NOT EXISTS booking_inquiries (
   FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS restaurant_menu (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(150) NOT NULL,
-  description TEXT NULL,
-  category ENUM('veg','non-veg','south-indian','beverages','desserts') NOT NULL,
-  price DECIMAL(10,2) NOT NULL,
-  image_path VARCHAR(255) NULL,
-  is_available TINYINT(1) DEFAULT 1,
-  status TINYINT(1) DEFAULT 1,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
+-- CREATE TABLE IF NOT EXISTS restaurant_menu (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   name VARCHAR(150) NOT NULL,
+--   description TEXT NULL,
+--   category ENUM('veg','non-veg','south-indian') NOT NULL,
+--   price DECIMAL(10,2) NOT NULL,
+--   image_path VARCHAR(255) NULL,
+--   is_available TINYINT(1) DEFAULT 1,
+--   status TINYINT(1) DEFAULT 1,
+--   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+-- ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS table_bookings (
   id INT AUTO_INCREMENT PRIMARY KEY,
