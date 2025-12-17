@@ -21,7 +21,16 @@
             <li><a href="Shree-hari-balaji-mandir.php">Shree Hari Balaji Mandir</a></li>
 <li><a href="ghodha-yatra-chimur.php">Ghodha Yatra Chimur</a></li>
             <li><a href="muktai-waterfall.php">Muktai Waterfall</a></li>
-
+            <li><a href="chimur-fort.php">Chimur Fort</a></li>
+            <li><a href="chimur-hanuman-temple.php">Chimur Hanuman Temple</a></li>
+            <li><a href="chimur-fort.php">Antique Balaji Temple
+</a></li>
+            <li><a href="chimur-fort.php">Muktai Temple</a></li>
+            <li><a href="chimur-fort.php">Hirapur Dolmen Site</a></li>
+            <li><a href="chimur-fort.php">Erai River</a></li>
+            <li><a href="chimur-fort.php">Erai Dam</a></li>
+            <li><a href="chimur-fort.php">Chimur Tiger Resort</a></li>
+            <li><a href="chimur-fort.php">Ghodazari Wildlife Sanctuary</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
@@ -69,17 +78,45 @@
         <li class="off-item" style="padding-left:24px;">
             <a href="Shree-hari-balaji-mandir.php" style="font-size:0.9rem;color:#666;">→ Shree Hari Balaji Mandir</a>
         </li>
-        <li class="off-item" style="padding-left:24px;"><a href="muktai-waterfall.php">Muktai Waterfall</a></li>
+        <li class="off-item" style="padding-left:24px;"><a href="muktai-waterfall.php">→ Muktai Waterfall</a></li>
 
         <li class="off-item" style="padding-left:24px;">
-            <a href="ghodha-yatra-chimur.php" style="font-size:0.9rem;color:#666;">→ Ghodha Yatra Chimur</a>
+            <a href="ghodha-yatra-chimur.php" style="font-size:0.9rem;color:#666;">→ Chimur Fort</a>
+        </li>
+
+        <li class="off-item" style="padding-left:24px;">
+            <a href="chimur-hanuman-temple.php" style="font-size:0.9rem;color:#666;">→ Chimur Hanuman Temple</a>
+        </li>
+        <li class="off-item" style="padding-left:24px;">
+            <a href="chimur-fort.php" style="font-size:0.9rem;color:#666;">→ Ghodha Yatra Chimur</a>
+        </li>
+        <li class="off-item" style="padding-left:24px;">
+            <a href="chimur-fort.php" style="font-size:0.9rem;color:#666;">→ Antique Balaji Temple</a>
+        </li>
+        <li class="off-item" style="padding-left:24px;">
+            <a href="chimur-fort.php" style="font-size:0.9rem;color:#666;">→ Muktai Temple</a>
+        </li>
+        <li class="off-item" style="padding-left:24px;">
+            <a href="chimur-fort.php" style="font-size:0.9rem;color:#666;">→ Hirapur Dolmen Site</a>
+        </li>
+        <li class="off-item" style="padding-left:24px;">
+            <a href="chimur-fort.php" style="font-size:0.9rem;color:#666;">→ Erai River</a>
+        </li>
+        <li class="off-item" style="padding-left:24px;">
+            <a href="chimur-fort.php" style="font-size:0.9rem;color:#666;">→ Erai Dam</a>
+        </li>
+        <li class="off-item" style="padding-left:24px;">
+            <a href="chimur-fort.php" style="font-size:0.9rem;color:#666;">→ Chimur Tiger Resort</a>
+        </li>
+        <li class="off-item" style="padding-left:24px;">
+            <a href="chimur-fort.php" style="font-size:0.9rem;color:#666;">→ Ghodazari Wildlife Sanctuary</a>
         </li>
 
         <li class="off-item"><a href="blog.php">Blog</a></li>
-<li class="nav-item cta">
-    <a class="nav-link btn-cta" href="contact.php" style="text-decoration: none; border-bottom: none;box-shadow: none;       
+
+    <a class=" btn-cta" href="contact.php" style="text-decoration: none; border-bottom: none;box-shadow: none;       
     outline: none;">Contact Us</a>
-</li>
+
 
     </ul>
 </nav>
