@@ -13,7 +13,7 @@
     <div class="hero-content">
       <h1 class="hero-title">Balaji Restaurant</h1>
       <p class="hero-subtitle">Fresh, homely meals — Pure Veg & Non-Veg specialties</p>
-	   <p class="font-italic font-weight-normal mt-0">Book a table in advance for a hassle-free dining experience. We accommodate groups of all sizes.</p>
+	   <p class="font-italic font-weight-normal mt-0">Book your table in advance and enjoy a smooth dining experience. We have space for both small and large groups.</p>
 	   <div class="hero-cta-buttons mt-4">
 		   <a data-toggle="modal" data-target="#tableBookingModal" class="btn-hero btn-hero-primary">
 			   <i class="fa fa-cutlery"></i> Book a Table

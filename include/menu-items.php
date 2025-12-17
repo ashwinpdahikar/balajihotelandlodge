@@ -14,6 +14,7 @@ $menu_categories = [
         ],
         'rating' => 4.8
     ],
+	
     'non-veg' => [
         'name' => 'Non-Vegetarian',
         'desc' => 'Rich flavours with perfectly cooked non-veg specials.',
@@ -25,6 +26,8 @@ $menu_categories = [
         ],
         'rating' => 4.7
     ],
+	
+   
     'south-indian' => [
         'name' => 'South Indian',
         'desc' => 'Authentic dosa, idli & traditional South Indian taste.',
@@ -117,7 +120,6 @@ $index = 0;
     <h1 class="text-center font-weight-bold mb-5">🍽 Our Food Categories</h1>
 
     <?php foreach ($menu_categories as $key => $cat): ?>
-        <?php if (!has_items($pdo, $key)) continue; ?>
         <?php $index++; ?>
 
         <div class="row category-section align-items-center mb-5 <?= $index % 2 == 0 ? 'flex-row-reverse' : '' ?>">
@@ -126,11 +128,11 @@ $index = 0;
             <div class="col-md-6 mb-3 mb-md-0">
                 <div class="category-image-box slider">
                     <?php foreach ($cat['images'] as $i => $img): ?>
-<img 
-    src="<?= $img ?>" 
-    class="<?= $i==0?'active':'' ?>"
-    alt="<?= $cat['name']; ?> food at Balaji Restaurant Chimur">
-                    <?php endforeach; ?>
+		<img 
+			src="<?= $img ?>" 
+			class="<?= $i==0?'active':'' ?>"
+			alt="<?= $cat['name']; ?> food at Balaji Restaurant Chimur">
+							<?php endforeach; ?>
                 </div>
             </div>
 
