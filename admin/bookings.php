@@ -94,19 +94,22 @@ $stats = [
                 
                 <div class="table-responsive">
                     <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Customer</th>
-                                <th>Phone</th>
-                                <th>Room</th>
-                                <th>Guests</th>
-                                <th>Payment</th>
-                                <th>Status</th>
-                                <th>Date</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
+                       <thead>
+							<tr>
+								<th>ID</th>
+								<th>Customer</th>
+								<th>Phone</th>
+								<th>Room</th>
+								<th>Guests</th>
+								<th>Payment</th>
+								<th>Status</th>
+								<th>Booking Date</th>
+								<th>Check-in</th>
+								<th>Check-out</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+
                         <tbody>
                             <?php if (empty($bookings)): ?>
                             <tr>
@@ -119,54 +122,84 @@ $stats = [
                             </tr>
                             <?php else: ?>
                             <?php foreach ($bookings as $booking): ?>
-                            <tr class="<?php echo $booking['is_read'] == 0 ? 'unread' : ''; ?>">
-                                <td>#<?php echo $booking['id']; ?></td>
-                                <td><?php echo h($booking['customer_name']); ?></td>
-                                <td><?php echo h($booking['phone']); ?></td>
-                                <td><?php echo h($booking['room_title'] ?? 'N/A'); ?></td>
-                                <td>
-                                    <?php echo $booking['adults']; ?> Adults
-                                    <?php if ($booking['children_under15'] > 0 || $booking['children_15plus'] > 0): ?>
-                                    <br><small>
-                                        <?php if ($booking['children_under15'] > 0): ?>
-                                        <?php echo $booking['children_under15']; ?> Kids (0-14)
-                                        <?php endif; ?>
-                                        <?php if ($booking['children_15plus'] > 0): ?>
-                                        <?php echo $booking['children_15plus']; ?> Kids (15+)
-                                        <?php endif; ?>
-                                    </small>
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <?php if ($booking['payment_status'] === 'paid'): ?>
-                                    <span class="badge badge-success">Paid</span>
-                                    <?php if ($booking['advance_amount']): ?>
-                                    <br><small>₹<?php echo number_format($booking['advance_amount'], 2); ?></small>
-                                    <?php endif; ?>
-                                    <?php else: ?>
-                                    <span class="badge badge-warning">Unpaid</span>
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <form method="POST" style="display: inline-block;">
-                                        <input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
-                                        <select name="status" onchange="this.form.submit()" style="padding: 4px 8px; border-radius: 4px; border: 1px solid #ddd;">
-                                            <option value="pending" <?php echo $booking['status'] === 'pending' ? 'selected' : ''; ?>>Pending</option>
-                                            <option value="approved" <?php echo $booking['status'] === 'approved' ? 'selected' : ''; ?>>Approved</option>
-                                            <option value="rejected" <?php echo $booking['status'] === 'rejected' ? 'selected' : ''; ?>>Rejected</option>
-                                        </select>
-                                        <input type="hidden" name="update_status" value="1">
-                                    </form>
-                                </td>
-                                <td><?php echo date('d M Y', strtotime($booking['created_at'])); ?><br>
-                                    <small><?php echo date('h:i A', strtotime($booking['created_at'])); ?></small>
-                                </td>
-                                <td>
-                                    <a href="booking_detail.php?id=<?php echo $booking['id']; ?>" class="btn-action">
-                                        <i class="fa fa-eye"></i> View
-                                    </a>
-                                </td>
-                            </tr>
+                            	<tr class="<?php echo $booking['is_read'] == 0 ? 'unread' : ''; ?>">
+									<td>#<?php echo $booking['id']; ?></td>
+
+									<td><?php echo h($booking['customer_name']); ?></td>
+
+									<td><?php echo h($booking['phone']); ?></td>
+
+									<td><?php echo h($booking['room_title'] ?? 'N/A'); ?></td>
+
+									<td>
+										<?php echo $booking['adults']; ?> Adults
+										<?php if ($booking['children_under15'] > 0 || $booking['children_15plus'] > 0): ?>
+										<br>
+										<small>
+											<?php if ($booking['children_under15'] > 0): ?>
+												<?php echo $booking['children_under15']; ?> Kids (0-14)
+											<?php endif; ?>
+											<?php if ($booking['children_15plus'] > 0): ?>
+												, <?php echo $booking['children_15plus']; ?> Kids (15+)
+											<?php endif; ?>
+										</small>
+										<?php endif; ?>
+									</td>
+
+									<td>
+										<?php if ($booking['payment_status'] === 'paid'): ?>
+											<span class="badge badge-success">Paid</span>
+											<?php if ($booking['advance_amount']): ?>
+												<br><small>₹<?php echo number_format($booking['advance_amount'], 2); ?></small>
+											<?php endif; ?>
+										<?php else: ?>
+											<span class="badge badge-warning">Unpaid</span>
+										<?php endif; ?>
+									</td>
+
+									<td>
+										<form method="POST">
+											<input type="hidden" name="booking_id" value="<?php echo $booking['id']; ?>">
+											<input type="hidden" name="update_status" value="1">
+											<select name="status" onchange="this.form.submit()">
+												<option value="pending"  <?php echo $booking['status']=='pending'?'selected':''; ?>>Pending</option>
+												<option value="approved" <?php echo $booking['status']=='approved'?'selected':''; ?>>Approved</option>
+												<option value="rejected" <?php echo $booking['status']=='rejected'?'selected':''; ?>>Rejected</option>
+											</select>
+										</form>
+									</td>
+
+									<!-- Booking Created Date -->
+									<td>
+										<?php echo date('d M Y', strtotime($booking['created_at'])); ?><br>
+										<small><?php echo date('h:i A', strtotime($booking['created_at'])); ?></small>
+									</td>
+
+									<!-- Check-in -->
+									<td>
+										<?php echo $booking['checkin_date']
+											? date('d M Y', strtotime($booking['checkin_date'])) : '—'; ?>
+										<?php if (!empty($booking['checkin_time'])): ?>
+											<br><small><?php echo date('h:i A', strtotime($booking['checkin_time'])); ?></small>
+										<?php endif; ?>
+									</td>
+
+									<!-- Check-out -->
+									<td>
+										<?php echo $booking['checkout_date']
+											? date('d M Y', strtotime($booking['checkout_date'])) : '—'; ?>
+										<?php if (!empty($booking['checkout_time'])): ?>
+											<br><small><?php echo date('h:i A', strtotime($booking['checkout_time'])); ?></small>
+										<?php endif; ?>
+									</td>
+
+									<td>
+										<a href="booking_detail.php?id=<?php echo $booking['id']; ?>" class="btn-action">
+											<i class="fa fa-eye"></i> View
+										</a>
+									</td>
+								</tr>
+
                             <?php endforeach; ?>
                             <?php endif; ?>
                         </tbody>

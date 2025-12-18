@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 require_once __DIR__ . '/include/functions.php';
 start_session_secure(); // Start session before any output
 ?>
@@ -283,74 +285,77 @@ start_session_secure(); // Start session before any output
 
       </div>
    </div>
+
+   
 </section>
+<?php ob_end_flush(); ?>
 
 <style>
-.about-feature-card {
-   transition:0.3s;
-}
-.about-feature-card:hover {
-   transform:translateY(-5px);
-   box-shadow:0 10px 25px rgba(0,0,0,0.12);
-}
+	.about-feature-card {
+	transition:0.3s;
+	}
+	.about-feature-card:hover {
+	transform:translateY(-5px);
+	box-shadow:0 10px 25px rgba(0,0,0,0.12);
+	}
 
 
-.feature-btn,
-.feature-btn-outline {
-   display:inline-block;
-   padding:12px 32px;      
-   border-radius:50px;
-   font-weight:600;
-   font-size:1rem;
-   text-decoration:none;
-   transition:0.3s ease;
-   min-width:165px;          
-   text-align:center;        
-}
+	.feature-btn,
+	.feature-btn-outline {
+	display:inline-block;
+	padding:12px 32px;      
+	border-radius:50px;
+	font-weight:600;
+	font-size:1rem;
+	text-decoration:none;
+	transition:0.3s ease;
+	min-width:165px;          
+	text-align:center;        
+	}
 
 
-.hotel-btn {
-   background:#8e3a02 !important;
-   color:#fff !important;
-}
-.hotel-btn-outline {
-   background:transparent !important;
-   color:#8e3a02 !important;
-   border:2px solid  #8e3a02 !important;
-}
+	.hotel-btn {
+	background:#8e3a02 !important;
+	color:#fff !important;
+	}
+	.hotel-btn-outline {
+	background:transparent !important;
+	color:#8e3a02 !important;
+	border:2px solid  #8e3a02 !important;
+	}
 
 
-.restaurant-btn {
-   background:#2E8B57 !important;
-   color:#fff !important;
-}
-.restaurant-btn-outline {
-   background:transparent !important;
-   color:#2E8B57 !important;
-   border:2px solid #2E8B57 !important;
-}
+	.restaurant-btn {
+	background:#2E8B57 !important;
+	color:#fff !important;
+	}
+	.restaurant-btn-outline {
+	background:transparent !important;
+	color:#2E8B57 !important;
+	border:2px solid #2E8B57 !important;
+	}
 
 
-.hotel-btn:hover,
-.hotel-btn-outline:hover,
-.restaurant-btn:hover,
-.restaurant-btn-outline:hover {
-   transform:translateY(-3px);
-   box-shadow:0 4px 10px rgba(0,0,0,0.15);
-}
+	.hotel-btn:hover,
+	.hotel-btn-outline:hover,
+	.restaurant-btn:hover,
+	.restaurant-btn-outline:hover {
+	transform:translateY(-3px);
+	box-shadow:0 4px 10px rgba(0,0,0,0.15);
+	}
 
 
-@media (max-width:768px) {
-   .feature-btn,
-   .feature-btn-outline {
-      width:100%;           
-      min-width:100%;       
-      margin-bottom:10px;
-   }
-}
+	@media (max-width:768px) {
+	.feature-btn,
+	.feature-btn-outline {
+		width:100%;           
+		min-width:100%;       
+		margin-bottom:10px;
+	}
+	}
 
-   h2 { font-size:2rem !important; }
-   h3 { font-size:1.5rem !important; }
+	h2 { font-size:2rem !important; }
+	h3 { font-size:1.5rem !important; }
 
 </style>
 

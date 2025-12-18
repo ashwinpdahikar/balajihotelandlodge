@@ -114,7 +114,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
                 </div>
                 <?php endif; ?>
             </div>
-            
+            <div class="detail-card">
+				<h3 style="margin-bottom: 20px;">Stay Duration</h3>
+
+				<div class="detail-row">
+					<div class="detail-label">Check-in:</div>
+					<div class="detail-value">
+						<?php echo date('d M Y', strtotime($booking['checkin_date'])); ?>
+						<?php if ($booking['checkin_time']): ?>
+							<br><small><?php echo date('h:i A', strtotime($booking['checkin_time'])); ?></small>
+						<?php endif; ?>
+					</div>
+				</div>
+
+				<div class="detail-row">
+					<div class="detail-label">Check-out:</div>
+					<div class="detail-value">
+						<?php echo date('d M Y', strtotime($booking['checkout_date'])); ?>
+						<?php if ($booking['checkout_time']): ?>
+							<br><small><?php echo date('h:i A', strtotime($booking['checkout_time'])); ?></small>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+
             <div class="detail-card">
                 <h3 style="margin-bottom: 20px;">Payment Information</h3>
                 <div class="detail-row">

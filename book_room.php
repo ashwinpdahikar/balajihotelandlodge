@@ -1,9 +1,8 @@
 <?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
+ob_start();
+error_reporting(E_ALL);			// Enable error reporting for debugging
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
-
 require_once __DIR__ . '/include/functions.php';
 start_session_secure();
 
@@ -65,6 +64,11 @@ $roomId = (int)($_POST['room_id'] ?? 0);
 $name = trim($_POST['name'] ?? '');
 $phone = trim($_POST['phone'] ?? '');
 $message = trim($_POST['message'] ?? '');
+$checkinDate  = $_POST['checkin_date']  ?? '';
+$checkinTime  = $_POST['checkin_time']  ?? '';
+$checkoutDate = $_POST['checkout_date'] ?? '';
+$checkoutTime = $_POST['checkout_time'] ?? null;
+
 
 error_log('Parsed Data - RoomID: ' . $roomId . ', Name: ' . $name . ', Phone: ' . $phone);
 
@@ -72,6 +76,23 @@ if ($roomId <= 0 || $name === '' || $phone === '') {
     error_log('VALIDATION FAILED - Missing required fields');
     redirect_with_msg('कृपया सभी आवश्यक फ़ील्ड भरें (Please fill all required fields)', false);
 }
+if (
+    !$checkinDate || !$checkinTime ||
+    !$checkoutDate
+) {
+    redirect_with_msg(
+        'Please select check-in and check-out date & time',
+        false
+    );
+}
+
+if (strtotime($checkoutDate) < strtotime($checkinDate)) {
+    redirect_with_msg(
+        'Check-out date cannot be before check-in date',
+        false
+    );
+}
+
 
 // Basic throttle: one request per 30s per IP
 $pdo = get_pdo();
@@ -140,36 +161,54 @@ if ($email) {
 
 try {
     // Ensure all values are properly set
-    $insertData = [
-        'room_id' => $roomId,
-        'customer_name' => $name,
-        'phone' => $phone,
-        'message' => $fullMessage ?: null,
-        'adults' => $adults,
-        'children_under15' => $kidsU15,
-        'children_15plus' => $kids15,
-        'extra_estimate' => $estimate,
-        'advance_amount' => $advance,
-        'payment_ref' => $paymentRef,
-        'payment_status' => $paymentStatus
-    ];
+   $insertData = [
+    'room_id' => $roomId,
+    'customer_name' => $name,
+    'phone' => $phone,
+    'checkin_date' => $checkinDate,
+    'checkin_time' => $checkinTime,
+    'checkout_date' => $checkoutDate,
+    'checkout_time' => $checkoutTime,
+    'message' => $fullMessage ?: null,
+    'adults' => $adults,
+    'children_under15' => $kidsU15,
+    'children_15plus' => $kids15,
+    'extra_estimate' => $estimate,
+    'advance_amount' => $advance,
+    'payment_ref' => $paymentRef,
+    'payment_status' => $paymentStatus
+];
+
     
     error_log('Attempting to insert booking: ' . print_r($insertData, true));
-    
-    $stmt = $pdo->prepare('INSERT INTO booking_inquiries (room_id, customer_name, phone, message, adults, children_under15, children_15plus, extra_estimate, advance_amount, payment_ref, payment_status) VALUES (?,?,?,?,?,?,?,?,?,?,?)');
-    $result = $stmt->execute([
-        $insertData['room_id'],
-        $insertData['customer_name'],
-        $insertData['phone'],
-        $insertData['message'],
-        $insertData['adults'],
-        $insertData['children_under15'],
-        $insertData['children_15plus'],
-        $insertData['extra_estimate'],
-        $insertData['advance_amount'],
-        $insertData['payment_ref'],
-        $insertData['payment_status']
-    ]);
+
+   $stmt = $pdo->prepare(
+    'INSERT INTO booking_inquiries
+    (room_id, customer_name, phone,
+     checkin_date, checkin_time, checkout_date, checkout_time,
+     message, adults, children_under15, children_15plus,
+     extra_estimate, advance_amount, payment_ref, payment_status)
+     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+);
+
+$result = $stmt->execute([
+    $insertData['room_id'],
+    $insertData['customer_name'],
+    $insertData['phone'],
+    $insertData['checkin_date'],
+    $insertData['checkin_time'],
+    $insertData['checkout_date'],
+    $insertData['checkout_time'],
+    $insertData['message'],
+    $insertData['adults'],
+    $insertData['children_under15'],
+    $insertData['children_15plus'],
+    $insertData['extra_estimate'],
+    $insertData['advance_amount'],
+    $insertData['payment_ref'],
+    $insertData['payment_status']
+]);
+
     
     error_log('Execute result: ' . ($result ? 'SUCCESS' : 'FAILED'));
     error_log('Row count: ' . $stmt->rowCount());

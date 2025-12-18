@@ -12,326 +12,355 @@ $phone = get_setting('phone', '+91 7350255026');
 $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
 ?>
 <style>
-/* Booking Modal Styles */
-#bookingModal .modal-dialog {
-  max-width: 900px;
-  margin: 30px auto;
-}
-#bookingModal .modal-content {
-  border-radius: 20px;
-  border: none;
-  box-shadow: 0 20px 60px rgba(0,0,0,.3);
-  overflow: hidden;
-  margin: 65px 0;
-}
-#bookingModal .modal-header {
-  background: linear-gradient(135deg, #d35400 0%, #ff6b35 100%);
-  color: #fff;
-  padding: 25px 30px;
-  border-bottom: none;
-  position: relative;
-}
-#bookingModal .modal-header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: rgba(255,255,255,.2);
-}
-#bookingModal .modal-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-#bookingModal .modal-title i {
-  font-size: 1.5rem;
-}
-#bookingModal .close {
-  color: #fff;
-  opacity: .9;
-  font-size: 2rem;
-  font-weight: 300;
-  text-shadow: none;
-  padding: 0;
-  margin: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all .3s;
-}
-#bookingModal .close:hover {
-  opacity: 1;
-  background: rgba(255,255,255,.2);
-  transform: rotate(90deg);
-}
-#bookingModal .modal-body {
-  padding: 35px;
-  background: #f8f9fa;
-  max-height: calc(100vh - 200px);
-  overflow-y: auto;
-  height: 80% !important;
-}
-#bookingModal .form-section {
-  background: #fff;
-  padding: 25px;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,.05);
-}
-#bookingModal .section-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #d35400;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-#bookingModal .section-title i {
-  color: #d35400;
-  font-size: 1.1rem;
-}
-#bookingModal .form-group {
-  margin-bottom: 20px;
-}
-#bookingModal .form-group:last-child {
-  margin-bottom: 0;
-}
-#bookingModal label {
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 8px;
-  display: block;
-  font-size: .95rem;
-}
-#bookingModal label .required {
-  color: #e74c3c;
-  margin-left: 3px;
-}
-#bookingModal .form-control {
-  width: 100%;
-  padding: 5px 15px;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: all .3s;
-  background: #fff;
-}
-#bookingModal .form-control:focus {
-  outline: none;
-  border-color: #d35400;
-  box-shadow: 0 0 0 3px rgba(211,84,0,.1);
-}
-#bookingModal .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-#bookingModal select.form-control {
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 40px;
-}
-#bookingModal .guest-counter {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #f8f9fa;
-  padding: 12px 20px;
-  border-radius: 10px;
-  border: 2px solid #e0e0e0;
-}
-#bookingModal .counter-btn {
-  width: 35px;
-  height: 35px;
-  border: 2px solid #d35400;
-  background: #fff;
-  color: #d35400;
-  border-radius: 50%;
-  cursor: pointer;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all .3s;
-  font-size: 1.1rem;
-  line-height: 1;
-}
-#bookingModal .counter-btn:hover {
-  background: #d35400;
-  color: #fff;
-  transform: scale(1.1);
-}
-#bookingModal .counter-value {
-  font-size: 1.2rem;
-  font-weight: 700;
-  min-width: 50px;
-  text-align: center;
-  border: none;
-  background: transparent;
-}
-#bookingModal .payment-box {
-  background: linear-gradient(135deg, #fff5f0 0%, #ffe8d6 100%);
-  border: 2px dashed #d35400;
-  border-radius: 15px;
-  padding: 25px;
-  margin-top: 20px;
-}
-#bookingModal .payment-instructions {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  border-left: 4px solid #d35400;
-}
-#bookingModal .payment-instructions h6 {
-  color: #2c3e50;
-  font-weight: 700;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-#bookingModal .payment-instructions ol {
-  margin: 0;
-  padding-left: 20px;
-  color: #555;
-}
-#bookingModal .payment-instructions li {
-  margin-bottom: 8px;
-  line-height: 1.6;
-}
-#bookingModal .qr-wrapper {
-  text-align: center;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  border: 2px solid #d35400;
-}
-#bookingModal .qr-wrapper img {
-  max-width: 200px;
-  width: 100%;
-  border: 3px solid #d35400;
-  border-radius: 10px;
-  padding: 10px;
-  background: #fff;
-  margin-bottom: 15px;
-}
-#bookingModal .upi-info {
-  text-align: center;
-}
-#bookingModal .upi-info strong {
-  display: block;
-  font-size: 1.1rem;
-  color: #d35400;
-  margin-top: 10px;
-  word-break: break-all;
-}
-#bookingModal .help-text {
-  font-size: .85rem;
-  color: #666;
-  margin-top: 5px;
-  font-style: italic;
-}
-#bookingModal .btn-submit {
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(135deg, #d35400 0%, #ff6b35 100%);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all .3s;
-  margin-top: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  box-shadow: 0 4px 15px rgba(211,84,0,.3);
-}
-#bookingModal .btn-submit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(211,84,0,.4);
-}
-#bookingModal .btn-submit:active {
-  transform: translateY(0);
-}
-#bookingModal .contact-help {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-  text-align: center;
-  border: 2px solid #e0e0e0;
-}
-#bookingModal .contact-help h6 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-#bookingModal .contact-help a {
-  color: #d35400;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  margin: 5px 10px;
-}
-#bookingModal .contact-help a:hover {
-  text-decoration: underline;
-}
-/* Responsive */
-@media (max-width: 768px) {
-  #bookingModal .modal-dialog {
-    margin: 10px;
-    max-width: calc(100% - 20px);
-  }
-  #bookingModal .modal-body {
-    padding: 20px;
-    max-height: calc(100vh - 100px);
-  }
-  #bookingModal .form-row {
-    grid-template-columns: 1fr;
-  }
-  #bookingModal .modal-title {
-    font-size: 1.2rem;
-  }
-  #bookingModal .section-title {
-    font-size: 1.1rem;
-  }
-  #bookingModal .qr-wrapper img {
-    max-width: 150px;
-  }
-}
-@media (max-width: 480px) {
-  #bookingModal .modal-header {
-    padding: 20px;
-  }
-  #bookingModal .modal-body {
-    padding: 15px;
-  }
-  #bookingModal .form-section {
-    padding: 15px;
-  }
-  #bookingModal .payment-box {
-    padding: 15px;
-  }
-}
+		/* Booking Modal Styles */
+		#bookingModal .modal-dialog {
+		max-width: 900px;
+		margin: 30px auto;
+		}
+		#bookingModal .modal-content {
+		border-radius: 20px;
+		border: none;
+		box-shadow: 0 20px 60px rgba(0,0,0,.3);
+		overflow: hidden;
+		margin: 65px 0;
+		}
+		#bookingModal .modal-header {
+		background: linear-gradient(135deg, #d35400 0%, #ff6b35 100%);
+		color: #fff;
+		padding: 25px 30px;
+		border-bottom: none;
+		position: relative;
+		}
+		#bookingModal .modal-header::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: rgba(255,255,255,.2);
+		}
+		#bookingModal .modal-title {
+		font-size: 1.8rem;
+		font-weight: 700;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		}
+		#bookingModal .modal-title i {
+		font-size: 1.5rem;
+		}
+		#bookingModal .close {
+		color: #fff;
+		opacity: .9;
+		font-size: 2rem;
+		font-weight: 300;
+		text-shadow: none;
+		padding: 0;
+		margin: 0;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		transition: all .3s;
+		}
+		#bookingModal .close:hover {
+		opacity: 1;
+		background: rgba(255,255,255,.2);
+		transform: rotate(90deg);
+		}
+		#bookingModal .modal-body {
+		background: #f8f9fa;
+		max-height: calc(100vh - 200px);
+		overflow-y: auto;
+		height: 80% !important;
+		}
+		#bookingModal .form-section {
+		background: #fff;
+		padding: 10px;
+		border-radius: 15px;
+		margin-bottom: 3px;
+		box-shadow: 0 4px 15px rgba(0,0,0,.05);
+		}
+		#bookingModal .section-title {
+		font-size: 1.2rem;
+		font-weight: 700;
+		color: #2c3e50;
+		margin-bottom: 20px;
+		padding-bottom: 12px;
+		border-bottom: 2px solid #d35400;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		}
+		#bookingModal .section-title i {
+		color: #d35400;
+		font-size: 1.1rem;
+		}
+		#bookingModal .form-group {
+		margin-bottom: 20px;
+		}
+		#bookingModal .form-group:last-child {
+		margin-bottom: 0;
+		}
+		#bookingModal label {
+		font-weight: 600;
+		color: #333;
+		margin-bottom: 8px;
+		display: block;
+		font-size: .95rem;
+		}
+		#bookingModal label .required {
+		color: #e74c3c;
+		margin-left: 3px;
+		}
+		#bookingModal .form-control {
+		width: 100%;
+		padding: 5px 15px;
+		border: 2px solid #e0e0e0;
+		border-radius: 10px;
+		font-size: 1rem;
+		transition: all .3s;
+		background: #fff;
+		}
+		#bookingModal .form-control:focus {
+		outline: none;
+		border-color: #d35400;
+		box-shadow: 0 0 0 3px rgba(211,84,0,.1);
+		}
+		#bookingModal .form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: 15px;
+		}
+		#bookingModal .guest-info-section .form-row {
+		grid-template-columns: 1fr 1fr 1fr;
+		}
+		
+		#bookingModal .guest-number-section .form-row {
+		grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		#bookingModal select.form-control {
+		cursor: pointer;
+		appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 16px center;
+		padding-right: 40px;
+		}
+		#bookingModal .guest-counter {
+			width: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 15px;
+		background: #f8f9fa;
+		padding: 8px 10px;
+		border-radius: 10px;
+		border: 1px solid #e0e0e0;
+		}
+		#bookingModal .counter-btn {
+		width: 35px;
+		height: 35px;
+		border: 2px solid #d35400;
+		background: #fff;
+		color: #d35400;
+		border-radius: 50%;
+		cursor: pointer;
+		font-weight: 700;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all .3s;
+		font-size: 1.1rem;
+		line-height: 1;
+		}
+		#bookingModal .counter-btn:hover {
+		background: #d35400;
+		color: #fff;
+		transform: scale(1.1);
+		}
+		#bookingModal .counter-value {
+		font-size: 1.2rem;
+		font-weight: 700;
+		min-width: 50px;
+		width: 100px;
+		text-align: center;
+		border: none;
+		background: transparent;
+		}
+		#bookingModal .payment-box {
+		background: linear-gradient(135deg, #fff5f0 0%, #ffe8d6 100%);
+		border: 2px dashed #d35400;
+		border-radius: 15px;
+		padding: 20px;
+		margin-top: 20px;
+		}
+		#bookingModal .payment-instructions {
+		background: #fff;
+		padding: 20px;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		border-left: 4px solid #d35400;
+		}
+		#bookingModal .payment-instructions h6 {
+		color: #2c3e50;
+		font-weight: 700;
+		margin-bottom: 12px;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		}
+		#bookingModal .payment-instructions ol {
+		margin: 0;
+		padding-left: 20px;
+		color: #555;
+		}
+		#bookingModal .payment-instructions li {
+		margin-bottom: 8px;
+		line-height: 1.6;
+		}
+		#bookingModal .qr-wrapper {
+		text-align: center;
+		background: #fff;
+		padding: 20px;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		border: 2px solid #d35400;
+		}
+		#bookingModal .qr-wrapper img {
+		max-width: 200px;
+		width: 100%;
+		border: 3px solid #d35400;
+		border-radius: 10px;
+		padding: 10px;
+		background: #fff;
+		margin-bottom: 15px;
+		}
+		#bookingModal .upi-info {
+		text-align: center;
+		}
+		#bookingModal .upi-info strong {
+		display: block;
+		font-size: 1.1rem;
+		color: #d35400;
+		margin-top: 10px;
+		word-break: break-all;
+		}
+		#bookingModal .help-text {
+		font-size: .85rem;
+		color: #666;
+		margin-top: 5px;
+		font-style: italic;
+		}
+		#bookingModal .btn-submit {
+		width: 100%;
+		padding: 16px;
+		background: linear-gradient(135deg, #d35400 0%, #ff6b35 100%);
+		color: #fff;
+		border: none;
+		border-radius: 10px;
+		font-size: 1.1rem;
+		font-weight: 700;
+		cursor: pointer;
+		transition: all .3s;
+		margin-top: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		box-shadow: 0 4px 15px rgba(211,84,0,.3);
+		}
+		#bookingModal .btn-submit:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(211,84,0,.4);
+		}
+		#bookingModal .btn-submit:active {
+		transform: translateY(0);
+		}
+		#bookingModal .contact-help {
+		background: #f8f9fa;
+		padding: 20px;
+		border-radius: 10px;
+		margin-top: 20px;
+		text-align: center;
+		border: 2px solid #e0e0e0;
+		}
+		#bookingModal .contact-help h6 {
+		color: #2c3e50;
+		margin-bottom: 10px;
+		font-weight: 700;
+		}
+		#bookingModal .contact-help a {
+		color: #d35400;
+		text-decoration: none;
+		font-weight: 600;
+		display: inline-block;
+		margin: 5px 10px;
+		}
+		#bookingModal .contact-help a:hover {
+		text-decoration: underline;
+		}
+		/* Responsive */
+		@media (max-width: 768px) {
+		#bookingModal .modal-dialog {
+			margin: 10px;
+			max-width: calc(100% - 20px);
+		}
+		#bookingModal .modal-body {
+			padding: 20px;
+			max-height: calc(100vh - 100px);
+		}
+		#bookingModal .form-row {
+			grid-template-columns: 1fr 1fr;
+			gap: 10px;
+		}
+		#bookingModal .modal-title {
+			font-size: 1.2rem;
+		}
+		#bookingModal .section-title {
+			font-size: 1.1rem;
+		}
+		#bookingModal .qr-wrapper img {
+			max-width: 150px;
+		}
+		#bookingModal .guest-info-section .form-row {
+		grid-template-columns: 1fr 1fr;
+		gap:10px;
+		}
+		#bookingModal .guest-number-section .form-row {
+		grid-template-columns: 1fr 1fr;
+		}
+		}
+		@media (max-width: 480px) {
+		#bookingModal .modal-header {
+			padding: 20px;
+		}
+		#bookingModal .modal-body {
+			padding: 15px;
+		}
+		#bookingModal .form-section {
+			padding: 15px;
+		}
+		#bookingModal .payment-box {
+			padding: 15px;
+		}
+		#bookingModal .form-row {
+			grid-template-columns: 1fr;
+			gap: 8px;
+		}
+		#bookingModal .guest-info-section .form-row {
+		grid-template-columns: 1fr;
+		gap: 8px;
+		}
+		#bookingModal .guest-number-section .form-row {
+		grid-template-columns: 1fr;
+		}
+		}
 </style>
 
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
@@ -397,7 +426,7 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
           </div>
 
           <!-- Guest Information -->
-          <div class="form-section">
+          <div class="form-section guest-info-section">
             <div class="section-title">
               <i class="fa fa-user"></i>
               <span>2. Guest Information</span>
@@ -413,45 +442,79 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
                        pattern="[6-9][0-9]{9}" maxlength="10" required>
                 <div class="help-text">We'll contact you on this number</div>
               </div>
-            </div>
-            <div class="form-group">
-              <label>Email (Optional)</label>
-              <input type="email" class="form-control" name="email" placeholder="your.email@example.com">
-              <div class="help-text">For booking confirmation</div>
+			  <div class="form-group">
+				<label>Email (Optional)</label>
+				<input type="email" class="form-control" name="email" placeholder="your.email@example.com">
+				<div class="help-text">For booking confirmation</div>
+			  </div>
             </div>
           </div>
+		  <!-- Stay Date & Time -->
+		<div class="form-section">
+			<div class="section-title">
+				<i class="fa fa-calendar"></i>
+				<span>3. Stay Date & Time</span>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group">
+					<label>Check-in Date <span class="required">*</span></label>
+					<input type="date" class="form-control" name="checkin_date" id="checkin_date" required>
+				</div>
+				<div class="form-group">
+					<label>Check-in Time <span class="required">*</span></label>
+					<input type="time" class="form-control" name="checkin_time" id="checkin_time" required>
+				</div>
+				<div class="form-group">
+					<label>Check-out Date <span class="required">*</span></label>
+					<input type="date" class="form-control" name="checkout_date" id="checkout_date" required>
+				</div>
+
+				<div class="form-group">
+					<label>Check-out Time</label>
+					<input type="time" class="form-control" name="checkout_time" id="checkout_time">
+				</div>
+			</div>
+			<div class="help-text">
+				Please select valid check-in and check-out date & time
+			</div>
+		</div>
+			
+
 
           <!-- Number of Guests -->
-          <div class="form-section">
+          <div class="form-section guest-number-section">
             <div class="section-title">
               <i class="fa fa-users"></i>
-              <span>3. Number of Guests</span>
+              <span>4. Number of Guests</span>
             </div>
-            <div class="form-group">
-              <label>Adults <span class="required">*</span></label>
-              <div class="guest-counter">
-                <button type="button" class="counter-btn" onclick="changeGuestCount('bm_adults', -1)">-</button>
-                <input type="number" class="counter-value" name="adults" id="bm_adults" value="1" min="1" required readonly>
-                <button type="button" class="counter-btn" onclick="changeGuestCount('bm_adults', 1)">+</button>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Children (0-14 years)</label>
-              <div class="guest-counter">
-                <button type="button" class="counter-btn" onclick="changeGuestCount('bm_kids', -1)">-</button>
-                <input type="number" class="counter-value" name="children_under15" id="bm_kids" value="0" min="0" readonly>
-                <button type="button" class="counter-btn" onclick="changeGuestCount('bm_kids', 1)">+</button>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Children (15+ years)</label>
-              <div class="guest-counter">
-                <button type="button" class="counter-btn" onclick="changeGuestCount('bm_kids15', -1)">-</button>
-                <input type="number" class="counter-value" name="children_15plus" id="bm_kids15" value="0" min="0" readonly>
-                <button type="button" class="counter-btn" onclick="changeGuestCount('bm_kids15', 1)">+</button>
-              </div>
-              <div class="help-text">Children 15+ are charged as extra guests</div>
-            </div>
+			<div class="form-row">
+				<div class="form-group">
+				<label>Adults <span class="required">*</span></label>
+				<div class="guest-counter">
+                    <button type="button" class="counter-btn" onclick="changeGuestCount('bm_adults', -1)">-</button>
+                    <input type="number" class="counter-value" name="adults" id="bm_adults" value="1" min="1" readonly>
+                    <button type="button" class="counter-btn" onclick="changeGuestCount('bm_adults', 1)">+</button>
+                  </div>
+				</div>
+				<div class="form-group">
+				<label>Children (0-14 years)</label>
+				<div class="guest-counter">
+                    <button type="button" class="counter-btn" onclick="changeGuestCount('bm_kids', -1)">-</button>
+                    <input type="number" class="counter-value" name="children_under15" id="bm_kids" value="0" min="0" readonly>
+                    <button type="button" class="counter-btn" onclick="changeGuestCount('bm_kids', 1)">+</button>
+                  </div>
+				</div>
+				<div class="form-group">
+				<label>Children (15+ years)</label>
+				<div class="guest-counter">
+					<button type="button" class="counter-btn" onclick="changeGuestCount('bm_kids15', -1)">-</button>
+					<input type="number" class="counter-value" name="children_15plus" id="bm_kids15" value="0" min="0" readonly>
+					<button type="button" class="counter-btn" onclick="changeGuestCount('bm_kids15', 1)">+</button>
+				</div>
+				<div class="help-text">Children 15+ are charged as extra guests</div>
+				</div>
+			</div>
           </div>
 
           <!-- Additional Message -->
@@ -466,7 +529,7 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
           <div class="payment-box">
             <div class="section-title" style="border-bottom: none; margin-bottom: 15px;">
               <i class="fa fa-credit-card"></i>
-              <span>4. Payment</span>
+              <span>5. Payment</span>
             </div>
             
             <div class="payment-instructions">
