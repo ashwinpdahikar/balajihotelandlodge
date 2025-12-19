@@ -8,7 +8,7 @@ $pdo = get_pdo(); ?>
       <div class="row mb-5">
          <div class="col-md-12">
             <div class="restaurant-intro text-center">
-               <h2>Welcome to Balaji Restaurant</h2>
+               <h2>Veg & Non Veg South Indian Restaurant in Chimur</h2>
                <p class="lead">We serve pure veg, non-veg, and South Indian dishes, prepared fresh with good quality and homely taste. Whether you are looking for a simple meal or a full family lunch/dinner, we have something for everyone.</p>
             </div>
          </div>

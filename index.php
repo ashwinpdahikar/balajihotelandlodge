@@ -9,7 +9,8 @@ start_session_secure(); // Start session before any output
 
 <head>
    <?php include 'include/header-section.php'; ?>
-
+   
+   <title>Hotel in Chimur | Best Budget Hotel in Chimur – Balaji Hotel</title>
    <!-- ✅ SEO Meta Tags Start -->
    <meta name="title" content="Balaji Hotel And Lodge Chimur">
    <meta name="description" content="Comfortable rooms, delicious food, and best stay experience at Balaji Hotel & Lodge Chimur near Tadoba. Book rooms, restaurant, and travel services.">
@@ -19,16 +20,18 @@ start_session_secure(); // Start session before any output
    <!-- Open Graph for Social Media -->
    <meta property="og:title" content="Balaji Hotel And Lodge Chimur">
    <meta property="og:description" content="Best hotel near Tadoba with rooms, restaurant & travel services.">
-   <meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg">
-   <meta property="og:type" content="website">
+<meta property="og:image" content="https://www.balajihotelchimur.com/images/og-image.jpg"> 
+  <meta property="og:type" content="website">
 
    <!-- Twitter Card -->
    <meta name="twitter:card" content="summary_large_image">
    <!-- ✅ SEO Meta Tags End -->
 
    <link rel="stylesheet" href="css/style.css">
-   <title>Balaji Hotel And Lodge Chimur</title>
+
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
+
 
 </head>
 

@@ -14,14 +14,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Canonical -->
-<link rel="canonical" href="https://yourwebsite.com/about.php" />
+<link rel="canonical" href="https://www.balajihotelchimur.com/about.php" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="About - Balaji Hotel And Lodge Chimur">
 <meta property="og:description" content="Clean rooms, great food, and prime location near Tadoba National Park. Know more about us.">
-<meta property="og:image" content="https://yourwebsite.com/images/about-og.jpg">
+<meta property="og:image" content="https://www.balajihotelchimur.com/images/about-og.jpg">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://yourwebsite.com/about.php">
+<meta property="og:url" content="https://www.balajihotelchimur.com/about.php">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
