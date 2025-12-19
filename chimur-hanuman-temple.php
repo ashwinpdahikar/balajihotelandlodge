@@ -1,4 +1,4 @@
-<?php // chimur-hanuman-temple.php (layout-compatible) ?>
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +21,8 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- 🔥 SAME CSS AS FORT (UNCHANGED) -->
+
 <style>
-/* ================= ROOT ================= */
 :root{
     --theme:#8e3a02;
     --light:#f8f9fa;
@@ -31,7 +30,6 @@
     --white:#fff;
 }
 
-/* ================= GLOBAL ================= */
 *{
     margin:0;
     padding:0;
@@ -60,7 +58,6 @@ img{
 .faq-item{
     border-left:5px solid var(--theme);
 }
-/* ================= HERO FIX ================= */
 .chimur-hero{
     height:180px;
     width:100%;
@@ -68,34 +65,28 @@ img{
     background:url('images/hanuman-temple-chimur.jpg') center/cover no-repeat;
     overflow:hidden;
 }
-
-/* OVERLAY */
 .chimur-hero .overlay{
     position:absolute;
     inset:0;
-    background:rgba(142,58,2,0.65); /* theme color */
+    background:rgba(142,58,2,0.65); 
     opacity:0;
     animation:overlayFade 1.2s ease forwards;
     z-index:1;
 }
-
-/* TEXT CONTENT */
 .hero-content{
     position:relative;
     z-index:2;
     text-align:center;
 }
 
-/* TITLE */
 .hero-content h1{
-    color:#fff;                     /* WHITE TEXT */
+    color:#fff;                   
     font-size:3rem;
     
 }
 
-/* PARAGRAPH – BOTTOM TO TOP EFFECT */
 .hero-content p{
-    color:#fff;                     /* WHITE TEXT */
+    color:#fff;                     
     font-size:1.2rem;
     opacity:0;
     transform:translateY(30px);
@@ -103,7 +94,6 @@ img{
     animation-delay:0.8s;
 }
 
-/* ANIMATIONS */
 @keyframes overlayFade{
     to{
         opacity:1;
@@ -124,7 +114,6 @@ img{
     }
 }
 
-/* MOBILE */
 @media(max-width:600px){
     .chimur-hero{
         height:180px;
@@ -140,12 +129,16 @@ img{
     }
 }
 
-
-/* ================= ABOUT ================= */
 .chimur-about{
+    width:100%;
     background:var(--light);
+    padding:70px 0;
 }
 .chimur-about .container{
+    width:100%;
+    max-width:none;          /* IMPORTANT */
+    margin:0 auto;
+    padding:0 5%;            /* side spacing */
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:40px;
@@ -155,10 +148,14 @@ img{
     color:var(--theme);
     margin-bottom:15px;
 }
-
-/* ================= HISTORY / IMPORTANCE ================= */
 .chimur-history{
     background:#fff;
+}
+.chimur-about img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:18px;
 }
 .history-grid{
     max-width:1200px;
@@ -188,8 +185,6 @@ img{
     margin-bottom:10px;
     color:var(--theme);
 }
-
-/* ================= VISIT INFO ================= */
 .visit-info{
     background:var(--light);
 }
@@ -212,8 +207,6 @@ img{
     font-size:35px;
     margin-bottom:10px;
 }
-
-/* ================= GALLERY ================= */
 .chimur-gallery{
     background:#fff;
 }
@@ -230,16 +223,13 @@ img{
     object-fit:cover;
 }
 
-/* ================= FAQ ================= */
 .faq-section{
     background: var(--light);
-    padding: 30px;                 /* 🔥 SAME TYPE PADDING */
+    padding: 30px;                 
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     margin: 40px 0;
 }
-
-/* HEADING */
 .section-title{
     text-align:center;
     color:var(--theme);
@@ -247,8 +237,6 @@ img{
     margin-bottom:25px;
     font-weight:700;
 }
-
-/* CONTAINER */
 .faq-container{
     max-width:100%;
     margin:auto;
@@ -256,25 +244,19 @@ img{
     flex-direction:column;
     gap:15px;
 }
-
-/* FAQ ITEM */
 .faq-item{
     background:#fff;
     padding:18px 20px;
     border-radius:10px;
-    border-left:4px solid var(--theme);   /* 🔥 LEFT BORDER */
+    border-left:4px solid var(--theme);   
     cursor:pointer;
     transition:0.3s ease;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
-
-/* HOVER EFFECT */
 .faq-item:hover{
     transform:translateX(5px);
     background:#fff3d6;
 }
-
-/* QUESTION */
 .faq-question{
     font-weight:600;
     font-size:16px;
@@ -284,7 +266,6 @@ img{
     align-items:center;
 }
 
-/* ANSWER */
 .faq-answer{
     display:none;
     margin-top:10px;
@@ -293,7 +274,7 @@ img{
     line-height:1.6;
 }
 
-/* ICON */
+
 .faq-icon{
     font-weight:bold;
     font-size:18px;
@@ -301,12 +282,11 @@ img{
     color:var(--theme);
 }
 
-/* ACTIVE STATE */
 .faq-item.active .faq-icon{
     transform:rotate(45deg);
 }
 
-/* RESPONSIVE */
+
 @media(max-width:768px){
     .faq-section{
         padding:20px;
@@ -317,7 +297,7 @@ img{
 }
 
 
-/* ================= RESPONSIVE ================= */
+
 @media(max-width:900px){
     .chimur-about .container{
         grid-template-columns:1fr;
@@ -344,7 +324,7 @@ img{
 <?php include 'include/loader.php'; ?>
 <?php include 'include/header.php'; ?>
 
-<!-- ================= HERO ================= -->
+<!--  HERO  -->
 <section class="chimur-hero">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -354,7 +334,7 @@ img{
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- ABOUT  -->
 <section class="chimur-about">
     <div class="container">
         <div>
@@ -367,14 +347,15 @@ img{
             <p>
                 Devotees visit the temple to seek blessings for courage, peace of mind,
                 and success. The temple is especially crowded on Tuesdays and during
-                Hanuman Jayanti celebrations.
+                Hanuman Jayanti celebrations.<br>
             </p>
+            <p>similar to other regional temples like those near Chandrapur known for ancient origins and local deity worship. To find its exact story, you'd need local lore or specific historical records from Chimur or Chandrapur</p>
         </div>
         <img src="images/chimur-hanuman-temple.jpg" alt="Chimur Hanuman Temple Maharashtra">
     </div>
 </section>
 
-<!-- ================= HISTORY / IMPORTANCE ================= -->
+<!--  HISTORY  -->
 <section class="chimur-history">
     <div class="history-grid">
 
@@ -408,7 +389,7 @@ img{
     </div>
 </section>
 
-<!-- ================= VISIT INFO ================= -->
+<!--  VISIT INFO  -->
 <section class="visit-info">
     <div class="visit-grid">
 
@@ -433,7 +414,7 @@ img{
     </div>
 </section>
 
-<!-- ================= GALLERY ================= -->
+<!-- GALLERY  -->
 <section class="chimur-gallery">
     <div class="gallery-grid">
         <img src="images/hanuman-temple-chimur.jpg" alt="Chimur Hanuman Temple Front View">
@@ -442,7 +423,7 @@ img{
     </div>
 </section>
 
-<!-- ================= FAQ ================= -->
+<!--  FAQ  -->
 <div class="section-box faq-section">
     <h1 class="section-title">❓ Frequently Asked Questions About Chimur Hanuman Temple</h1>
 
