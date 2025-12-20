@@ -12,22 +12,18 @@
 <meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
 <style>
 :root{
     --theme:#8e3a02;        
     --light:#f8f9fa;
 }
-
-/* ---------- GLOBAL ---------- */
 body{
     margin:0;
     font-family:'Segoe UI',sans-serif;
     color:#333;
 }
 section{width:100%;}
-
-/* ---------- HERO ---------- */
 .chimur-hero{
     height:180px;
     background:url('images/erai-river3.jpg') center/cover no-repeat;
@@ -61,8 +57,6 @@ section{width:100%;}
 @keyframes slideUp{
     to{opacity:1;transform:translateY(0);}
 }
-
-/* ---------- ABOUT ---------- */
 .chimur-about{
     background:var(--light);
     padding:70px 0;
@@ -87,8 +81,6 @@ section{width:100%;}
     object-fit:cover;
     border-radius:18px;
 }
-
-/* ---------- HIGHLIGHTS ---------- */
 .muktai-highlights{
     padding:90px 5%;
     background:linear-gradient(135deg,#fbf7f2,#f1e6d8);
@@ -147,8 +139,6 @@ section{width:100%;}
     color:#555;
     line-height:1.6;
 }
-
-/* ---------- VISIT ---------- */
 .muktai-visit{
     padding:80px 5%;
     background:#ffffff;
@@ -187,8 +177,6 @@ section{width:100%;}
     margin:3px 0 0;
     color:#555;
 }
-
-/* ---------- GALLERY ---------- */
 .chimur-gallery{
     background:#f1f3f5;
     padding:80px 5%;
@@ -204,8 +192,6 @@ section{width:100%;}
     object-fit:cover;
     border-radius:16px;
 }
-
-/* ---------- FAQ ---------- */
 .faq-section{
     padding:40px 20px;
     background:var(--light);
@@ -267,7 +253,6 @@ section{width:100%;}
     transform:rotate(45deg);
 }
 
-/* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
     .chimur-about .container,
     .history-grid{

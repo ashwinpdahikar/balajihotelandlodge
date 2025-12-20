@@ -158,8 +158,22 @@ $breadcrumb_data = json_encode([
   <head>
     <?php include 'include/header-section.php'; ?>
     <title><?php echo h($page_title); ?></title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <meta name="title" content="Balaji Hotel And Lodge Chimur">
+   <meta name="description" content="Comfortable rooms, delicious food, and best stay experience at Balaji Hotel & Lodge Chimur near Tadoba. Book rooms, restaurant, and travel services.">
+   <meta name="keywords" content="Balaji Hotel Chimur, Lodge Chimur, Rooms Chimur, Tadoba Hotels, Restaurant Chimur">
+   <meta name="robots" content="index, follow">
 
+   <!-- Open Graph for Social Media -->
+   <meta property="og:title" content="Balaji Hotel And Lodge Chimur">
+   <meta property="og:description" content="Best hotel near Tadoba with rooms, restaurant & travel services.">
+<meta property="og:image" content="https://www.balajihotelchimur.com/images/og-image.jpg"> 
+  <meta property="og:type" content="website">
+
+   <meta name="twitter:card" content="summary_large_image">
+   <link rel="stylesheet" href="css/style.css">
+
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
     <script type="application/ld+json">
 <?php echo $breadcrumb_data; ?>
     </script>
@@ -233,7 +247,7 @@ $breadcrumb_data = json_encode([
       .btn-link:hover{color:#b84300;text-decoration:underline;}
 
       /* Itinerary Section */
-      .itinerary{ 0;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);color:#fff; padding:20px 0;}
+      .itinerary{ background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);color:#fff; padding:20px 0;}
       .itinerary-inner{display:flex;gap:50px;flex-wrap:wrap;align-items:flex-start;}
       .itinerary-header{flex:1;min-width:300px;}
       .itinerary-header .eyebrow{color:#ffd9b3;}

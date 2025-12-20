@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="canonical" href="https://yourwebsite.com/ghodazari-wildlife-sanctuary">
+<link rel="canonical" href="https://www.balajihotelchimur.com/ghodazari-wildlife-sanctuary">
 
 <style>
 :root{
@@ -29,8 +29,6 @@ body{
     color:#333;
 }
 section{width:100%;}
-
-/* HERO */
 .chimur-hero{
     height:200px;
     background:url('images/ghodazari-main.avif') center/cover no-repeat;
@@ -65,7 +63,6 @@ section{width:100%;}
     to{opacity:1;transform:translateY(0);}
 }
 
-/* ABOUT */
 .chimur-about{
     background:var(--light);
     padding:70px 0;
@@ -87,7 +84,6 @@ section{width:100%;}
     width:100%;
     align-items:center;
 }
-
 .about-content{
     padding:0 6%;
 }
@@ -136,8 +132,6 @@ section{width:100%;}
     }
 }
 
-
-/* HIGHLIGHTS */
 .muktai-highlights{
     padding:90px 5%;
     background:linear-gradient(135deg,#fbf7f2,#f1e6d8);
@@ -174,7 +168,6 @@ section{width:100%;}
     margin:0 auto 18px;
 }
 
-/* VISIT */
 .muktai-visit{
     padding:80px 5%;
 }
@@ -199,8 +192,6 @@ section{width:100%;}
     border-radius:14px;
     border-left:6px solid var(--theme);
 }
-
-/* GALLERY */
 .chimur-gallery{
     background:#f1f3f5;
     padding:80px 5%;
@@ -227,8 +218,6 @@ section{width:100%;}
     }
 }
 
-
-/* FAQ */
 .faq-section{
     padding:40px 20px;
     background:var(--light);
@@ -265,7 +254,6 @@ section{width:100%;}
 <?php include 'include/loader.php'; ?>
 <?php include 'include/header.php'; ?>
 
-<!-- HERO -->
 <section class="chimur-hero">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -274,7 +262,6 @@ section{width:100%;}
     </div>
 </section>
 
-<!-- ABOUT -->
 <section class="chimur-about">
     <div class="about-grid">
         <div class="about-content">
@@ -293,7 +280,6 @@ section{width:100%;}
     </div>
 </section>
 
-<!-- HIGHLIGHTS -->
 <section class="muktai-highlights">
     <h2 class="highlight-title">🌿 Sanctuary Highlights</h2>
     <div class="highlight-grid">
@@ -315,7 +301,6 @@ section{width:100%;}
     </div>
 </section>
 
-<!-- VISIT -->
 <section class="muktai-visit">
     <h2 class="visit-title">🧭 Plan Your Visit</h2>
     <div class="visit-strip">
@@ -343,7 +328,6 @@ section{width:100%;}
     </div>
 </section>
 
-<!-- GALLERY -->
 <section class="chimur-gallery">
     <div class="gallery-grid">
         <img src="images/ghodazari-img1.jpg"
@@ -360,8 +344,6 @@ section{width:100%;}
     </div>
 </section>
 
-
-<!-- FAQ -->
 <div class="faq-section">
     <h2 class="section-title">❓ Frequently Asked Questions About Ghodazari Wildlife Sanctuary</h2>
     <div class="faq-container">
@@ -394,7 +376,6 @@ section{width:100%;}
             </div>
         </div>
 
-        <!-- NEW FAQ 1 -->
         <div class="faq-item">
             <div class="faq-question">What animals can be seen in Ghodazari Sanctuary?</div>
             <div class="faq-answer">
@@ -402,7 +383,6 @@ section{width:100%;}
             </div>
         </div>
 
-        <!-- NEW FAQ 2 -->
         <div class="faq-item">
             <div class="faq-question">Is Ghodazari Wildlife Sanctuary suitable for family visits?</div>
             <div class="faq-answer">

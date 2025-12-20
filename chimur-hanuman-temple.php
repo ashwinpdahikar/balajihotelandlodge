@@ -14,13 +14,12 @@
 <meta name="author" content="Balaji Hotel Chimur" />
 <meta property="og:title" content="Chimur Hanuman Temple | Timings & History">
 <meta property="og:description" content="Explore the spiritual importance, timings and visitor guide for Chimur Hanuman Temple.">
-<meta property="og:image" content="https://yourwebsite.com/images/chimur-hanuman-temple.jpg">
-<meta property="og:url" content="https://yourwebsite.com/chimur-hanuman-temple.php">
+<meta property="og:image" content="https://www.balajihotelchimur.com/images/chimur-hanuman-temple.jpg">
+<meta property="og:url" content="https://www.balajihotelchimur.com/chimur-hanuman-temple.php">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://yourwebsite.com/chimur-hanuman-temple.php" />
+<link rel="canonical" href="https://www.balajihotelchimur.com/chimur-hanuman-temple.php" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 
 <style>
 :root{
@@ -84,7 +83,6 @@ img{
     font-size:3rem;
     
 }
-
 .hero-content p{
     color:#fff;                     
     font-size:1.2rem;
@@ -136,9 +134,9 @@ img{
 }
 .chimur-about .container{
     width:100%;
-    max-width:none;          /* IMPORTANT */
+    max-width:none;          
     margin:0 auto;
-    padding:0 5%;            /* side spacing */
+    padding:0 5%;            
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:40px;
@@ -274,7 +272,6 @@ img{
     line-height:1.6;
 }
 
-
 .faq-icon{
     font-weight:bold;
     font-size:18px;
@@ -295,9 +292,6 @@ img{
         font-size:24px;
     }
 }
-
-
-
 @media(max-width:900px){
     .chimur-about .container{
         grid-template-columns:1fr;
@@ -323,8 +317,6 @@ img{
 
 <?php include 'include/loader.php'; ?>
 <?php include 'include/header.php'; ?>
-
-<!--  HERO  -->
 <section class="chimur-hero">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -333,8 +325,6 @@ img{
     </div>
 </section>
 
-
-<!-- ABOUT  -->
 <section class="chimur-about">
     <div class="container">
         <div>
@@ -355,7 +345,6 @@ img{
     </div>
 </section>
 
-<!--  HISTORY  -->
 <section class="chimur-history">
     <div class="history-grid">
 
@@ -389,7 +378,6 @@ img{
     </div>
 </section>
 
-<!--  VISIT INFO  -->
 <section class="visit-info">
     <div class="visit-grid">
 
@@ -414,7 +402,6 @@ img{
     </div>
 </section>
 
-<!-- GALLERY  -->
 <section class="chimur-gallery">
     <div class="gallery-grid">
         <img src="images/hanuman-temple-chimur.jpg" alt="Chimur Hanuman Temple Front View">
@@ -423,7 +410,6 @@ img{
     </div>
 </section>
 
-<!--  FAQ  -->
 <div class="section-box faq-section">
     <h1 class="section-title">❓ Frequently Asked Questions About Chimur Hanuman Temple</h1>
 
@@ -481,9 +467,7 @@ img{
         guidelines to respect the religious atmosphere.
     </div>
 </div>
-
-
-    </div>
+</div>
 </div>
 
 <script>

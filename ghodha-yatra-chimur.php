@@ -13,29 +13,27 @@
 <meta property="og:title" content="Ghodha Yatra Chimur | Shri Hari Balaji Temple Festival">
 <meta property="og:description" content="Discover Ghodha Yatra Chimur, festival details, timings, visitor guidelines, gallery & nearby attractions.">
 <meta property="og:image" content="images/ghoda-yatra.jpg">
-<meta property="og:url" content="https://www.yoursite.com/ghodha-yatra-chimur.php">
+<meta property="og:url" content="https://www.balajihotelchimur.com/ghodha-yatra-chimur.php">
 <meta property="og:type" content="website">
-
+   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
     <style>
         body{
             margin:0;
             font-family: Arial, sans-serif;
             background:#f5f5f5;
         }
-
-/* ---------- Banner ---------- */
 .top-banner{
     width: 100%;
     height: 170px; 
     background: 
         linear-gradient(
-            rgba(169, 87, 10, 0.83),   /* Warm Orange */
-            rgba(138, 61, 2, 0.64)     /* Deep Brown */
+            rgba(169, 87, 10, 0.83),   
+            rgba(138, 61, 2, 0.64)     
         ), 
         url('images/balaji_img4.jpeg') no-repeat center center/cover;
 
     display: flex;
-    flex-direction: column;      /* <-- FIX: title ke niche subtitle */
+    flex-direction: column;      
     align-items: center;
     justify-content: center;
     color: white;
@@ -45,12 +43,10 @@
     text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-/* Main title */
 .main-title{
     font-size: 36px;
 }
 
-/* Subtitle */
 .subtitle{
     font-size: 18px;
     margin-top: 5px;
@@ -59,7 +55,6 @@
     animation: slideUp 1s ease-out forwards;
 }
 
-/* Slide-up animation */
 @keyframes slideUp{
     from{
         opacity: 0;
@@ -71,24 +66,22 @@
     }
 }
 
-/* Responsive */
 @media(max-width:768px){
     .main-title{ font-size: 26px; }
     .subtitle{ font-size: 15px; }
 }
-/* ---------- Banner ---------- */
 .top-banner{
     width: 100%;
     height: 170px; 
     background: 
         linear-gradient(
-            rgba(169, 87, 10, 0.83),   /* Warm Orange */
-            rgba(138, 61, 2, 0.64)     /* Deep Brown */
+            rgba(169, 87, 10, 0.83),   
+            rgba(138, 61, 2, 0.64)     
         ), 
         url('images/balaji_img4.jpeg') no-repeat center center/cover;
 
     display: flex;
-    flex-direction: column;      /* <-- FIX: title ke niche subtitle */
+    flex-direction: column;      
     align-items: center;
     justify-content: center;
     color: white;
@@ -98,12 +91,10 @@
     text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-/* Main title */
 .main-title{
     font-size: 36px;
 }
 
-/* Subtitle */
 .subtitle{
     font-size: 18px;
     margin-top: 5px;
@@ -112,7 +103,6 @@
     animation: slideUp 1s ease-out forwards;
 }
 
-/* Slide-up animation */
 @keyframes slideUp{
     from{
         opacity: 0;
@@ -124,16 +114,12 @@
     }
 }
 
-/* Responsive */
 @media(max-width:768px){
     .main-title{ font-size: 26px; }
     .subtitle{ font-size: 15px; }
 }
 
-
-
-        /* ---------- MAIN CONTAINER ---------- */
-        .section-box{
+.section-box{
     width:100%;
     margin:20px 0;
     padding:25px 40px;
@@ -156,7 +142,6 @@
             
         }
 
-        /* ---------- ABOUT SECTION ---------- */
         .about-section{
             display:flex;
             flex-wrap:wrap;
@@ -184,8 +169,6 @@
     line-height: 1.7;
     
 }
-
-        /* ---------- Gallery ---------- */
         .gallery{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -200,9 +183,6 @@
             border-radius:8px;
             border:2px solid #8e3a02;
         }
-
-        /* ---------- NEW SECTION STYLES ---------- */
-
         .timing-box{
             display:flex;
             flex-wrap:wrap;
@@ -235,8 +215,6 @@
             color:#8e3a02;
             font-weight:bold;
         }
-
-        /* ---------- MAP ---------- */
         .map-box iframe{
             width:100%;
             height:350px;
@@ -247,11 +225,6 @@
         .bottom-space{
             height:40px;
         }
-
-        /* ---------- OUR ROOMS ---------- */
-       
-
-        /* ---------- RESPONSIVE ---------- */
         @media(max-width:1024px){
             .about-section img, .about-text{
                 width:100%;
@@ -300,7 +273,6 @@
                 height:200px;
             }
         }
-        /*Visitor Guidelines Box Styling */
 .guidelines-section {
     background: #fff8e8;
     padding: 25px 30px;
@@ -309,15 +281,12 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* Heading style */
 .guidelines-section h1,h2 {
     color: #8e3a02;   
     font-weight: 700;
     margin-bottom: 18px;
     text-align: left;
 }
-
-/* List styling */
 .guidelines-list {
     list-style: none;
     padding: 0;
@@ -338,19 +307,17 @@
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* Icon style */
+
 .guidelines-list li i {
     color: #c47b00;
     font-size: 18px;
 }
 
-/* Hover animation */
 .guidelines-list li:hover {
     transform: translateX(6px);
     background: #fff3d6;
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .guidelines-section {
         padding: 20px;
@@ -361,7 +328,6 @@
     }
 }
 
-/* Nearby Places Section Styling */
 .nearby-section {
     margin: 40px 0;
     padding: 30px;
@@ -411,19 +377,16 @@
     line-height: 1.6;
 }
 
-/* Hover Effect */
 .nearby-card:hover {
     transform: translateY(-6px);
     box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
 }
 
-/* Highlight Main Attraction */
 .highlight {
     border-left: 6px solid #d47a24;
     background: #fff9f3;
 }
 .faq-section {
-    /* background: #fdf5e6; Soft warm background */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -484,7 +447,6 @@
     transform: rotate(45deg);
 }
 
-/* ---------- Responsive ---------- */
 @media(max-width:768px){
     .faq-section {
         padding: 20px;
@@ -505,7 +467,6 @@
     <div class="subtitle">Blessings for Peace, Prosperity & Devotion</div>
 </div>
 
-    <!-- ABOUT -->
 <div class="section-box">
     
     <h1>About Ghodha Yatra Chimur
@@ -527,7 +488,6 @@
     </div>
 </div>
 
-    <!-- GALLERY -->
     <div class="section-box">
         <h2>Temple View Gallery</h2>
         <p>The beauty of the temple is captured in the images below.</p>
@@ -540,7 +500,6 @@
         </div>
     </div>
 
-    <!--NEW SECTION: DARSHAN TIMINGS -->
     <div class="section-box">
         <h2>Darshan & Aarti Timings</h2>
 
@@ -561,7 +520,6 @@
         </div>
     </div>
 
-   <!-- NEW SECTION: TESTIMONIALS -->
 <div class="section-box">
     <h2>Devotees Testimonials</h2>
 
@@ -595,7 +553,6 @@
 </div>
 
 
-    <!--NEW SECTION: VISITOR GUIDELINES -->
 <div class="guidelines-section section-box">
     <h2>Visitor Guidelines</h2>
 
@@ -609,13 +566,11 @@
     </ul>
 </div>
 
-   <!-- NEW SECTION: NEARBY PLACES -->
 <div class="section-box nearby-section">
     <h2 class="section-title">🌍 Nearby Places to Visit</h2>
 
     <div class="nearby-grid">
 
-        <!-- Place 1 -->
         <div class="nearby-card highlight">
             <a href="tadoba.php" style="text-decoration:none; color:inherit;">
                 <div class="icon">🐅</div>
@@ -624,7 +579,6 @@
             </a>
         </div>
 
-        <!-- Place 2 -->
         <div class="nearby-card">
             <a href="tadoba.php" style="text-decoration:none; color:inherit;">
                 <div class="icon">🛕</div>
@@ -633,7 +587,6 @@
             </a>
         </div>
 
-        <!-- Place 3 -->
         <div class="nearby-card">
             <a href="tadoba.php" style="text-decoration:none; color:inherit;">
                 <div class="icon">🌿</div>
@@ -645,20 +598,17 @@
     </div>
 </div>
 
-    <!-- ACCOMMODATION -->
     <div class="section-box" id="accommodation">
         <h2>Accommodation</h2>
         <p>Comfortable rooms and guest facilities are available.</p>
         <?php include 'include/our_room.php'; ?>
     </div>
 
- <!-- ⭐ NEW SECTION: FAQ -->
 <div class="section-box faq-section">
     <h2 class="section-title">❓ Frequently Asked Questions About Ghodha Yatra Chimur
     </h2>
 
     <div class="faq-container">
-        <!-- FAQ 1 -->
         <div class="faq-item">
             <div class="faq-question">What are the temple timings? <span class="faq-icon">+</span></div>
             <div class="faq-answer">
@@ -666,7 +616,6 @@
             </div>
         </div>
 
-        <!-- FAQ 2 -->
         <div class="faq-item">
             <div class="faq-question">Is photography allowed inside the temple? <span class="faq-icon">+</span></div>
             <div class="faq-answer">
@@ -674,7 +623,6 @@
             </div>
         </div>
 
-        <!-- FAQ 3 -->
         <div class="faq-item">
             <div class="faq-question">Are there accommodation facilities near the temple? <span class="faq-icon">+</span></div>
             <div class="faq-answer">
@@ -682,7 +630,6 @@
             </div>
         </div>
 
-        <!-- FAQ 4 -->
         <div class="faq-item">
             <div class="faq-question">What are the nearby attractions? <span class="faq-icon">+</span></div>
             <div class="faq-answer">
@@ -690,7 +637,6 @@
             </div>
         </div>
 
-        <!-- FAQ 5 -->
         <div class="faq-item">
             <div class="faq-question">Is there any special dress code? <span class="faq-icon">+</span></div>
             <div class="faq-answer">
@@ -701,7 +647,6 @@
     </div>
 </div>
 
-    <!-- MAP SECTION -->
     <div class="section-box">
         <h2>Temple Location</h2>
         <p>Find the temple location on the map below:</p>
@@ -726,7 +671,6 @@
                         i.querySelector('.faq-answer').style.display = 'none';
                     });
 
-                    // Toggle current
                     if(!isActive){
                         item.classList.add('active');
                         answer.style.display = 'block';

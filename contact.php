@@ -5,7 +5,7 @@
       
       <title>Contact - Balaji Hotel And Lodge Chimur</title>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
    </head>
    <!-- body -->
    <body class="main-layout">

@@ -10,9 +10,9 @@
 
     <meta name="keywords" content="Muktai Waterfall, Muktai Temple Waterfall, Waterfalls in Maharashtra, Best waterfalls near temple, Monsoon waterfalls Maharashtra, Muktai Chimur" />
 
-    <meta name="author" content="Your Website Name" />
+    <meta name="author" content="https://www.balajihotelchimur.com/" />
 
-    <link rel="canonical" href="https://yourwebsite.com/muktai-waterfall.php" />
+    <link rel="canonical" href="https://www.balajihotelchimur.com/muktai-waterfall.php" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>

@@ -14,10 +14,10 @@
 <meta name="author" content="Balaji Hotel Chimur" />
 <meta property="og:title" content="Chimur Fort | History, Best Time to Visit & Travel Guide">
 <meta property="og:description" content="Explore the history, location, best time to visit and travel tips for Chimur Fort in Maharashtra.">
-<meta property="og:image" content="https://yourwebsite.com/images/chimur-fort.jpg">
-<meta property="og:url" content="https://yourwebsite.com/chimur-fort.php">
+<meta property="og:image" content="https://www.balajihotelchimur.com/images/chimur-fort.jpg">
+<meta property="og:url" content="https://www.balajihotelchimur.com/chimur-fort.php">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://yourwebsite.com/chimur-fort.php" />
+<link rel="canonical" href="https://www.balajihotelchimur.com/chimur-fort.php" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -26,15 +26,12 @@
     --theme:#8e3a02;
 }
 
-/* ================= GENERAL ================= */
 body{
     margin:0;
     font-family:'Segoe UI',sans-serif;
     color:#333;
 }
 section{width:100%;}
-
-/* ================= HERO ================= */
 .chimur-hero{
     height:180px;
     background:url('images/chimur-fort.jpg') center/cover no-repeat;
@@ -45,7 +42,6 @@ section{width:100%;}
     text-align:center;
     overflow:hidden;
 }
-
 .chimur-hero .overlay{
     position:absolute;
     inset:0;
@@ -57,7 +53,6 @@ section{width:100%;}
     );
     transition:0.6s ease;
 }
-
 .chimur-hero:hover .overlay{
     background:linear-gradient(
         120deg,
@@ -98,8 +93,6 @@ section{width:100%;}
     }
 }
 
-
-/* ================= ABOUT ================= */
 .chimur-about{
     padding:70px 0;
     background:#f8f9fa;
@@ -125,8 +118,6 @@ section{width:100%;}
     border-radius:18px;
     box-shadow:0 15px 35px rgba(0,0,0,0.2);
 }
-
-/* ================= HISTORY ================= */
 .chimur-history{
     padding:80px 5%;
     background:#fff;
@@ -156,8 +147,6 @@ section{width:100%;}
 .history-card h3{
     color:var(--theme);
 }
-
-/* ================= VISIT INFO – UNIQUE ================= */
 .visit-info{
     padding:90px 5%;
  background:#fff8f3;
@@ -212,17 +201,11 @@ section{width:100%;}
     line-height:1.6;
 }
 
-/* Responsive */
 @media(max-width:900px){
     .visit-grid{
         grid-template-columns:1fr;
     }
-
-
 }
-
-
-/* ================= GALLERY ================= */
 .chimur-gallery{
     padding:80px 5%;
     background:#f1f3f5;
@@ -243,9 +226,7 @@ section{width:100%;}
     transform:scale(1.06);
 }
 
-/* ================= FAQ ================= */
 .faq-section {
-    /* background: #fdf5e6; Soft warm background */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -306,7 +287,6 @@ section{width:100%;}
     transform: rotate(45deg);
 }
 
-/* ---------- Responsive ---------- */
 @media(max-width:768px){
     .faq-section {
         padding: 20px;
@@ -316,7 +296,6 @@ section{width:100%;}
     }
 }
 
-/* ================= RESPONSIVE ================= */
 @media(max-width:900px){
     .chimur-about .container,
     .history-grid,
@@ -333,7 +312,6 @@ section{width:100%;}
 <?php include 'include/loader.php'; ?>
 <?php include 'include/header.php'; ?>
 
-<!-- ================= HERO ================= -->
 <section class="chimur-hero">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -342,7 +320,6 @@ section{width:100%;}
     </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
 <section class="chimur-about">
     <div class="container">
         <div>
@@ -361,7 +338,6 @@ section{width:100%;}
     </div>
 </section>
 
-<!-- ================= HISTORY ================= -->
 <section class="chimur-history">
     <div class="history-grid">
         <div class="history-card">
@@ -408,7 +384,6 @@ section{width:100%;}
     </div>
 </section>
 
-<!-- ================= GALLERY ================= -->
 <section class="chimur-gallery">
     <div class="gallery-grid">
         <img src="images/fort-view.jpg" alt="Chimur Fort in Chandrapur Maharashtra - Maratha era fort">
@@ -417,7 +392,6 @@ section{width:100%;}
     </div>
 </section>
 
-<!-- ⭐ NEW SECTION: FAQ -->
 <div class="section-box faq-section">
     <h2 class="section-title">❓ Frequently Asked Questions About Chimur Fort</h2>
 
@@ -492,14 +466,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const answer = parent.querySelector(".faq-answer");
             const icon = item.querySelector(".faq-icon");
 
-            // toggle active class
             parent.classList.toggle("active");
 
             if (parent.classList.contains("active")) {
-                answer.style.display = "block";   // ✅ SHOW ANSWER
+                answer.style.display = "block";   
                 icon.textContent = "×";
             } else {
-                answer.style.display = "none";    // ✅ HIDE ANSWER
+                answer.style.display = "none";    
                 icon.textContent = "+";
             }
         });

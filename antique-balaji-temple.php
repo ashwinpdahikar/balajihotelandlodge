@@ -17,7 +17,7 @@
 <meta property="og:type" content="website">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="canonical" href="https://yourwebsite.com/antique-balaji-temple">
+<link rel="canonical" href="https://www.balajihotelchimur.com/antique-balaji-temple">
 
 <style>
 :root{

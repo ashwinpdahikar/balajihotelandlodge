@@ -9,16 +9,16 @@
 <meta name="description" content="Hirapur Dolmen Site in Maharashtra is an ancient megalithic burial site known for its prehistoric stone structures and archaeological importance." />
 <meta name="keywords" content="Hirapur Dolmen, Hirapur Megalithic Site, Dolmen Site Maharashtra, Ancient Stone Structures" />
 <meta name="robots" content="index, follow">
-<meta name="author" content="Your Name or Website Name">
+<meta name="author" content="https://www.balajihotelchimur.com/">
 <meta property="og:title" content="Hirapur Dolmen Site | Ancient Megalithic Heritage of Maharashtra">
 <meta property="og:description" content="Explore the ancient Hirapur Dolmen Site in Maharashtra, a prehistoric megalithic burial site with archaeological significance.">
 <meta property="og:image" content="images/hirapur-dolmen.jpg">
-<meta property="og:url" content="https://yourwebsite.com/hirapur-dolmen.php">
+<meta property="og:url" content="https://www.balajihotelchimur.com/hirapur-dolmen.php">
 <meta name="twitter:card" content="summary_large_image">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
 <style>
 :root{
     --theme:#8e3a02;

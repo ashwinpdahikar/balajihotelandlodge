@@ -165,8 +165,19 @@ $breadcrumb_data = json_encode([
   <head>
     <?php include 'include/header-section.php'; ?>
     <title><?php echo h($page_title); ?></title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        
+       <meta name="title" content="Balaji Hotel And Lodge Chimur">
+   <meta name="description" content="Comfortable rooms, delicious food, and best stay experience at Balaji Hotel & Lodge Chimur near Tadoba. Book rooms, restaurant, and travel services.">
+   <meta name="keywords" content="Balaji Hotel Chimur, Lodge Chimur, Rooms Chimur, Tadoba Hotels, Restaurant Chimur">
+   <meta name="robots" content="index, follow">
 
+   <meta property="og:title" content="Balaji Hotel And Lodge Chimur">
+   <meta property="og:description" content="Best hotel near Tadoba with rooms, restaurant & travel services.">
+<meta property="og:image" content="https://www.balajihotelchimur.com/images/og-image.jpg"> 
+  <meta property="og:type" content="website">
+   <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
     <script type="application/ld+json">
 <?php echo $breadcrumb_data; ?>
     </script>
@@ -281,8 +292,8 @@ $breadcrumb_data = json_encode([
       .room-content p{color:#666;line-height:1.6;margin-bottom:20px;font-size:.95rem;}
       .room-cta{text-align:center;}
 
-<<<<<<< HEAD
-      //* FAQ Section */
+
+     
 .faq {
     padding: 50px 0;
     background: #f9f9f9;
@@ -345,7 +356,7 @@ $breadcrumb_data = json_encode([
 .faq-content a:hover {
     text-decoration: underline;
 }
-=======
+
       /* FAQ Section */
       .faq{padding:10px 0;background:#f9f9f9;}
       .faq-list{max-width:100%;margin:0 auto;}
@@ -358,7 +369,7 @@ $breadcrumb_data = json_encode([
       .faq-content{padding:20px 0 0 32px;color:#555;line-height:1.8;}
       .faq-content a{color:#d35400;text-decoration:none;}
       .faq-content a:hover{text-decoration:underline;}
->>>>>>> d05eb44dc05f98e160cf324f141bb69faf981e08
+ 
 
       /* Social Share */
       .social-share{padding:60px 0;background:#fff;border-top:1px solid #eee;border-bottom:1px solid #eee;}

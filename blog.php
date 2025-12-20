@@ -4,6 +4,17 @@
       <?php include 'include/header-section.php'; ?>
       <title>Blog - Balaji Hotel And Lodge Chimur</title>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+           <meta name="title" content="Balaji Hotel And Lodge Chimur">
+   <meta name="description" content="Comfortable rooms, delicious food, and best stay experience at Balaji Hotel & Lodge Chimur near Tadoba. Book rooms, restaurant, and travel services.">
+   <meta name="keywords" content="Balaji Hotel Chimur, Lodge Chimur, Rooms Chimur, Tadoba Hotels, Restaurant Chimur">
+   <meta name="robots" content="index, follow">
+
+   <meta property="og:title" content="Balaji Hotel And Lodge Chimur">
+   <meta property="og:description" content="Best hotel near Tadoba with rooms, restaurant & travel services.">
+<meta property="og:image" content="https://www.balajihotelchimur.com/images/og-image.jpg"> 
+  <meta property="og:type" content="website">
+   <meta name="twitter:card" content="Balaji Hotel And Lodge Chimur">
+   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
 
    </head>
    <!-- body -->
