@@ -24,7 +24,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2><span>Gallery</span></h2>
+                     <h1><span>Gallery</span></h1>
                      <p class="subtitle">Explore Our Hotel, Rooms & Facilities Through Images</p>
                   </div>
                </div>

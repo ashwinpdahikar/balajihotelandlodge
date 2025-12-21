@@ -303,13 +303,13 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-<h1><span>About Us</span></h1>
+					<h1><span>About Us</span></h1>
                      <p class="subtitle">Discover Our Story, Hospitality & Commitment to Your Comfort</p>
                   </div>
                </div>
             </div>
          </div>
-      </div>
+       </div>
       <!-- about -->
       <?php require_once __DIR__ . '/include/functions.php'; ?>
       <div class="about">

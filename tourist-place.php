@@ -382,7 +382,7 @@ $breadcrumb_data = json_encode([
                <div class="col-md-12">
                   <div class="title">
                     <!-- <p class="eyebrow">Curated Nearby Attractions</p> -->
-                    <h2>Top Tourist Places Around Chimur</h2>
+                    <h1><span>Top Tourist Places Around Chimur</span></h1>
                      <p class="subtitle">Shortlist your itinerary with drive times, best seasons, and on-ground tips from the Balaji Hotel team.</p>
                   </div>
                </div>

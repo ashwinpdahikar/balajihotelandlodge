@@ -96,7 +96,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title text-center">
-                        <h2><span>Our Rooms</span></h2>
+                        <h1><span>Our Rooms</span></h1>
                         <p class="subtitle">Comfortable AC & Non-AC Rooms for Your Perfect Stay</p>
                     </div>
                 </div>

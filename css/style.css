@@ -1494,7 +1494,7 @@ ul.social_icon li a:hover {
 	);
 	border-radius: 2px;
 }
-.back_re .title h2 {
+.back_re .title h1 {
 	color: #fff;
 	font-size: 48px;
 	font-weight: 800;
@@ -1509,7 +1509,7 @@ ul.social_icon li a:hover {
 	font-family: 'Poppins', sans-serif;
 	animation: fadeInUp 0.8s ease-out;
 }
-.back_re .title h2::before {
+.back_re .title h1::before {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -1526,7 +1526,7 @@ ul.social_icon li a:hover {
 	border-radius: 2px;
 	opacity: 0.6;
 }
-.back_re .title h2::after {
+.back_re .title h1::after {
 	content: '';
 	position: absolute;
 	right: 0;
@@ -1543,12 +1543,12 @@ ul.social_icon li a:hover {
 	border-radius: 2px;
 	opacity: 0.6;
 }
-.back_re .title h2 span {
+.back_re .title h1 span {
 	display: inline-block;
 	position: relative;
 	padding: 0 5px;
 }
-.back_re .title h2 span::after {
+.back_re .title h1 span::after {
 	content: '';
 	position: absolute;
 	bottom: 8px;

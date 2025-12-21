@@ -618,7 +618,7 @@ $breadcrumb_data = json_encode([
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2>Tadoba Tiger Reserve Safari Guide</h2>
+                     <h1><span>Tadoba Tiger Reserve Safari Guide</span></h1>
                      <p class="subtitle">Complete Guide to Safari Booking, Gates, Permits & Wildlife Sightings</p>
                   </div>
                </div>

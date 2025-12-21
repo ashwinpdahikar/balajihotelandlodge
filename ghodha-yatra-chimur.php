@@ -469,8 +469,7 @@
 
 <div class="section-box">
     
-    <h1>About Ghodha Yatra Chimur
-    </h1>
+    <h2>About Ghodha Yatra Chimur</h2>
     <div class="about-section">
         <img src="images/ghoda-yatra.jpg" 
              alt="Ghodha Yatra Chimur Festival at Shri Hari Balaji Temple" 
