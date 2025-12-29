@@ -4,6 +4,8 @@
     <?php include 'include/header-section.php'; ?>
     <title>Our Rooms - Balaji Hotel And Lodge Chimur</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+			 <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
+
   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
   <meta name="title" content="Balaji Hotel And Lodge Chimur">
    <meta name="description" content="Comfortable rooms, delicious food, and best stay experience at Balaji Hotel & Lodge Chimur near Tadoba. Book rooms, restaurant, and travel services.">

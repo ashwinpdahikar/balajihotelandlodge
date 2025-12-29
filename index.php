@@ -26,7 +26,8 @@ start_session_secure(); // Start session before any output
    <!-- Twitter Card -->
    <meta name="twitter:card" content="summary_large_image">
    <!-- ✅ SEO Meta Tags End -->
-
+	
+   <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
    <link rel="stylesheet" href="css/style.css">
 
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

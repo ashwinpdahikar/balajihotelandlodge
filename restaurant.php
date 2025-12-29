@@ -8,8 +8,12 @@ start_session_secure(); // Start session before any output
       <?php include 'include/header-section.php'; ?>
       <title>Veg & Non Veg Restaurant in Chimur | South Indian Restaurant – Balaji Hotel</title>
 
+	  	 <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
+
 	  <link rel="canonical" href="https://www.balajihotelchimur.com/restaurant.php" />
       <!-- Font Awesome -->
+	   
+	   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta name="description" content="Balaji Hotel Restaurant is a popular veg and non veg restaurant in Chimur serving delicious South Indian food. Best family restaurant in Chimur with hygienic dining and great taste.">
 

@@ -19,6 +19,8 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
    <link rel="canonical" href="https://www.balajihotelchimur.com/" />
+   		  	 <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
+
 <style>
 :root{
     --theme:#8e3a02;

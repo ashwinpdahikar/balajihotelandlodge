@@ -16,6 +16,8 @@
 <meta property="og:url" content="https://www.balajihotelchimur.com/ghodha-yatra-chimur.php">
 <meta property="og:type" content="website">
    <link rel="canonical" href="https://www.balajihotelchimur.com/" />
+   	<link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
+
     <style>
         body{
             margin:0;

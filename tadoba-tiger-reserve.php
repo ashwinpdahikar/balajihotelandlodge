@@ -166,17 +166,18 @@ $breadcrumb_data = json_encode([
     <?php include 'include/header-section.php'; ?>
     <title><?php echo h($page_title); ?></title>
         
-       <meta name="title" content="Balaji Hotel And Lodge Chimur">
-   <meta name="description" content="Comfortable rooms, delicious food, and best stay experience at Balaji Hotel & Lodge Chimur near Tadoba. Book rooms, restaurant, and travel services.">
-   <meta name="keywords" content="Balaji Hotel Chimur, Lodge Chimur, Rooms Chimur, Tadoba Hotels, Restaurant Chimur">
+       <meta name="title" content="Best Hotel Near Tadoba Tiger Reserve – Balaji Hotel Chimur">
+   <meta name="description" content="Tadoba Tiger Reserve ke paas comfortable aur budget stay. Safari guests ke liye best hotel in Chimur. Call now for booking.">
+   <meta name="keywords" content="hotel near Tadoba, Tadoba hotel, hotel near Tadoba Tiger Reserve, Tadoba lodge, Tadoba safari stay, best hotel in Tadoba, budget hotel near Tadoba, Tadoba Chimur hotel, hotel near Moharli Gate Tadoba, hotel near Kolara Gate Tadoba, hotel near Navegaon Gate Tadoba, Tadoba safari hotel, stay near Tadoba safari, Tadoba jungle stay, Tadoba Andhari Tiger Reserve hotel">
    <meta name="robots" content="index, follow">
 
-   <meta property="og:title" content="Balaji Hotel And Lodge Chimur">
+   <meta property="og:title" content="Best Hotel Near Tadoba Tiger Reserve – Balaji Hotel Chimur">
    <meta property="og:description" content="Best hotel near Tadoba with rooms, restaurant & travel services.">
 <meta property="og:image" content="https://www.balajihotelchimur.com/images/og-image.jpg"> 
   <meta property="og:type" content="website">
    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	 <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
    <link rel="canonical" href="https://www.balajihotelchimur.com/" />
     <script type="application/ld+json">
 <?php echo $breadcrumb_data; ?>

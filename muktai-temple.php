@@ -10,6 +10,7 @@
 <meta name="keywords" content="Muktai Temple, Muktai Mandir, Muktai Waterfall Temple, Muktai Temple Jalgaon" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+		  	 <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
    <link rel="canonical" href="https://www.balajihotelchimur.com/" />
