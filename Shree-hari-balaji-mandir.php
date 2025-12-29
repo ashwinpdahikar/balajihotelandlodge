@@ -6,11 +6,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shree Hari Balaji Mandir</title>
+<title>Shree Hari Balaji Mandir Chimur | Balaji Temple Near Tadoba | Darshan Timings</title>
 	<link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
    <meta name="title" content="Balaji Hotel And Lodge Chimur">
-   <meta name="description" content="Comfortable rooms, delicious food, and best stay experience at Balaji Hotel & Lodge Chimur near Tadoba. Book rooms, restaurant, and travel services.">
+   <meta name="description" content="Visit Shree Hari Balaji Mandir Chimur, Chandrapur. Check darshan & aarti timings, temple location, nearby Tadoba National Park, accommodation & visitor guidelines. Comfortable rooms, delicious food, and best stay experience at Balaji Hotel & Lodge Chimur near Tadoba. Book rooms, restaurant, and travel services.">
    <meta name="keywords" content="Balaji Hotel Chimur, Lodge Chimur, Rooms Chimur, Tadoba Hotels, Restaurant Chimur">
    <meta name="robots" content="index, follow">
 
@@ -36,13 +36,13 @@
                 height: 170px; 
                 background: 
                     linear-gradient(
-                        rgba(169, 87, 10, 0.83),   /* Warm Orange */
-                        rgba(138, 61, 2, 0.64)     /* Deep Brown */
+                        rgba(169, 87, 10, 0.83),   
+                        rgba(138, 61, 2, 0.64)     
                     ), 
                     url('images/balaji_img4.jpeg') no-repeat center center/cover;
 
                 display: flex;
-                flex-direction: column;      /* <-- FIX: title ke niche subtitle */
+                flex-direction: column;      
                 align-items: center;
                 justify-content: center;
                 color: white;
@@ -506,16 +506,34 @@
                 }
             }
 
-
-
-
     </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HinduTemple",
+  "name": "Shree Hari Balaji Mandir Chimur",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chimur",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "openingHours": "Mo-Su 05:30-12:00,16:00-21:00",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "20.493193",
+    "longitude": "79.365322"
+  }
+}
+</script>
+
 </head>
 
 <body class="main-layout">
 
     <div class="top-banner">
-        <div class="main-title">Shree Hari Balaji Mandir</div>
+        <h1 class="main-title">Shree Hari Balaji Mandir</h1>
         <div class="subtitle">Blessings for Peace, Prosperity & Devotion</div>
     </div>
 
@@ -523,25 +541,34 @@
 
     <!-- ABOUT -->
     <div class="section-box">
-    
-    <h2>About Shree Hari Balaji Mandir
-    </h2>
+
+    <h2>About Shree Hari Balaji Mandir Chimur</h2>
             <div class="about-section">
                 <img src="images/balaji_img2.jpeg" 
-                    alt="Temple Image" 
+                    alt="Shree Hari Balaji Mandir Chimur Temple View" loading="lazy"
                     style="width:450px; height:300px; object-fit:cover; border-radius:10px;">
                 <div class="about-text">
                     <p>
-                        Hari Balaji Temple is a peaceful and spiritual destination dedicated to Lord Balaji. 
-                        Devotees visit this place to experience divine blessings, calm environment, and positive energy.
-                    </p>
-                    <p>
-                        Situated in a serene location, this temple offers a wonderful devotional atmosphere.
-                        "Hari Balaji Temple" often refers to the famous Tirumala Venkateswara Temple (Balaji Temple) in Tirupati, Andhra Pradesh, a major pilgrimage site dedicated to Lord Venkateswara (Balaji/Hari). However, "Hari Balaji" can also refer to other local shrines, like the Shri Hari Balaji Devsthan in Chimur, Chandrapur, Maharashtra, dedicated to Lord Balaji, showing it's a common name for temples honoring this form of Vishnu. The most prominent is Tirupati, known for rituals like hair donation, while local ones serve regional communities.
-                        Tirumala Venkateswara Temple (Tirupati, AP): The most famous, a major Hindu pilgrimage center under the Tirumala Tirupati Devasthanams (TTD).
-        Shri Hari Balaji Devsthan (Chimur, Chandrapur, MH): A well-regarded local temple in Maharashtra.
-        Mehandipur Balaji Temple (Dausa, Rajasthan): Though dedicated to Hanuman (Balaji), it's famous for exorcism and healing, attracting many devotees. 
-                    </p>
+Shree Hari Balaji Mandir Chimur is a famous spiritual temple located in 
+Chimur, Chandrapur district of Maharashtra. This Balaji Mandir near Tadoba 
+attracts devotees from nearby villages and tourists visiting Tadoba National Park.
+</p>
+
+
+<p>
+The name "Hari Balaji Temple" is commonly associated with several famous temples 
+across India. The most prominent is the Tirumala Venkateswara Temple in Tirupati, 
+Andhra Pradesh, which is one of the largest Hindu pilgrimage centers in the world.
+</p>
+
+<h3>Famous Temples Known as Balaji</h3>
+
+<p>
+Apart from Tirupati, there are other well-known Balaji temples such as Shri Hari 
+Balaji Devsthan in Chimur, Maharashtra, and Mehandipur Balaji Temple in Rajasthan, 
+which is famous for spiritual healing rituals.
+</p>
+
                 </div>
             </div>
     </div>
@@ -552,10 +579,10 @@
         <p>The beauty of the temple is captured in the images below.</p>
 
         <div class="gallery">
-            <img src="images/balaji_gate.jpg">
-            <img src="images/balaji_img2.jpeg">
-            <img src="images/balaji_img3.jpeg">
-            <img src="images/balaji_img4.jpeg">
+            <img src="images/balaji_gate.jpg" alt="Balaji Mandir Chimur Main Gate" loading="lazy">
+            <img src="images/balaji_img2.jpeg" alt="Balaji Temple Chimur Aarti View" loading="lazy">
+            <img src="images/balaji_img3.jpeg" alt="Shree hari balaji temple inside view" loading="lazy">
+            <img src="images/balaji_img4.jpeg" alt="Shree hari balaji temple outside view" loading="lazy">
         </div>
     </div>
 
@@ -588,7 +615,7 @@
 
         <div class="testimonial">
             <img src="images/testimonial1.jpg" 
-                 alt="Rakesh Kumar"
+                 alt="Rakesh Kumar" loading="lazy"
                  style="width:80px; height:80px; object-fit:cover; border-radius:50%;">
             <p>“A very peaceful and divine place. The morning aarti feels magical!”</p>
             <b>– Rakesh Kumar</b>
@@ -596,7 +623,7 @@
 
         <div class="testimonial">
             <img src="images/testimonial2.jpg" 
-                 alt="Manisha Sharma"
+                 alt="Manisha Sharma" loading="lazy"
                  style="width:80px; height:80px; object-fit:cover; border-radius:50%;">
             <p>“Clean and well-maintained temple. The environment is full of positive energy.”</p>
             <b>– Manisha Sharma</b>
@@ -604,7 +631,7 @@
 
         <div class="testimonial">
             <img src="images/testimonial3.jpg" 
-                 alt="Amit Verma"
+                 alt="Amit Verma" loading="lazy"
                  style="width:80px; height:80px; object-fit:cover; border-radius:50%;">
             <p>“Perfect place to spend time in devotion and silence. Must visit!”</p>
             <b>– Amit Verma</b>

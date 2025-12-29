@@ -1,12 +1,12 @@
 <?php
-// muktai-waterfall.php (layout-compatible)
+// muktai-waterfall.php 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php include 'include/header-section.php'; ?>
-<title>Muktai Waterfall | Best Time to Visit, Location & Travel Guide</title>
-    <meta name="description" content="Muktai Waterfall near Muktai Temple, Maharashtra is a peaceful natural destination famous for monsoon views, photography, and scenic beauty. Best time to visit, location, FAQs and travel tips." />
+<title>Muktai Waterfall Near Muktai Temple, Chimur | Best Time & Travel Guide</title>
+<meta name="description" content="Muktai Waterfall near Muktai Temple, Chimur Maharashtra is a beautiful monsoon waterfall. Check best time to visit, location, distance, travel tips, photos and FAQs." />
 
     <meta name="keywords" content="Muktai Waterfall, Muktai Temple Waterfall, Waterfalls in Maharashtra, Best waterfalls near temple, Monsoon waterfalls Maharashtra, Muktai Chimur" />
 
@@ -16,6 +16,23 @@
 		  	 <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Muktai Waterfall",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chimur",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "touristType": ["Nature Lovers", "Photographers"],
+  "isAccessibleForFree": true
+}
+</script>
+
 </head>
 <body>
 
@@ -26,7 +43,7 @@
 <section class="muktai-hero">
     <div class="overlay"></div>
     <div class="hero-content">
-        <h1>Muktai Waterfall</h1>
+      <h1>Muktai Waterfall Near Muktai Temple, Maharashtra</h1>
         <p>Where nature flows and silence speaks 🌿</p>
         
     </div>
@@ -36,13 +53,15 @@
 <section id="about" class="muktai-about">
     <div class="container">
         <div class="about-text">
-            <h1 class="about-title">About Muktai Waterfall</h1>
+            <h2 class="about-title">About Muktai Waterfall</h2>
 
             <p>
-                Muktai Waterfall is one of the most peaceful and naturally rich destinations
-                located near the sacred Muktai Temple in Maharashtra. Surrounded by lush green
-                hills and rocky terrain, it offers a refreshing escape from city life.
-            </p>
+Muktai Waterfall is one of the most peaceful natural destinations located near
+the sacred Muktai Temple in Maharashtra. Visitors who come to
+<a href="index.php">Shree Hari Balaji Mandir Chimur</a>
+often explore this beautiful waterfall during the monsoon season.
+</p>
+
 
             <p>
                 During the monsoon season, the waterfall becomes vibrant and powerful,
@@ -55,16 +74,17 @@
             </p>
 
             <p>
-               Muktai Waterfall near Muktai Temple in Maharashtra is one of the
-               most beautiful monsoon waterfalls, attracting nature lovers
-               and photographers every year.
-            </p>
+Muktai Waterfall near Muktai Temple in Chimur, Maharashtra is a popular monsoon
+tourist attraction. Visitors from Chimur, Chandrapur and nearby villages visit
+this waterfall during rainy season for nature views, photography and peace.
+</p>
+
 
         </div>
 
         <div class="about-image">
             <img src="images/waterfall-img3.jpg"
-                 alt="Muktai Waterfall"
+             alt="Muktai Waterfall near Muktai Temple Chimur Maharashtra"  loading="lazy"
                  style="height:350px;width:100%;object-fit:cover;">
         </div>
     </div>
@@ -99,10 +119,10 @@
     <h2>Gallery of Muktai Waterfall</h2>
 
     <div class="gallery-grid">
-        <img src="images/waterfall-img1.jpg" alt="Muktai Waterfall scenic view during monsoon">
-        <img src="images/waterfall-img2.webp" alt="Muktai Waterfall near Muktai Temple Maharashtra">
-        <img src="images/waterfall-img3.jpg" alt="Natural beauty of Muktai Waterfall">
-        <img src="images/waterfall-img4.webp" alt="Muktai Waterfall surrounded by greenery">
+        <img src="images/waterfall-img1.jpg" alt="Muktai Waterfall scenic view during monsoon" loading="lazy">
+        <img src="images/waterfall-img2.webp" alt="Muktai Waterfall near Muktai Temple Maharashtra" loading="lazy">
+        <img src="images/waterfall-img3.jpg" alt="Natural beauty of Muktai Waterfall" loading="lazy">
+        <img src="images/waterfall-img4.webp" alt="Muktai Waterfall surrounded by greenery" loading="lazy">
 
     </div>
 </section>
@@ -115,13 +135,15 @@
 
       <div class="faq-item">
     <div class="faq-question">
-        Is there any entry fee to visit Muktai Waterfall?
+        Is there any entry fee to visit Muktai Waterfall near Muktai Temple?
         <span class="icon">+</span>
     </div>
     <div class="faq-answer">
         <p>
             There is no entry fee to visit Muktai Waterfall.
             However, local parking charges may apply.
+            Many visitors plan their trip along with nearby religious places such as
+<a href="index.php">Shree Hari Balaji Mandir Chimur
         </p>
     </div>
 </div>
