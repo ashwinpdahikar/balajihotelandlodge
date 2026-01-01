@@ -32,7 +32,7 @@
                         <li><a href="room.php">Our Room</a></li>
                         <li><a href="restaurant.php">Restaurant</a></li>
                         <li><a href="gallery.php">Gallery</a></li>
-                        <li><a href="chimur-tourism.php">Chimur Travel Guide</a></li>
+                        <li><a href="chimur-tourism.php">Tourist Place Chimur</a></li>
                         <li><a href="blog.php">Blog</a></li>
                         <li><a href="contact.php">Contact Us</a></li>
                     </ul>

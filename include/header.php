@@ -15,7 +15,7 @@
         <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
        <li class="nav-item has-dropdown">
   <a class="nav-link" href="tourist-place.php">
-    Tourist Places Chimur 
+    Tourist Place Chimur 
     <i class="fa fa-chevron-down" style="font-size:10px;margin-left:4px;"></i>
   </a>
 

@@ -361,6 +361,30 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
 		grid-template-columns: 1fr;
 		}
 		}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  
+}
+
+.payment-left,
+.payment-right {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  height: 360px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
@@ -461,22 +485,16 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
 					<label>Check-in Date <span class="required">*</span></label>
 					<input type="date" class="form-control" name="checkin_date" id="checkin_date" required>
 				</div>
-				<div class="form-group">
-					<label>Check-in Time <span class="required">*</span></label>
-					<input type="time" class="form-control" name="checkin_time" id="checkin_time" required>
-				</div>
+				
 				<div class="form-group">
 					<label>Check-out Date <span class="required">*</span></label>
 					<input type="date" class="form-control" name="checkout_date" id="checkout_date" required>
 				</div>
 
-				<div class="form-group">
-					<label>Check-out Time</label>
-					<input type="time" class="form-control" name="checkout_time" id="checkout_time">
-				</div>
+				
 			</div>
 			<div class="help-text">
-				Please select valid check-in and check-out date & time
+				Please select valid check-in and check-out date
 			</div>
 		</div>
 			
@@ -548,7 +566,7 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
                      min="500" step="100" value="500" required>
               <div class="help-text">Minimum ₹500 required to confirm booking</div>
             </div>
-
+<!-- 
             <?php if ($upiId): ?>
             <div class="qr-wrapper">
               <h6 style="margin-bottom: 15px; color: #2c3e50;">Scan to Pay via UPI</h6>
@@ -569,7 +587,42 @@ $email = get_setting('email', 'balajirestaurantandlodge@gmail.com');
               <input type="text" class="form-control" name="payment_ref" id="bm_ref" 
                      placeholder="Enter UPI reference number after payment" required>
               <div class="help-text">This is the transaction ID you receive after payment</div>
-            </div>
+            </div> -->
+			<div class="payment-grid">
+
+  <!-- LEFT : QR -->
+  <div class="payment-left">
+    <?php if ($upiId): ?>
+    <div class="qr-wrapper">
+      <h6>Scan to Pay via UPI</h6>
+      <img id="bm_qr"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=<?php echo urlencode('upi://pay?pa='.$upiId.'&pn='.$upiName.'&am=500&cu=INR'); ?>">
+      <strong><?php echo h($upiId); ?></strong>
+      <p><?php echo h($upiName); ?></p>
+    </div>
+    <?php endif; ?>
+  </div>
+
+  <!-- RIGHT : Screenshot Upload -->
+  <div class="payment-right">
+    <div class="form-group">
+      <label>Upload Payment Screenshot <span class="required">*</span></label>
+      <input type="file"
+             class="form-control"
+             name="payment_screenshot"
+             accept="image/*"
+             required>
+      <div class="help-text">UPI / GPay / PhonePe screenshot upload karein</div>
+    </div>
+
+    <div class="form-group">
+      <label>UPI Reference / Transaction ID</label>
+      <input type="text" class="form-control" name="payment_ref" required>
+    </div>
+  </div>
+
+</div>
+
           </div>
 
           <button type="submit" class="btn-submit">

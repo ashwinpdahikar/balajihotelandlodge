@@ -55,6 +55,8 @@
             /* Main title */
             .main-title{
                 font-size: 36px;
+                color: white;
+                
             }
 
             /* Subtitle */
@@ -89,13 +91,13 @@
                 height: 170px; 
                 background: 
                     linear-gradient(
-                        rgba(169, 87, 10, 0.83),   /* Warm Orange */
-                        rgba(138, 61, 2, 0.64)     /* Deep Brown */
+                        rgba(169, 87, 10, 0.83),   
+                        rgba(138, 61, 2, 0.64)     
                     ), 
                     url('images/balaji_img4.jpeg') no-repeat center center/cover;
 
                 display: flex;
-                flex-direction: column;      /* <-- FIX: title ke niche subtitle */
+                flex-direction: column;      
                 align-items: center;
                 justify-content: center;
                 color: white;

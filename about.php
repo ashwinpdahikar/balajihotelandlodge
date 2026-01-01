@@ -35,7 +35,7 @@
          /* About Page Custom Styles */
          .about {
             padding: 60px 0;
-         }
+         }w
          .about .titlepage h2 {
             font-size: 32px;
             font-weight: 600;
