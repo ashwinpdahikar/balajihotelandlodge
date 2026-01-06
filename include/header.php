@@ -9,12 +9,57 @@
     <nav class="main-nav" aria-label="Primary">
       <ul class="nav-list">
         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="restaurant.php">Restaurant</a></li>
         <li class="nav-item"><a class="nav-link" href="room.php">Our Rooms</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
         <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="chimur-tourism.php">Chimur Travel Guide</a></li>
+       <li class="nav-item has-dropdown">
+  <a class="nav-link" href="tourist-place.php">
+    Tourist Place Chimur 
+    <i class="fa fa-chevron-down" style="font-size:10px;margin-left:4px;"></i>
+  </a>
+
+  <ul class="dropdown-menu tourist-dropdown">
+    <div class="dropdown-box">
+
+      <!-- Column 1 -->
+      <div class="dropdown-column">
+        <h6>🌿 Nature & Safari</h6>
+        <a href="tourist-place.php">All Tourist Places</a>
+        <a href="tadoba-tiger-reserve.php">Tadoba Safari Guide</a>
+        <a href="muktai-waterfall.php">Muktai Waterfall</a>
+        <a href="erai-river.php">Erai River</a>
+        <a href="erai-dam.php">Erai Dam</a>
+        <a href="ghodazari-wildlife-sanctuary.php">Ghodazari Wildlife Sanctuary</a>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="dropdown-column">
+        <h6>🛕 Temples</h6>
+        <a href="Shree-hari-balaji-mandir.php">Shree Hari Balaji Mandir</a>
+        <a href="chimur-hanuman-temple.php">Chimur Hanuman Temple</a>
+        <a href="antique-balaji-temple.php">Antique Balaji Temple</a>
+        <a href="muktai-temple.php">Muktai Temple</a>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="dropdown-column">
+        <h6>🏛 History & Culture</h6>
+        <a href="chimur-fort.php">Chimur Fort</a>
+        <a href="hirapur-dolmen-site.php">Hirapur Dolmen Site</a>
+        <a href="ghodha-yatra-chimur.php">Ghodha Yatra Chimur</a>
+      </div>
+
+    </div>
+  </ul>
+</li>
+
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
-        <li class="nav-item cta"><a class="nav-link btn-cta" href="contact.php">Contact Us</a></li>
+<li class="nav-item cta">
+    <a class="nav-link btn-cta" href="contact.php" style="text-decoration: none; border-bottom: none; box-shadow: none;       
+    outline: none;">Contact Us</a>
+</li>
+
       </ul>
     </nav>
 
@@ -25,28 +70,57 @@
   </div>
 
   <!-- Offcanvas (right) -->
-  <aside id="offcanvas" class="offcanvas" role="dialog" aria-hidden="true" aria-labelledby="menu-title">
-    <div class="offcanvas-inner">
-      <div class="offcanvas-head">
-        <a class="brand-small" href="index.php" aria-label="Balaji Home">
-          <img src="images/BalajiHotelLogo.png" alt="Balaji" />
-        </a>
-        <button class="offcanvas-close" aria-label="Close menu">✕</button>
-      </div>
+  <!-- Offcanvas (right) -->
+<aside id="offcanvas" class="offcanvas" role="dialog" aria-hidden="true">
+  <div class="offcanvas-inner">
 
-      <nav class="offcanvas-nav" aria-label="Mobile primary">
-        <ul>
-          <li class="off-item"><a href="index.php">Home</a></li>
-          <li class="off-item"><a href="about.php">About</a></li>
-          <li class="off-item"><a href="room.php">Our Rooms</a></li>
-          <li class="off-item"><a href="gallery.php">Gallery</a></li>
-          <li class="off-item"><a href="chimur-tourism.php">Chimur Travel Guide</a></li>
-          <li class="off-item"><a href="blog.php">Blog</a></li>
-          <li class="off-item cta"><a href="contact.php">Contact Us</a></li>
-        </ul>
-      </nav>
+    <div class="offcanvas-head">
+      <a class="brand-small" href="index.php" aria-label="Balaji Home">
+        <img src="images/BalajiHotelLogo.png" alt="Balaji">
+      </a>
+      <button class="offcanvas-close" aria-label="Close menu">✕</button>
     </div>
-  </aside>
+
+    <nav class="offcanvas-nav" aria-label="Mobile primary">
+      <ul>
+
+        <li class="off-item"><a href="index.php">Home</a></li>
+        <li class="off-item"><a href="restaurant.php">Restaurant</a></li>
+        <li class="off-item"><a href="room.php">Our Rooms</a></li>
+        <li class="off-item"><a href="about.php">About</a></li>
+        <li class="off-item"><a href="gallery.php">Gallery</a></li>
+
+        <li class="off-item">
+          <a href="tourist-place.php">Tourist Places Chimur</a>
+
+          <div class="mobile-mega">
+            <a href="tadoba-tiger-reserve.php">Tadoba Safari</a>
+            <a href="Shree-hari-balaji-mandir.php">Balaji Mandir</a>
+            <a href="muktai-waterfall.php">Muktai Waterfall</a>
+            <a href="chimur-fort.php">Chimur Fort</a>
+            <a href="chimur-hanuman-temple.php">Hanuman Temple</a>
+            <a href="antique-balaji-temple.php">Antique Balaji</a>
+            <a href="muktai-temple.php">Muktai Temple</a>
+            <a href="ghodha-yatra-chimur.php">Ghodha Yatra</a>
+            <a href="hirapur-dolmen-site.php">Dolmen Site</a>
+            <a href="erai-river.php">Erai River</a>
+            <a href="erai-dam.php">Erai Dam</a>
+            <a href="ghodazari-wildlife-sanctuary.php">Ghodazari Sanctuary</a>
+          </div>
+        </li>
+
+        <li class="off-item"><a href="blog.php">Blog</a></li>
+
+        <li class="off-item">
+          <a class="btn-cta" href="contact.php">Contact Us</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+</aside>
+
 
   <!-- Overlay -->
   <div class="offcanvas-overlay" tabindex="-1" aria-hidden="true"></div>
@@ -62,24 +136,37 @@
     --header-h:76px;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif}
-  .container{max-width:1140px;margin:0 auto;padding:0 16px}
+  body{margin:0;overflow-x:hidden;font-family:Inter,system-ui,Arial,Helvetica,sans-serif}
+  .container{max-width:1140px;margin:0 auto;padding:0 16px;overflow:visible}
 
   /* Header */
-  .site-header{background:var(--bg);position:sticky;top:0;z-index:1100;border-bottom:1px solid rgba(0,0,0,0.06)}
-  .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--header-h)}
+  .site-header{background:var(--bg);position:sticky;top:0;z-index:1100;border-bottom:1px solid rgba(0,0,0,0.06);overflow:visible}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--header-h);position:relative;overflow:visible}
   .brand-img{max-height:75px;transition:transform .25s ease}
   .brand-img:hover{transform:scale(1.03)}
 
   /* Desktop nav */
-  .main-nav{display:block}
-  .nav-list{display:flex;gap:6px;align-items:center;margin:0;padding:0;list-style:none}
-  .nav-item{position:relative}
-  .nav-link{display:inline-block;padding:10px 14px;color:var(--dark);text-decoration:none;font-weight:600;transition:color .18s ease}
+  .main-nav{display:block;position:relative;z-index:1110}
+  .nav-list{display:flex;gap:6px;align-items:center;margin:0;padding:0;list-style:none;position:relative}
+  .nav-item{position:relative;overflow:visible}
+  .nav-link{display:inline-block;padding:10px 14px;color:var(--dark);text-decoration:none;font-weight:600;transition:color .18s ease;position:relative;z-index:1}
   .nav-link:hover{color:var(--accent)}
   /* underline */
   .nav-link::after{content:'';position:absolute;left:0;bottom:6px;height:3px;background:var(--accent);width:0;transition:width .28s ease}
   .nav-item.active .nav-link::after,.nav-link:hover::after{width:100%}
+  
+  /* Dropdown */
+  .nav-item.has-dropdown .dropdown-menu{position:absolute;top:calc(100% + 5px);left:0;background:#fff;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.15);border-radius:8px;opacity:0;visibility:hidden;transform:translateY(-5px);transition:all .3s ease;padding:8px 0;list-style:none;z-index:9999;margin:0;pointer-events:none;border:1px solid rgba(0,0,0,0.08);display:block}
+  .nav-item.has-dropdown:hover .dropdown-menu,
+  .nav-item.has-dropdown.dropdown-open .dropdown-menu,
+  .nav-item.has-dropdown .dropdown-menu:hover{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+  .nav-item.has-dropdown .nav-link::after{display:none}
+  .dropdown-menu li{margin:0;list-style:none}
+  .dropdown-menu a{display:block;padding:12px 20px;color:var(--dark);text-decoration:none;font-weight:500;font-size:0.95rem;transition:all .2s ease;white-space:nowrap}
+  .dropdown-menu a:hover{background:rgba(211,84,0,0.1);color:var(--accent);padding-left:24px}
+  
+  /* Bridge gap between nav-link and dropdown to maintain hover */
+  .nav-item.has-dropdown::before{content:'';position:absolute;top:100%;left:0;right:0;height:5px;background:transparent;z-index:9998;pointer-events:auto}
 
   /* CTA */
   .cta .nav-link{background:var(--accent);color:#fff;padding:8px 18px;border-radius:30px}
@@ -95,12 +182,32 @@
   /* Offcanvas */
   .offcanvas{position:fixed;top:0;right:-360px;width:360px;height:100%;background:var(--bg);box-shadow:-12px 0 30px rgba(0,0,0,0.12);z-index:1200;transition:right .36s ease;display:flex;flex-direction:column}
   .offcanvas.open{right:0}
-  .offcanvas-inner{padding:18px}
+@media (max-width:768px){
+  .offcanvas-inner{
+    padding: 10px 12px;         
+  }
+}
   .offcanvas-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:6px}
   .offcanvas-head img{max-height:50px}
   .offcanvas-close{background:none;border:0;font-size:26px;cursor:pointer}
   .offcanvas-nav ul{list-style:none;padding:10px 0;margin:0}
-  .off-item{padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.04)}
+@media (max-width:768px){
+    .offcanvas-nav ul{
+    padding: 6px 0;
+  }
+
+  .off-item{
+    padding: 6px 0;             
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .off-item a{
+    padding: 6px 2px;            
+    font-size: 0.88rem;
+    line-height: 0.5;
+    font-weight: 500;
+  }
+}
   .off-item a{color:var(--dark);text-decoration:none;font-weight:600;display:block}
   .off-item.cta a{display:inline-block;background:var(--accent);color:#fff;padding:8px 16px;border-radius:26px}
   .offcanvas-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:1150}
@@ -110,19 +217,149 @@
   @media (max-width:1024px){
     .main-nav{display:none}
     .menu-toggle{display:block}
-    .header-inner{height:64px}
-    .brand-img{max-height:55px}
-    .offcanvas{width:320px}
+    .header-inner{height:56px}
+    .brand-img{max-height:48px}
+    .offcanvas{width:280px}
+    .offcanvas-nav{
+    padding-top:5px;
+  }
   }
 
   @media (max-width:480px){
-    .offcanvas{width:100%;right:-100%}
+    .offcanvas{width:100%;right:-100%;padding: 12px 14px}
     .offcanvas.open{right:0}
   }
 
   @media (prefers-reduced-motion:reduce){
     .offcanvas,.offcanvas-overlay,.nav-link::after{transition:none}
   }
+
+.dropdown-menu .dropdown-column h6{
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.dropdown-menu .dropdown-column a{
+  padding: 6px 0;
+  white-space: nowrap;
+}
+
+.dropdown-box{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 15px;
+  width: 580px;
+  
+}
+
+.dropdown-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-column h6{
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.dropdown-column a{
+  padding: 6px 0;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-column a:hover{
+  color: #b84300;
+}
+
+.nav-item.has-dropdown{
+  position: relative;
+}
+
+.tourist-dropdown{
+  left: 0 ;
+  right: auto ;
+  width: 560px;
+}
+
+@media (max-width:768px){
+
+  .mobile-mega{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+    gap: 4px 6px;
+    padding: 4px 4px;            
+    margin-top: 4px;
+    max-height: 45vh;            
+    overflow-y: auto;
+  }
+
+  .mobile-mega a{
+    font-size: 0.75rem;         
+    padding: 3px 4px;
+    line-height: 1.15;
+    color: #555;
+  }
+}
+  .tourist-dropdown .dropdown-column h6{
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+  }
+
+  .tourist-dropdown .dropdown-column a{
+    font-size: 0.75rem;
+    padding: 2px 0;
+  }
+
+@media (max-width:768px){
+
+  .tourist-dropdown{
+    width: 100%;
+    left: 0;
+    padding: 4px 0;
+  }
+}
+
+/* Offcanvas main container */
+.offcanvas-nav{
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Agar parent offcanvas hai */
+.offcanvas{
+  overflow-y: auto;
+}
+
+/* Body lock issue fix */
+body.offcanvas-open{
+  overflow: hidden;
+}
+
+@media (max-width:768px){
+
+  .offcanvas-nav .btn-cta{
+    background: none;          
+    border-radius: 0;
+    padding: 6px 2px;          
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--accent);      
+    text-align: left;
+    box-shadow: none;
+  }
+}
 </style>
 
 <!-- Script (self-contained) -->
@@ -136,11 +373,20 @@
 
   // Desktop
   document.querySelectorAll(".nav-item").forEach(li => {
-    const a = li.querySelector("a");
+    const a = li.querySelector(".nav-link");
     if(a && a.getAttribute("href") === currentPage){
       li.classList.add("active");
     } else {
-      li.classList.remove("active");
+      // Check dropdown items
+      const dropdownLinks = li.querySelectorAll(".dropdown-menu a");
+      dropdownLinks.forEach(dropdownLink => {
+        if(dropdownLink.getAttribute("href") === currentPage){
+          li.classList.add("active");
+        }
+      });
+      if(!li.querySelector(".dropdown-menu a[href='" + currentPage + "']")){
+        li.classList.remove("active");
+      }
     }
   });
 
@@ -157,12 +403,81 @@
 
 
 // ----------------------------
+// DROPDOWN TOGGLE (CLICK & HOVER)
+// ----------------------------
+(function(){
+  function initDropdown() {
+    const dropdownItems = document.querySelectorAll('.nav-item.has-dropdown');
+    
+    dropdownItems.forEach(item => {
+      const navLink = item.querySelector('.nav-link');
+      const dropdownMenu = item.querySelector('.dropdown-menu');
+      
+      if(!navLink || !dropdownMenu) return;
+      
+      // Click handler - toggle dropdown on click
+      navLink.addEventListener('click', function(e) {
+        // Don't prevent default if clicking dropdown items
+        if(e.target.closest('.dropdown-menu')) return;
+        
+        // Toggle dropdown
+        const isOpen = item.classList.contains('dropdown-open');
+        
+        // Close all dropdowns first
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(dd => {
+          dd.classList.remove('dropdown-open');
+        });
+        
+        // Toggle current dropdown
+        if(!isOpen) {
+          e.preventDefault();
+          e.stopPropagation();
+          item.classList.add('dropdown-open');
+        } else {
+          // If already open, allow link to work
+          item.classList.remove('dropdown-open');
+        }
+      });
+      
+      // Hover support - keep dropdown open when hovering
+      item.addEventListener('mouseenter', function() {
+        item.classList.add('dropdown-open');
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        item.classList.remove('dropdown-open');
+      });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if(!e.target.closest('.nav-item.has-dropdown')) {
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(dd => {
+          dd.classList.remove('dropdown-open');
+        });
+      }
+    });
+  }
+  
+  // Initialize when DOM is ready
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDropdown);
+  } else {
+    initDropdown();
+  }
+})();
+
+// ----------------------------
 // CLICK ACTIVE HIGHLIGHT
 // ----------------------------
 const allLinks = document.querySelectorAll('.nav-list .nav-link, .offcanvas-nav a');
 
 allLinks.forEach(link => {
-  link.addEventListener('click', function() {
+  link.addEventListener('click', function(e) {
+    // Don't interfere with dropdown clicks
+    if(this.closest('.has-dropdown') && !this.closest('.dropdown-menu')) {
+      return;
+    }
 
     document.querySelectorAll('.nav-item').forEach(item =>
       item.classList.remove('active')

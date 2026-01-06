@@ -2,7 +2,12 @@
 <html lang="en">
    <head>
       <?php include 'include/header-section.php'; ?>
+      
       <title>Contact - Balaji Hotel And Lodge Chimur</title>
+	  		  	 <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -13,12 +18,17 @@
       <?php include 'include/header.php'; ?>
       <!-- end header inner -->
       <!-- end header -->
-     <div class="back_re">
+      <div class="back_re">
+         <div class="decorative-corner top-left"></div>
+         <div class="decorative-corner top-right"></div>
+         <div class="decorative-corner bottom-left"></div>
+         <div class="decorative-corner bottom-right"></div>
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                      <h2>Contact Us</h2>
+                     <h2><span>Contact Us</span></h2>
+                     <p class="subtitle">Get in Touch - We're Here to Help You Plan Your Stay</p>
                   </div>
                </div>
             </div>
