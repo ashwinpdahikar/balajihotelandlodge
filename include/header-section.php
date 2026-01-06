@@ -49,8 +49,8 @@ if (strpos($og_image, 'http') !== 0) {
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
      
-     <link rel="icon" href="images/fevicon.png" type="image/gif" />
-
+     <link rel="icon" href="images/fevicon.ico" type="image/gif" />
+<link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
 
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
