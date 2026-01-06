@@ -23,6 +23,13 @@
   <link rel="canonical" href="https://www.balajihotelchimur.com/" />
    <!-- Twitter Card -->
    <meta name="twitter:card" content="summary_large_image">
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0L8N4ZV5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F0L8N4ZV5G');
+</script>
     <style>
         body{
             margin:0;

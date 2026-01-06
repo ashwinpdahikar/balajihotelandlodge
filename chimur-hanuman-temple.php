@@ -21,7 +21,13 @@
 		  	 <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F0L8N4ZV5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F0L8N4ZV5G');
+</script>
 <style>
 :root{
     --theme:#8e3a02;

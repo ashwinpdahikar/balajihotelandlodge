@@ -165,12 +165,19 @@ $breadcrumb_data = json_encode([
     <?php include 'include/header-section.php'; ?>
     <title><?php echo h($page_title); ?></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-				  	 <!-- <link rel="icon" href="images/BalajiHotelLogo.png" type="image" /> -->
+				  	 <link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
 	<meta name="description" content="<?php echo h($page_description); ?>">
            <link rel="canonical" href="https://www.balajihotelchimur.com/" />
     <script type="application/ld+json">
 <?php echo $breadcrumb_data; ?>
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0L8N4ZV5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F0L8N4ZV5G');
+</script>
   </head>
   <body class="main-layout tourist-guide">
     <?php include 'include/loader.php'; ?>

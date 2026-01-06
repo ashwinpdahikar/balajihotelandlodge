@@ -18,6 +18,13 @@
    <link rel="canonical" href="https://www.balajihotelchimur.com/" />
 	<link rel="icon" href="images/BalajiHotelLogo.png" type="image" />
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0L8N4ZV5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F0L8N4ZV5G');
+</script>
     <style>
         body{
             margin:0;

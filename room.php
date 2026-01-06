@@ -18,6 +18,13 @@
   <meta property="og:type" content="website">
    <meta name="twitter:card" content="summary_large_image">
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F0L8N4ZV5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F0L8N4ZV5G');
+</script>
 
     <style>
         /* Room Card Styling */

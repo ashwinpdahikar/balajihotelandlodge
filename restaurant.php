@@ -22,7 +22,13 @@ start_session_secure(); // Start session before any output
 <meta name="author" content="Balaji Hotel Restaurant and Lodge">
 
 <meta name="robots" content="index, follow">
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F0L8N4ZV5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F0L8N4ZV5G');
+</script>
    </head>
    <!-- body -->
    <body class="main-layout">

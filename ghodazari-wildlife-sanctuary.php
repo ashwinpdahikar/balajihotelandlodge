@@ -20,6 +20,13 @@
 
 <link rel="canonical" href="https://www.balajihotelchimur.com/ghodazari-wildlife-sanctuary">
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F0L8N4ZV5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F0L8N4ZV5G');
+</script>
 <style>
 :root{
     --theme:#8e3a02;
